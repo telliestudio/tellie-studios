@@ -1,0 +1,150 @@
+/* Style sheet for Tellie Studios */
+
+/* Brand Colors */
+:root {
+  --hot-pink: #FF69B4;
+  --baby-blue: #89CFF0;
+  --dark-green: #006400;
+  --deep-dark-purple: #301934;
+  --light-grey: #D3D3D3;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+/* Custom background color for navbar */
+.bg-custom {
+  background-color: var(--hot-pink); /* Replace with the brand's specific color */
+}
+
+/* Navbar link styles */
+.nav-link:link, .nav-link:visited {
+  font-family: 'Grandstander', sans-serif;
+  color: var(--black); /* Replace with the brand's primary color */
+  font-size: 16px; /* Adjust as needed */
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: var(--baby-blue); /* Replace with the brand's accent color */
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Navbar brand logo */
+.logo {
+  width: 10%; /* Adjust the size as needed */
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--light-grey); /* Replace with the brand's footer background color */
+  color: var(--black); /* Replace with the brand's footer text color */
+}
+
+.footer a {
+  color: var(--baby-blue); /* Replace with the brand's footer link color */
+}
+
+.footer a:hover {
+  color: var(--black); /* Replace with the brand's footer link hover color */
+}
+
+/* Footer text styles */
+.footer h5, .footer h6, .footer p {
+  font-family: 'Grandstander', sans-serif;
+  color: var(--black); /* Replace with the brand's primary text color */
+}
+
+.footer h5 {
+  font-size: 18px; /* Adjust as needed */
+}
+
+.footer h6 {
+  font-size: 16px; /* Adjust as needed */
+}
+
+.footer p {
+  font-size: 14px; /* Adjust as needed */
+}
+
+/* Social media icon styles */
+.bi {
+  color: var(--baby-blue); /* Replace with the brand's icon color */
+  font-size: 24px; /* Adjust the size as needed */
+  margin-right: 10px; /* Adjust the spacing as needed */
+}
+
+/* Additional custom styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--black); /* Replace with the brand's primary text color */
+}
+
+/* Product grid styles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Product styles */
+.product {
+  background-color: #B0E0E6; /* Lighter blue background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product.coral {
+  background-color: #FF7F50; /* Coral background */
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.product h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.product p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Buy button styles */
+.buy-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--hot-pink); /* Hot pink color */
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.buy-button:hover {
+  background-color: #FF1493; /* Darker pink for hover effect */
+}
+
+/* Product specs and trust signals */
+.product-specs {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 10px;
+}
+
+.trust-signals {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #777;
+}
+  
