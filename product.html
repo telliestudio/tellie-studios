@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Products</title>
+    <title>Products - Tellie Studios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXhW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
         body {
-            font-family: 'Bubblegum Sans', cursive;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
         }
@@ -25,17 +25,25 @@
             text-align: center;
             color: #2c3e50;
         }
-        img {
-            display: block;
-            margin: 20px auto;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .product img {
             max-width: 100%;
             height: auto;
-        }
-        p {
-            text-align: justify;
+            margin-bottom: 15px;
         }
         .navbar {
-            background-color: #FF69B4; /* Hot pink color */
+            background-color: #4682B4; /* Steel blue color */
             padding: 10px 20px;
             display: flex;
             justify-content: center;
@@ -46,8 +54,8 @@
             align-items: center;
         }
         .navbar-brand .logo {
-            width: 250px;
-            height: 150px;
+            width: auto;
+            height: 100px; /* Adjust the height as needed */
         }
         .navbar-nav {
             margin-left: auto;
@@ -58,7 +66,7 @@
             margin-right: 15px;
         }
         .navbar-nav .nav-link:hover {
-            color: #FF1493 !important; /* Darker pink for hover effect */
+            color: #4169E1 !important; /* Royal blue for hover effect */
         }
         .footer {
             background-color: #D3D3D3; /* Light gray color */
@@ -99,262 +107,143 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="newpage.html">New Page</a>
+                </li>
             </ul>
         </div>
     </nav>
     <main class="container">
         <h1>Our Products</h1>
         <div class="product-grid">
-            <section class="product">
-                <h2>Lap Quilt Kits</h2>
-                <img src="colorsqaures.jpg" alt="Color Squares Quilt Kit">
-                <p>Our lap quilt kits include precut squares, hexagons, triangles, and strips with instructions on how to complete your quilt. Prices range from $60 to $100, depending on the design and materials. Design ideas include Floral Garden, Geometric Bliss, Vintage Charm, Modern Minimalist, and Seasonal Delight.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Cotton, Polyester</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product coral">
-                <h2>Seasonal Delight Quilt Kit</h2>
-                <img src="seasonkit.jpg" alt="Season Kit Quilt">
-                <p>Celebrate the seasons with our seasonal delight quilt kit. Prices range from $60 to $100, depending on the design and materials.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Cotton, Polyester</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Geometric Bliss Quilt Kit</h2>
-                <img src="sqaurekit.jpg" alt="Square Kit Quilt">
-                <p>Create stunning geometric patterns with our geometric bliss quilt kit. Prices range from $60 to $100, depending on the design and materials.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Cotton, Polyester</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product coral">
-                <h2>Modern Minimalist Quilt Kit</h2>
-                <img src="stripekit.jpg" alt="Stripe Kit Quilt">
-                <p>Embrace modern design with our modern minimalist quilt kit. Prices range from $60 to $100, depending on the design and materials.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Cotton, Polyester</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Triangle Kit Quilt</h2>
-                <img src="trianglekit.jpg" alt="Triangle Kit Quilt">
-                <p>Create intricate designs with our triangle kit quilt. Prices range from $60 to $100, depending on the design and materials.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Cotton, Polyester</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Oil and Acrylic Art Kits</h2>
-                <img src="kit.jpg" alt="Oil and Acrylic Art Kits">
-                <p>Our art kits include everything you need to create beautiful paintings. Each kit is priced between $30 and $60 for a 16x20 canvas. Design ideas include Sunset Over Mountains, Abstract Waves, Floral Bouquet, Cityscape at Night, and Wildlife Portrait. Custom kits are also available, with prices varying based on size and color complexity.</p>
-                <div class="product-specs">
-                    <p>Dimensions: 16x20 inches</p>
-                    <p>Materials: Canvas, Acrylic/Oil Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now
-                     <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product coral">
-                <h2>Cityscape at Night Art Kit</h2>
-                <img src="city.jpg" alt="Cityscape Art Kit">
-                <p>Capture the beauty of the city at night with our cityscape art kit. Prices range from $30 to $60 for a 16x20 canvas.</p>
-                <div class="product-specs">
-                    <p>Dimensions: 16x20 inches</p>
-                    <p>Materials: Canvas, Acrylic/Oil Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Custom Art Kit</h2>
-                <img src="custom.jpg" alt="Custom Art Kit">
-                <p>Create your own unique masterpiece with our custom art kit. Prices vary based on size and color complexity.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Custom sizes</p>
-                    <p>Materials: Canvas, Acrylic/Oil Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product coral">
-                <h2>Floral Bouquet Art Kit</h2>
-                <img src="flowers.jpg" alt="Floral Bouquet Art Kit">
-                <p>Paint beautiful floral arrangements with our floral bouquet art kit. Prices range from $30 to $60 for a 16x20 canvas.</p>
-                <div class="product-specs">
-                    <p>Dimensions: 16x20 inches</p>
-                    <p>Materials: Canvas, Acrylic/Oil Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Moon Art Kit</h2>
-                <img src="moon.jpg" alt="Moon Art Kit">
-                <p>Create a serene moonlit scene with our moon art kit. Prices range from $30 to $60 for a 16x20 canvas.</p>
-                <div class="product-specs">
-                    <p>Dimensions: 16x20 inches</p>
-                    <p>Materials: Canvas, Acrylic/Oil Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product coral">
-                <h2>Mountain Art Kit</h2>
-                <img src="mountain.jpg" alt="Mountain Art Kit">
-                <p>Capture the majesty of mountains with our mountain art kit. Prices range from $30 to $60 for a 16x20 canvas.</p>
-                <div class="product-specs">
-                    <p>Dimensions: 16x20 inches</p>
-                    <p>Materials: Canvas, Acrylic/Oil Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Religious Art Kit</h2>
-                <img src="religion.jpg" alt="Religious Art Kit">
-                <p>Create inspiring religious art with our religious art kit. Prices range from $30 to $60 for a 16x20 canvas.</p>
-                <div class="product-specs">
-                    <p>Dimensions: 16x20 inches</p>
-                    <p>Materials: Canvas, Acrylic/Oil Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Sculpture Kits</h2>
-                <img src="animal.jpg" alt="Animal Sculpture Kit">
-                <p>Create charming animal sculptures with our animal sculpture kit. Prices range from $30 to $50, including the cost of paint.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Ceramic, Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product coral">
-                <h2>Owl Sculpture Kit</h2>
-                <img src="owl.jpg" alt="Owl Sculpture Kit">
-                <p>Craft a wise owl sculpture with our owl sculpture kit. Prices range from $30 to $50, including the cost of paint.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Ceramic, Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Planter Sculpture Kit</h2>
-                <img src="planter.jpg" alt="Planter Sculpture Kit">
-                <p>Design your own ceramic plant holder with our planter sculpture kit. Prices range from $30 to $50, including the cost of paint.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Ceramic, Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product coral">
-                <h2>Sunflower Bowl Sculpture Kit</h2>
-                <img src="sunflower.jpg" alt="Sunflower Bowl Sculpture Kit">
-                <p>Create a beautiful sunflower bowl with our sunflower bowl sculpture kit. Prices range from $30 to $50, including the cost of paint.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Ceramic, Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
-            <section class="product">
-                <h2>Vases Sculpture Kit</h2>
-                <img src="vases.jpg" alt="Vases Sculpture Kit">
-                <p>Craft elegant small vases with our vases sculpture kit. Prices range from $30 to $50, including the cost of paint.</p>
-                <div class="product-specs">
-                    <p>Dimensions: Various sizes</p>
-                    <p>Materials: Ceramic, Paint</p>
-                </div>
-                <a href="https://venmo.com/Shantel-Crowley" class="buy-button">Buy Now</a>
-                <div class="trust-signals">
-                    <p>Secure Payment via Venmo</p>
-                    <p>30-Day Return Policy</p>
-                </div>
-            </section>
+            <div class="product">
+                <h2>Custom Art Kits</h2>
+                <img src="kit.jpg" alt="Custom Art Kits">
+                <p>Our custom art kits are tailored to your preferences and needs. Whether you're a beginner or an experienced artist, we have something for everyone. Prices vary based on the kits wanted and their size. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to set up your order.</p>
+            </div>
+            <div class="product">
+                <h2>Animal Art</h2>
+                <img src="animal.jpg" alt="Animal Art">
+                <p>Explore our collection of animal-themed art. Perfect for animal lovers and those looking to add a touch of nature to their space.</p>
+            </div>
+            <div class="product">
+                <h2>Cityscapes</h2>
+                <img src="city.jpg" alt="Cityscapes">
+                <p>Our cityscape art captures the beauty and energy of urban environments. Ideal for modern and contemporary decor.</p>
+            </div>
+            <div class="product">
+                <h2>Color Squares</h2>
+                <img src="colorsqaures.jpg" alt="Color Squares">
+                <p>Add a pop of color to your home with our vibrant color squares art pieces. These are great for brightening up any room.</p>
+            </div>
+            <div class="product">
+                <h2>Custom Art</h2>
+                <img src="custom.jpg" alt="Custom Art">
+                <p>We offer personalized art pieces tailored to your specific preferences. Contact us to discuss your custom art project.</p>
+            </div>
+            <div class="product">
+                <h2>Deer Art</h2>
+                <img src="deer.jpg" alt="Deer Art">
+                <p>Our deer-themed art pieces are perfect for nature enthusiasts and those looking to bring a touch of the wild into their home.</p>
+            </div>
+            <div class="product">
+                <h2>Floral Art</h2>
+                <img src="flowers.jpg" alt="Floral Art">
+                <p>Brighten up your space with our beautiful floral art pieces. These are perfect for adding a touch of nature and elegance to any room.</p>
+            </div>
+            <div class="product">
+                <h2>Moon Art</h2>
+                <img src="moon.jpg" alt="Moon Art">
+                <p>Our moon-themed art pieces capture the beauty and mystery of the night sky. Perfect for creating a serene and calming atmosphere.</p>
+            </div>
+            <div class="product">
+                <h2>Mountain Art</h2>
+                <img src="mountain.jpg" alt="Mountain Art">
+                <p>Bring the majesty of the mountains into your home with our stunning mountain art pieces. Ideal for nature lovers and adventurers.</p>
+            </div>
+            <div class="product">
+                <h2>Owl Art</h2>
+                <img src="owl.jpg" alt="Owl Art">
+                <p>Our owl-themed art pieces are perfect for adding a touch of wisdom and mystery to your space. Great for animal lovers and collectors.</p>
+            </div>
+            <div class="product">
+                <h2>Planter Art</h2>
+                <img src="planter.jpg" alt="Planter Art">
+                <p>Enhance your home decor with our unique planter art pieces. These are perfect for adding a touch of greenery and creativity to any room.</p>
+            </div>
+            <div class="product">
+                <h2>Religious Art</h2>
+                <img src="religion.jpg" alt="Religious Art">
+                <p>Our religious art pieces are designed to inspire and uplift. Perfect for creating a serene and spiritual atmosphere in your home.</p>
+            </div>
+            <div class="product">
+                <h2>Seasonal Art</h2>
+                <img src="seasonkit.jpg" alt="Seasonal Art">
+                <p>Celebrate the beauty of the changing seasons with our seasonal art pieces. These are perfect for adding a touch of nature to your decor.</p>
+            </div>
+            <div class="product">
+                <h2>Square Art Kits</h2>
+                <img src="sqaurekit.jpg" alt="Square Art Kits">
+                <p>Our square art kits are perfect for creating unique and personalized art pieces. Great for artists of all skill levels.</p>
+            </div>
+            <div class="product">
+                <h2>Stripe Art Kits</h2>
+                <img src="stripekit.jpg" alt="Stripe Art Kits">
+                <p>Our stripe art kits are designed to help you create beautiful and modern art pieces. Perfect for adding a contemporary touch to your home.</p>
+            </div>
+            <div class="product">
+                <h2>Sunflower Art</h2>
+                <img src="sunflower.jpg" alt="Sunflower Art">
+                <p>Brighten up your space with our vibrant sunflower art pieces. These are perfect for adding a touch of warmth and cheer to any room.</p>
+            </div>
+            <div class="product">
+                <h2>Art Therapy Kits</h2>
+                <img src="thearpy.jpg" alt="Art Therapy Kits">
+                <p>Our art therapy kits are designed to provide a therapeutic and relaxing experience. Perfect for anyone looking to use art as a tool for healing and self-expression.</p>
+            </div>
+            <div class="product">
+                <h2>Tree Art</h2>
+                <img src="tree.jpg" alt="Tree Art">
+                <p>Bring the beauty of nature into your home with our tree-themed art pieces. Ideal for creating a serene and calming atmosphere.</p>
+            </div>
+            <div class="product">
+                <h2>Triangle Art Kits</h2>
+                <img src="trianglekit.jpg" alt="Triangle Art Kits">
+                <p>Our triangle art kits are perfect for creating geometric and modern art pieces. Great for adding a contemporary touch to your decor.</p>
+            </div>
+            <div class="product">
+                <h2>Vase Art</h2>
+                <img src="vases.jpg" alt="Vase Art">
+                <p>Enhance your home decor with our unique vase art pieces. These are perfect for adding a touch of elegance and creativity to any room.</p>
+            </div>
+            <div class="product">
+                <h2>Webpage Design</h2>
+                <img src="web.jpg" alt="Webpage Design">
+                <p>We now offer webpage design services for $150 a month, which includes unlimited edits and 24/7 support. Let us help you create a professional and engaging online presence. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to get started.</p>
+            </div>
+            <div class="product">
+                <h2>Workshops and Classes</h2>
+                <img src="workshop.jpg" alt="Workshops and Classes">
+                <p>Join our online workshops and classes via Zoom to learn new techniques and improve your skills. Each session is priced at $30. Check our schedule for upcoming sessions. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to sign up.</p>
+            </div>
+            <div class="product">
+                <h2>Book Layout and Design Services</h2>
+                <img src="writing.jpg" alt="Book Layout and Design Services">
+                <p>We offer a range of book layout and design services, including basic cover design, formatting for print or eBook, and formatting for both print and eBook. Our services are personalized to bring your vision to life, ensuring professional quality at competitive rates. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to discuss your project.</p>
+            </div>
         </div>
     </main>
     <footer class="footer mt-auto py-3">
         <div class="container">
             <span class="text-muted">© 2024 Tellie Studios. All rights reserved.</span>
             <div class="contact-info">
-               <p>Hours: Mon-Fri 9am-5pm</p>
-<p>Email: contact@telliestudios.com</p>
-<p>Phone: (123) 456-7890</p>
-</div>
-</div>
-</footer>
+                <p>Hours: Mon-Fri 9am-5pm</p>
+                <p>Email: info@telliestudios.com</p>
+                <a href="https://www.facebook.com/profile.php?id=61569383602060" class="text-muted me-2"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
 
