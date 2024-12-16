@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Design Service - Tellie Studios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXhW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #34495e;
+        }
+        .navbar {
+            background-color: #4682B4; /* Steel blue color */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand .logo {
+            width: auto;
+            height: 100px; /* Adjust the height as needed */
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #4169E1 !important; /* Royal blue for hover effect */
+        }
+        .footer {
+            background-color: #D3D3D3; /* Light gray color */
+            padding: 20px 0;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer .contact-info {
+            text-align: right;
+        }
+        .footer .contact-info p, .footer .contact-info a {
+            color: #000000; /* Black color */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.jpg" alt="Tellie Studios logo" class="logo">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="webdesign.html">Web Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <h1>Web Design Service</h1>
+        <p>We offer webpage design services for $150 a month, which includes unlimited edits and 24/7 support. Please fill out the form below to provide us with your preferences and requirements.</p>
+        <form action="mailto:telliestudios@gmail.com" method="post" enctype="text/plain">
+            <label for="fonts">Preferred Fonts:</label>
+            <input type="text" id="fonts" name="fonts" placeholder="e.g., Roboto, Arial" required>
+            
+            <label for="webpage-name">Webpage Name:</label>
+            <input type="text" id="webpage-name" name="webpage-name" required>
+            
+            <label for="logo">Logo:</label>
+            <select id="logo" name="logo" required>
+                <option value="existing">I have a logo</option>
+                <option value="create">Create a logo for $50</option>
+            </select>
+            
+            <label for="contact-info">Contact Information for Each Page:</label>
+            <textarea id="contact-info" name="contact-info" rows="3" required></textarea>
+            
+            <label for="forms">Forms Wanted:</label>
+            <textarea id="forms" name="forms" rows="3" required></textarea>
+            
+            <label for="photo-styles">Photo Styles Wanted:</label>
+            <textarea id="photo-styles" name="photo-styles" rows="3" required></textarea>
+            
+            <label for="mission-statement">Mission Statement:</label>
+            <textarea id="mission-statement" name="mission-statement" rows="3" required></textarea>
+            
+            <label for="about-company">About the Company:</label>
+            <textarea id="about-company" name="about-company" rows="3" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">© 2024 Tellie Studios. All rights reserved.</span>
+            <div class="contact-info">
+                <p>Hours: Mon-Fri 9am-5pm</p>
+                <p>Email: info@telliestudios.com</p>
+                <a href="https://www.facebook.com/profile.php?id=61569383602060" class="text-muted me-2"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
