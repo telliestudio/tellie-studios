@@ -119,31 +119,26 @@
             <h2>Custom Art Kits</h2>
             <img src="kit.jpg" alt="Custom Art Kits">
             <p>We offer personalized art kits tailored to your preferences and needs. Whether you're a beginner or an experienced artist, we have something for everyone. Prices vary based on the kits wanted and their size. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to set up your order.</p>
-            <button onclick="addToCart('Custom Art Kits', 50)">Add to Cart</button>
         </section>
         <section class="service">
             <h2>Workshops and Classes</h2>
             <img src="workshop.jpg" alt="Workshops and Classes">
             <p>Join our online workshops and classes via Zoom to learn new techniques and improve your skills. Each session is priced at $30. Check our schedule for upcoming sessions. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to sign up.</p>
-            <button onclick="addToCart('Workshops and Classes', 30)">Add to Cart</button>
         </section>
         <section class="service">
             <h2>Art Therapy Sessions</h2>
             <img src="thearpy.jpg" alt="Art Therapy Sessions">
             <p>Experience the therapeutic benefits of art with our art therapy sessions. Perfect for anyone looking to use art as a tool for healing and self-expression. Sessions are available via Zoom and other links, priced at $40 per session. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to schedule a session.</p>
-            <button onclick="addToCart('Art Therapy Sessions', 40)">Add to Cart</button>
         </section>
         <section class="service">
             <h2>Book Layout and Design Services</h2>
             <img src="writing.jpg" alt="Book Layout and Design Services">
-            <p>We offer a range of book layout and design services, including basic cover design, formatting for print or eBook, and formatting for both print and eBook. Our services are personalized to bring your vision to life, ensuring professional quality at competitive rates. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to discuss your project.</p>
-            <button onclick="addToCart('Book Layout and Design Services', 100)">Add to Cart</button>
+            <p>We offer a range of book layout and design services, including basic cover design, formatting for print or eBook, and formatting for both print and eBook. Basic edits start at $100, but prices may vary depending on the complexity and extent of the work needed. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to discuss your project.</p>
         </section>
         <section class="service">
             <h2>Webpage Design</h2>
             <img src="web.jpg" alt="Webpage Design">
             <p>We now offer webpage design services for $150 a month, which includes unlimited edits and 24/7 support. Let us help you create a professional and engaging online presence. If you're interested, please visit our <a href="contact.html">contact page</a> to send us a text or email to get started.</p>
-            <button onclick="addToCart('Webpage Design', 150)">Add to Cart</button>
         </section>
     </main>
     <footer class="footer mt-auto py-3">
@@ -157,19 +152,5 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        function addToCart(name, price) {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const existingItem = cart.find(item => item.name === name);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ name, price, quantity: 1 });
-            }
-
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${name} has been added to your cart!`);
-        }
-    </script>
 </body>
 </html>
