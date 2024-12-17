@@ -118,12 +118,12 @@
         <section class="service">
             <h2>Custom Art Kits</h2>
             <img src="kit.jpg" alt="Custom Art Kits">
-            <p>We offer personalized art kits tailored to your preferences and needs. Whether you're a beginner or an experienced artist, we have something for everyone. Prices vary based on the kits wanted and their size. </p>
+            <p>We offer personalized art kits tailored to your preferences and needs. Whether you're a beginner or an experienced artist, we have something for everyone. Prices vary based on the kits wanted and their size.</p>
         </section>
         <section class="service">
             <h2>Workshops and Classes</h2>
             <img src="workshop.jpg" alt="Workshops and Classes">
-            <p>Join our online workshops and classes via Zoom to learn new techniques and improve your skills. Each session is priced at $30. Check our schedule for upcoming sessions.</p>
+            <p>Join our online workshops and classes via Zoom to learn new techniques and improve your skills. Each session is priced at $30. Check our schedule for upcoming sessions. </p>
         </section>
         <section class="service">
             <h2>Art Therapy Sessions</h2>
@@ -133,7 +133,7 @@
         <section class="service">
             <h2>Book Layout and Design Services</h2>
             <img src="writing.jpg" alt="Book Layout and Design Services">
-            <p>We offer a range of book layout and design services, including basic cover design, formatting for print or eBook, and formatting for both print and eBook. Basic edits start at $100, but prices may vary depending on the complexity and extent of the work needed.  </p>
+            <p>We offer a range of book layout and design services, including basic cover design, formatting for print or eBook, and formatting for both print and eBook. Basic edits start at $100, but prices may vary depending on the complexity and extent of the work needed. </p>
         </section>
         <section class="service">
             <h2>Webpage Design</h2>
@@ -141,10 +141,10 @@
             <p>We now offer webpage design services for $150 a month, which includes unlimited edits and 24/7 support. Let us help you create a professional and engaging online presence. </p>
         </section>
         <h2>Request a Service</h2>
-        <form id="service-request-form">
+        <form id="service-request-form" action="https://formspree.io/f/{your_form_id}" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                 <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -178,25 +178,5 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        document.getElementById('service-request-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            const comments = document.getElementById('comments').value;
-
-            const emailBody = `
-                Name: ${name}
-                Email: ${email}
-                Service Requested: ${service}
-                Additional Comments: ${comments}
-            `;
-
-            window.location.href = `mailto:telliestudios@gmail.com?subject=Service Request&body=${encodeURIComponent(emailBody)}`;
-            alert('Your service request has been sent!');
-        });
-    </script>
 </body>
 </html>
