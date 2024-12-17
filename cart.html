@@ -191,6 +191,7 @@
             }
 
             const totalAmount = cartItems.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2);
+
             const orderDetails = {
                 name,
                 email,
@@ -215,6 +216,17 @@
             `;
 
             window.location.href = `mailto:telliestudios@gmail.com?subject=New Order&body=${encodeURIComponent(emailBody)}`;
+
+            // Send confirmation email to the user
+            const userEmailBody = `
+                Thank you for your order, ${name}!
+                Here are your order details:
+                ${cartItems.map(item => `${item.name} - ${item.quantity} x $${item.price.toFixed(2)} = $${(item.quantity * item.price).toFixed(2)}`).join('\n')}
+                Total: $${totalAmount}
+                We will process your order shortly.
+            `;
+
+            window.location.href = `mailto:${email}?subject=Order Confirmation&body=${encodeURIComponent(userEmailBody)}`;
 
             // Redirect to Venmo for payment
             if (paymentMethod === 'venmo') {
