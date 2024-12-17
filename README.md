@@ -1,44 +1,46 @@
-Tellie Studios Website
+# Tellie Studios Website
+
 Welcome to the Tellie Studios website repository! This project contains the source code for the Tellie Studios website, which showcases various art kits and products designed to inspire creativity in people of all abilities.
 
-Table of Contents
-About
-Mission Statement
-Features
-Installation
-Usage
-Products
-Services
-Web Design
-Contributing
-License
-Contact
-About
+## Table of Contents
+- About
+- Mission Statement
+- Features
+- Installation
+- Usage
+- Products
+- Services
+- Web Design
+- Contributing
+- License
+- Contact
+
+## About
 Hello! I am a disabled adult who loves art. My mission is to bring my art to others in a way that inspires them to become their own artist. Each product on my page is for sale as a kit, so that in their hands, they can bring that art to life, even if they have never painted before or felt they couldn't because of a disability or lack of skill.
 
 I decided to pick up art to help with my own disability, and it has become a new way of life for me. I have a Bachelor's degree in Art because I wanted to expand my own knowledge and learn new ways to create art, from sketches to oil paintings, sculptures, and even blankets. The positive impact art has had on my life is something I want others to experience. I want everyone to feel the freedom and love that creating art brings.
 
 Thank you for visiting my page, and I hope my art kits inspire you to create something beautiful!
 
-Mission Statement
+## Mission Statement
 At Tellie Studios, our mission is to inspire creativity and foster a love for art through engaging workshops, high-quality art kits, and personalized teaching. We are dedicated to helping individuals discover their artistic potential and share their unique expressions with the world.
 
-Features
-Responsive Design: The website is fully responsive and works on all devices.
-Product Listings: Detailed descriptions and images of various art kits.
-Secure Payments: Integration with Venmo for secure payments.
-Accessibility: Designed with accessibility in mind to ensure everyone can enjoy our products.
-Installation
+## Features
+- **Responsive Design**: The website is fully responsive and works on all devices.
+- **Product Listings**: Detailed descriptions and images of various art kits.
+- **Secure Payments**: Integration with Venmo for secure payments.
+- **Accessibility**: Designed with accessibility in mind to ensure everyone can enjoy our products.
+- **Shopping Cart**: Users can add products and services to a cart and proceed to checkout.
+
+## Installation
 To run this project locally, follow these steps:
 
-Clone the repository:
-
-git clone https://github.com/telliestudio/congenial-octo-guide.git
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/telliestudio/congenial-octo-guide.git
 Navigate to the project directory:
-
 cd congenial-octo-guide
 Open the index.html file in your browser to view the website.
-
 Usage
 Home Page: Overview of Tellie Studios and our mission.
 About Page: Information about the artist and the inspiration behind Tellie Studios.
@@ -46,6 +48,8 @@ Services Page: Details about the services we offer.
 Products Page: Browse and purchase various art kits.
 Contact Page: Get in touch with us for any inquiries.
 Web Design Page: Explore our web design services and portfolio.
+Cart Page: View and manage items in your cart.
+Checkout Page: Complete your purchase securely.
 Products
 Lap Quilt Kits
 Our lap quilt kits include precut squares, hexagons, triangles, and strips with instructions on how to complete your quilt. Prices range from $60 to $100, depending on the design and materials. Design ideas include Floral Garden, Geometric Bliss, Vintage Charm, Modern Minimalist, and Seasonal Delight. If you're interested, please visit our contact page to send us a text or email to set up your order.
