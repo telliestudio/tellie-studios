@@ -149,7 +149,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        // Function to display cart items
         function displayCartItems() {
             const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
             const cartItemsContainer = document.getElementById('cart-items');
@@ -174,7 +173,6 @@
             cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
         }
 
-        // Function to handle form submission
         document.getElementById('checkout-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -191,6 +189,8 @@
                 alert('Your cart is empty.');
                 return;
             }
+
+            const totalAmount = cartItems.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2);
             const orderDetails = {
                 name,
                 email,
@@ -199,7 +199,8 @@
                 state,
                 zip,
                 paymentMethod,
-                cartItems
+                cartItems,
+                totalAmount
             };
 
             // Send order details via email
@@ -210,20 +211,25 @@
                 Payment Method: ${paymentMethod}
                 Order Details:
                 ${cartItems.map(item => `${item.name} - ${item.quantity} x $${item.price.toFixed(2)} = $${(item.quantity * item.price).toFixed(2)}`).join('\n')}
-                Total: $${cartItems.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2)}
+                Total: $${totalAmount}
             `;
 
             window.location.href = `mailto:telliestudios@gmail.com?subject=New Order&body=${encodeURIComponent(emailBody)}`;
 
             // Redirect to Venmo for payment
             if (paymentMethod === 'venmo') {
-                const totalAmount = cartItems.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2);
                 window.location.href = `https://venmo.com/?txn=pay&recipients=Shantel-Crowley&amount=${totalAmount}&note=Order%20from%20Tellie%20Studios`;
+            } else if (paymentMethod === 'paypal') {
+                // Redirect to PayPal for payment
+                window.location.href = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=telliestudios@gmail.com&amount=${totalAmount}&currency_code=USD&item_name=Order%20from%20Tellie%20Studios`;
+            } else if (paymentMethod === 'creditCard') {
+                // Handle credit card payment (this would typically involve integrating with a payment gateway)
+                alert('Credit card payment is not yet implemented.');
             }
 
             // Clear the cart
             localStorage.removeItem('cart');
-            alert('Thank you for your order! You will be redirected to Venmo for payment.');
+            alert('Thank you for your order! You will be redirected for payment.');
         });
 
         // Display cart items on page load
