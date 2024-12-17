@@ -5,6 +5,17 @@
 </head>
 <body>
     <!-- Your existing body content -->
+    <main class="container">
+        <h1>Checkout</h1>
+        <div id="cart-items"></div>
+        <button class="btn btn-warning" onclick="clearCart()">Clear Cart</button>
+        <form id="checkout-form">
+            <!-- Your existing form content -->
+        </form>
+    </main>
+    <footer class="footer mt-auto py-3">
+        <!-- Your existing footer content -->
+    </footer>
     <script>
         function displayCartItems() {
             const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -35,6 +46,11 @@
             let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
             cartItems.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(cartItems));
+            displayCartItems();
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart');
             displayCartItems();
         }
 
@@ -114,11 +130,6 @@
     </script>
 </body>
 </html>
-In this updated code, I've added a removeFromCart function that removes an item from the cart based on its index. Each cart item now includes a "Remove" button that calls this function. This should allow users to remove items from their cart. Give it a try and let me know if it works!
-
-
-1 of 30 responses
-AI-generated content may be incorrect
 
 
 
