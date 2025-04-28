@@ -1,95 +1,113 @@
-# Tellie Studios Website
 
-Welcome to the Tellie Studios website repository! This project contains the source code for the Tellie Studios website, which showcases various art kits and products designed to inspire creativity in people of all abilities.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tellie Studios</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-## Table of Contents
-- About
-- Mission Statement
-- Features
-- Installation
-- Usage
-- Products
-- Services
-- Web Design
-- Contributing
-- License
-- Contact
+  <main>
+    <div class="logo-container">
+      <img src="path/to/your/logo.png" alt="Tellie Studios Logo">
+    </div>
+    <div class="mission-statement">
+      <h1>Our Mission</h1>
+      <p>At Tellie Studios, our mission is to inspire creativity and foster a love for art through engaging workshops, high-quality art kits, and personalized teaching. We are dedicated to helping individuals discover their artistic potential and share their unique expressions with the world.</p>
+      <a href="#products" class="btn">Explore Our Kits</a>
+    </div>
+  </main>
 
-## About
-Hello! I am a disabled adult who loves art. My mission is to bring my art to others in a way that inspires them to become their own artist. Each product on my page is for sale as a kit, so that in their hands, they can bring that art to life, even if they have never painted before or felt they couldn't because of a disability or lack of skill.
+  <footer>
+    <p>&copy; 2025 Tellie Studios. All rights reserved.</p>
+  </footer>
+</body>
+</html>
 
-I decided to pick up art to help with my own disability, and it has become a new way of life for me. I have a Bachelor's degree in Art because I wanted to expand my own knowledge and learn new ways to create art, from sketches to oil paintings, sculptures, and even blankets. The positive impact art has had on my life is something I want others to experience. I want everyone to feel the freedom and love that creating art brings.
+body {
+  font-family: 'Arial, sans-serif';
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+ : center;
+  justify-content: center;
+  height: 100vh;
+}
 
-Thank you for visiting my page, and I hope my art kits inspire you to create something beautiful!
+header {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 10px 0;
+}
 
-## Mission Statement
-At Tellie Studios, our mission is to inspire creativity and foster a love for art through engaging workshops, high-quality art kits, and personalized teaching. We are dedicated to helping individuals discover their artistic potential and share their unique expressions with the world.
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
 
-## Features
-- **Responsive Design**: The website is fully responsive and works on all devices.
-- **Product Listings**: Detailed descriptions and images of various art kits.
-- **Secure Payments**: Integration with Venmo for secure payments.
-- **Accessibility**: Designed with accessibility in mind to ensure everyone can enjoy our products.
-- **Shopping Cart**: Users can add products and services to a cart and proceed to checkout.
+nav ul li {
+  margin: 0 15px;
+}
 
-## Installation
-To run this project locally, follow these steps:
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/telliestudio/congenial-octo-guide.git
-Navigate to the project directory:
-cd congenial-octo-guide
-Open the index.html file in your browser to view the website.
-Usage
-Home Page: Overview of Tellie Studios and our mission.
-About Page: Information about the artist and the inspiration behind Tellie Studios.
-Services Page: Details about the services we offer.
-Products Page: Browse and purchase various art kits.
-Contact Page: Get in touch with us for any inquiries.
-Web Design Page: Explore our web design services and portfolio.
-Cart Page: View and manage items in your cart.
-Checkout Page: Complete your purchase securely.
-Products
-Lap Quilt Kits
-Our lap quilt kits include precut squares, hexagons, triangles, and strips with instructions on how to complete your quilt. Prices range from $60 to $100, depending on the design and materials. Design ideas include Floral Garden, Geometric Bliss, Vintage Charm, Modern Minimalist, and Seasonal Delight. If you're interested, please visit our contact page to send us a text or email to set up your order.
+.logo-container {
+  text-align: center;
+  margin: 20px 0;
+}
 
-Oil and Acrylic Art Kits
-Our art kits include everything you need to create beautiful paintings. Each kit is priced between $30 and $60 for a 16x20 canvas. Design ideas include Sunset Over Mountains, Abstract Waves, Floral Bouquet, Cityscape at Night, and Wildlife Portrait. Custom kits are also available, with prices varying based on size and color complexity. If you're interested, please visit our contact page to send us a text or email to set up your order.
+.logo-container img {
+  max-width: 200px;
+  height: auto;
+}
 
-Sculpture Kits
-Our sculpture kits include ceramic pieces that can be painted and baked in the oven. Prices range from $30 to $50, including the cost of paint. Design ideas include a Ceramic Owl, Ceramic Plant Holder, Small Vases, Sunflower Bowl, and Animal Figurines. If you're interested, please visit our contact page to send us a text or email to set up your order.
+.mission-statement {
+  text-align: center;
+  margin: 20px 0;
+}
 
-Services
-Personalized Art Kits: Tailored to your preferences and needs. Prices vary based on the kits wanted and their size.
-Online Workshops and Classes: Join our online workshops and classes via Zoom to learn new techniques and improve your skills. Each session is priced at $30.
-Art Therapy Sessions: Experience the therapeutic benefits of art with our art therapy sessions. Sessions are available via Zoom and other links, priced at $40 per session.
-Web Design
-We now offer web design services to help you create a stunning online presence. Our services include:
+.mission-statement h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
 
-Custom Website Design: Tailored to your brand and needs.
-Responsive Design: Ensuring your site looks great on all devices.
-SEO Optimization: Helping your site rank better in search engines.
-Maintenance and Support: Ongoing support to keep your site running smoothly.
-Contributing
-We welcome contributions to improve the Tellie Studios website! To contribute:
+.mission-statement p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
 
-Fork the repository.
-Create a new branch:
-git checkout -b feature/your-feature-name
-Make your changes and commit them:
-git commit -m "Add your message here"
-Push to the branch:
-git push origin feature/your-feature-name
-Create a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+.btn {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-Contact
-For any questions or inquiries, please contact us at:
-
-Email: telliestudios@gmail.com
-Phone: (720) 234-3639 (Best to text)
-Hours: Monday - Friday, 10 AM - 8 PM
-Facebook: Tellie Studios
-Thank you for visiting Tellie Studios!
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+}
