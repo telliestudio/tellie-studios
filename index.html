@@ -11,22 +11,23 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="webdesign.html">Web Design</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="logo-container">
-      <img src="logo.jpg" alt="Tellie Studios Logo">
-    </div>
-    <div class="mission-statement">
-      <h1>Our Mission</h1>
-      <p>At Tellie Studios, our mission is to inspire creativity and foster a love for art through engaging workshops, high-quality art kits, and personalized teaching. We and share their unique expressions with the world.</p>
-      <a href="#products" class="btn">Explore Our Kits</a>
+    <div class="content">
+      <div class="mission-statement">
+        <h1>Our Mission</h1>
+        <p>At Tellie Studios, our mission is to inspire creativity and foster a love for art through engaging workshops, high-quality art kits, and personalized teaching. We are dedicated to helping individuals discover their artistic potential and share their unique expressions with the world.</p>
+        <a href="product.html" class="btn">Explore Our Kits</a>
+      </div>
     </div>
   </main>
 
@@ -55,11 +56,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: url('logo.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
 header {
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
 }
 
@@ -79,19 +82,11 @@ nav ul li a {
   color: #333;
 }
 
-.logo-container {
+.content {
   text-align: center;
-  margin: 20px 0;
-}
-
-.logo-container img {
-  max-width: 200px;
-  height: auto;
-}
-
-.mission-statement {
-  text-align: center;
-  margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .mission-statement h1 {
@@ -115,7 +110,7 @@ nav ul li a {
 footer {
   width: 100%;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
   position: absolute;
   bottom: 0;
