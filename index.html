@@ -12,16 +12,16 @@
             width: 100%;
         }
         .background-image {
-       position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('newweb.png') no-repeat center center;
-    background-size: 100% 100%; /* Ensures the entire image fits within the viewport */
-    z-index: -1;
-}
-  .nav-links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('newweb.png') no-repeat center center;
+            background-size: contain; /* Ensures the entire image fits within the viewport */
+            z-index: -1;
+        }
+        .nav-links {
             display: flex;
             justify-content: center;
             position: relative;
@@ -29,8 +29,8 @@
         }
         .nav-links a {
             margin: 0 10px; /* Adjust spacing between links as needed */
-           -decoration: none;
-            color: black; /* Adjust link color as needed */
+            text-decoration: none;
+            color: white; /* Adjust link color as needed */
             font-size: 18px; /* Adjust font size as needed */
         }
         .header {
@@ -46,7 +46,7 @@
 <div class="background-image"></div>
 
 <div class="header">
-    <h1></h1>
+    <h1>Tellie Studios</h1>
 </div>
 
 <div class="nav-links">
@@ -61,6 +61,7 @@
 
 </body>
 </html>
+
 
 
 
