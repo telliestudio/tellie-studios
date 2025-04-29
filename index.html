@@ -3,58 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tellie Studios</title>
+    <style>
+        body {
+            background-image: url('new web.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links ul {
+            list-style-type: none;
+        }
+        .links li {
+            margin-bottom: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        color: blue;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="product.html">Product</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="webdesign.html">Web Design</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="portfolio">
-            <div class="portfolio-item">
-                <img src="images/Jesus_at_the_well.jpg" alt="Jesus at the well">
-                <p>Jesus at the well</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/Jesus_reaching_in.jpg" alt="Jesus reaching in">
-                <p>Jesus reaching in</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/London_street.jpg" alt="London street">
-                <p>London street</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/angel.jpg" alt="Angel">
-                <p>Angel</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/animal.jpg" alt="Animal">
-                <p>Animal</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/anime.jpg" alt="Anime">
-                <p>Anime</p>
-            </div>
-            <!-- Add more portfolio items as needed -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Your Portfolio</p>
-    </footer>
+    <div class="links">
+        <ul>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="webdesign.html">Web Design</a></li>
+        </ul>
+    </div>
+    <div class="gallery">
+        <a href="product.html"><img src="streets.png" alt="Streets"></a>
+        <a href="product.html"><img src="religion.png" alt="Religion"></a>
+        <a href="product.html"><img src="elephant.jpg" alt="Elephant"></a>
+        <a href="product.html"><img src="red.png" alt="Red"></a>
+        <a href="product.html"><img src="mountain creek.jpg" alt="Mountain Creek"></a>
+        <a href="product.html"><img src="hummingbird.jpg" alt="Hummingbird"></a>
+    </div>
+    <div class="contact-info">
+        <p>Hours: Mon-Fri 9am-5pm</p>
+        <p>Email: <a href="mailto:telliestudios@gmail.com">telliestudios@gmail.com</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Tellie Studios</a></p>
+    </div>
 </body>
 </html>
+
 
 
 
