@@ -1,4 +1,260 @@
-npx "@builder.io/dev-tools@latest" add c39df76e
+export interface ProductCardProps {
+  title: string;
+  description?: string;
+  imageUrl: string;
+  imageAlt: string;
+}
+
+export interface NavigationLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+export const NavigationLink: React.FC<NavigationLinkProps> = ({
+  href,
+  children,
+}) => {
+  return (
+    <a
+      className="text-sm font-extralight no-underline text-stone-500"
+      href={href}
+    >
+      {children}
+    </a>
+  );
+};
+"use client";
+import * as React from "react";
+import { NavigationLink } from "./NavigationLink";
+
+export const Navigation: React.FC = () => {
+  const [showContact, setShowContact] = React.useState(false);
+
+  return (
+    <nav className="flex justify-between items-center px-10 py-5 border-b border-solid border-b-black border-b-opacity-10 max-sm:flex-col max-sm:gap-4 max-sm:px-5 max-sm:py-4">
+      <div className="flex gap-4 items-center">
+        <img
+          alt="logo.png"
+          src="https://telliestudio.github.io/tellie-studios/"
+          className="object-cover overflow-hidden mr-4 w-20 h-20 rounded-full aspect-square shadow-[0_2px_8px_rgba(0,0,0,0.1)] max-sm:h-[60px] max-sm:w-[60px]"
+        />
+        <span className="text-2xl font-thin tracking-tighter text-blue-500">
+          Tellie Studios
+        </span>
+      </div>
+      <div className="flex gap-8 max-sm:gap-4">
+        <NavigationLink href="/">Home</NavigationLink>
+        <NavigationLink href="/products">Products</NavigationLink>
+        <NavigationLink href="/about">About</NavigationLink>
+        <div className="relative">
+          <NavigationLink href="/contact">Contact</NavigationLink>
+          {showContact && (
+            <div className="absolute right-0 top-full p-5 text-left rounded-lg shadow-[0_2px_15px_rgba(0,0,0,0.05)] w-[250px] z-[100]">
+              <h4 className="mb-2.5 text-base font-extralight text-blue-500">
+                Hours & Contact
+              </h4>
+              <p className="mb-2.5 text-sm leading-relaxed text-black text-opacity-60">
+                Mon-Fri: 9:00 AM - 5:00 PM
+              </p>
+              <p className="mb-1.5 text-sm leading-relaxed text-black text-opacity-60">
+                Phone: (720) 234-3639
+              </p>
+              <p className="text-sm leading-relaxed text-black text-opacity-60">
+                Email: telliestudios@gmail.com
+              </p>
+            </div>
+          )}
+        </div>
+        <NavigationLink href="/cart">Cart</NavigationLink>
+      </div>
+    </nav>
+  );
+};
+import * as React from "react";
+
+export const HeroBanner: React.FC = () => {
+  return (
+    <section className="overflow-hidden relative mb-12 w-full h-[400px] max-sm:h-[300px]">
+      <img
+        alt="Artistic floral banner"
+        src="https://cdn.builder.io/api/v1/image/assets%2F444ac1a30a6f48e69eb575909e978c71%2Fcacc894c8ce44b539fbdb243268af973"
+        className="object-cover overflow-hidden aspect-square size-full"
+      />
+      <div className="absolute top-2/4 left-2/4 px-16 py-10 text-center rounded-lg -translate-x-2/4 -translate-y-2/4 bg-white bg-opacity-90 max-sm:px-8 max-sm:py-5 max-sm:w-4/5">
+        <h2 className="mb-4 text-4xl font-extralight text-blue-500 max-sm:text-2xl">
+          Tellie Studios&nbsp;
+        </h2>
+        <p className="text-base leading-relaxed text-black text-opacity-60">
+          Where anyone can create
+        </p>
+      </div>
+    </section>
+  );
+};
+import * as React from "react";
+
+export const MissionStatement: React.FC = () => {
+  return (
+    <section className="px-10 py-0 mx-auto my-12 text-center max-w-[1200px] max-sm:px-5 max-sm:py-0 max-sm:mx-auto max-sm:my-8">
+      <h1 className="mb-8 text-6xl font-thin tracking-tighter leading-tight text-blue-500 max-sm:text-4xl">
+        Discover Your Creative Journey
+      </h1>
+      <div className="p-10 mx-auto mt-0 mb-16 rounded-lg bg-white bg-opacity-90 max-w-[800px] shadow-[0_2px_15px_rgba(0,0,0,0.05)] max-sm:p-8 max-sm:mx-5 max-sm:mt-0 max-sm:mb-10">
+        <h2 className="mb-5 text-2xl font-extralight tracking-tight text-blue-500">
+          Our Mission
+        </h2>
+        <p className="text-lg font-extralight leading-relaxed text-black text-opacity-60">
+          At Tellie Studios, we inspire creativity and foster a love for art
+          through engaging workshops, high-quality art kits, and personalized
+          teaching.
+        </p>
+      </div>
+      <p className="mx-auto mt-0 mb-10 text-lg leading-relaxed max-w-[600px] text-black text-opacity-50">
+        Quality art supplies for every artist. From brushes to canvases, find
+        everything you need to bring your vision to life.
+      </p>
+      <a
+        className="px-10 py-4 mb-12 text-lg font-extralight no-underline bg-blue-500 rounded-lg transition-all duration-[0.3s] ease-[ease] shadow-[0_2px_15px_rgba(65,131,196,0.2)] text-[white] max-sm:px-8 max-sm:py-3 max-sm:text-base"
+        href="/products"
+      >
+        Shop Now & Explore My Art
+      </a>
+    </section>
+  );
+};
+import * as React from "react";
+import { ProductCardProps } from "./types";
+
+export const ProductCard: React.FC<ProductCardProps> = ({
+  title,
+  description,
+  imageUrl,
+  imageAlt,
+}) => {
+  return (
+    <article className="p-8 rounded-lg shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+      <img
+        alt={imageAlt}
+        src={imageUrl}
+        className="object-cover overflow-hidden mb-5 w-full aspect-square"
+      />
+      <h3 className="mb-2.5 text-xl font-extralight text-blue-500">{title}</h3>
+      {description && (
+        <p className="text-sm leading-relaxed text-black text-opacity-60">
+          {description}
+        </p>
+      )}
+    </article>
+  );
+};
+import * as React from "react";
+import { ProductCard } from "./ProductCard";
+
+export const ProductGrid: React.FC = () => {
+  return (
+    <section className="grid gap-8 mt-12 grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(2,1fr)] max-sm:grid-cols-[1fr]">
+      <ProductCard
+        title="Brushes and Painting supplies"
+        imageUrl="https://cdn.builder.io/api/v1/image/assets%2F444ac1a30a6f48e69eb575909e978c71%2Ffaec294cc7074053bad8eba8a65a7472"
+        imageAlt="Premium Brushes"
+      />
+      <ProductCard
+        title="Canvas Collection"
+        imageUrl="https://images.pexels.com/photos/31718839/pexels-photo-31718839.jpeg"
+        imageAlt="Canvas Collection"
+      />
+      <ProductCard title="Art Kits" imageUrl="https://cdn.builder.io/api/v1/image/assets%2F444ac1a30a6f48e69eb575909e978c71%2F4e3bfa01b1654c1ca338f454de49f65b" imageAlt="Artist Paints" />
+      <ProductCard
+        title="Book Layout & Design"
+        description="Professional book layout and design services"
+        imageUrl="https://cdn.builder.io/api/v1/image/assets%2F444ac1a30a6f48e69eb575909e978c71%2F58e3767a4dfb4555b8fb2a3d71ed93f4"
+        imageAlt="Book Layout Services"
+      />
+      <ProductCard
+        title="Website & Logo Design"
+        description="Custom website development and brand identity design"
+        imageUrl="https://images.pexels.com/photos/1083792/pexels-photo-1083792.jpeg"
+        imageAlt="Website and Logo Design"
+      />
+    </section>
+  );
+};
+import * as React from "react";
+
+export const SocialSection: React.FC = () => {
+  return (
+    <section className="p-10 mx-auto my-16 text-center rounded-lg max-w-[600px] shadow-[0_2px_15px_rgba(0,0,0,0.05)] max-sm:p-8 max-sm:mx-5 max-sm:my-10">
+      <h3 className="mb-5 text-2xl font-extralight tracking-tight text-blue-500">
+        Stay Inspired
+      </h3>
+      <p className="mb-6 text-base leading-relaxed text-black text-opacity-60">
+        Follow us on Facebook for exclusive content and special offers
+      </p>
+      <a
+        className="px-8 py-3 text-base font-extralight no-underline bg-blue-500 rounded-lg transition-all duration-[0.3s] ease-[ease] text-[white]"
+        href="https://www.facebook.com/profile.php?id=61569383602060"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join Our Community
+      </a>
+    </section>
+  );
+};
+import * as React from "react";
+
+export const Footer: React.FC = () => {
+  return (
+    <footer className="text-center">
+      <nav>
+        <a
+          className="mx-2.5 my-0 text-sm font-extralight no-underline text-stone-500"
+          href="#"
+        >
+          Help Center
+        </a>
+        <a
+          className="mx-2.5 my-0 text-sm font-extralight no-underline text-stone-500"
+          href="#"
+        >
+          Contact Support
+        </a>
+      </nav>
+      <a href="/" className="inline-block mt-9">
+        <img
+          alt="Home"
+          src="https://images.pexels.com/photos/8998295/pexels-photo-8998295.jpeg"
+          className="object-cover overflow-hidden w-8 h-8 aspect-square"
+        />
+      </a>
+    </footer>
+  );
+};
+"use client";
+import * as React from "react";
+import { Navigation } from "./Navigation";
+import { HeroBanner } from "./HeroBanner";
+import { MissionStatement } from "./MissionStatement";
+import { ProductGrid } from "./ProductGrid";
+import { SocialSection } from "./SocialSection";
+import { Footer } from "./Footer";
+
+function InputDesign() {
+  return (
+    <div className="relative min-h-screen bg-rose-100 bg-repeat bg-blend-soft-light bg-[300px] bg-[url('https://images.pexels.com/photos/7676310/pexels-photo-7676310.jpeg')]">
+      <Navigation />
+      <main>
+        <HeroBanner />
+        <MissionStatement />
+        <ProductGrid />
+        <SocialSection />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default InputDesign;
+
 
 
 
