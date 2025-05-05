@@ -22,6 +22,11 @@
             padding: 15px;
         }
 
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
@@ -45,6 +50,25 @@
             font-size: 24px;
         }
 
+        .welcome-section {
+            position: relative;
+            text-align: center;
+            background: url("detail.jpg") no-repeat center/cover;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .welcome-text {
+            position: absolute;
+            width: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
         .services {
             display: flex;
             justify-content: center;
@@ -58,6 +82,25 @@
             padding: 15px;
             background: white;
             text-align: center;
+        }
+
+        .service-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .faq {
+            background: #dabfff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .testimonial {
+            background: pink;
+            padding: 20px;
+            font-weight: bold;
+            border-radius: 8px;
         }
 
         .contact-form input, .contact-form textarea {
@@ -99,26 +142,28 @@
         <a href="gallery.html" class="cta-button">Explore Gallery</a>
     </section>
 
-    <section class="intro">
-        <h1>Welcome to TellieStudios</h1>
-        <p>We inspire creativity and foster a love for art through engaging workshops, high-quality art kits, and personalized teaching.</p>
+    <section class="welcome-section">
+        <div class="welcome-text">
+            <h1>Welcome to TellieStudios</h1>
+            <p>We inspire creativity and foster a love for art through engaging workshops, high-quality art kits, and personalized teaching.</p>
+        </div>
     </section>
 
     <section class="services">
         <div class="service-box">
-            <img src="workshop.jpg" alt="Art Workshops" width="100%">
+            <img src="workshop.jpg" alt="Art Workshops">
             <h3>Engaging Art Workshops</h3>
             <p>Dive into a hands-on experience where creativity knows no limits...</p>
             <a href="services.html" class="service-button">More Info</a>
         </div>
         <div class="service-box">
-            <img src="seven.jpg" alt="Art Kits" width="100%">
+            <img src="seven.jpg" alt="Art Kits">
             <h3>High-Quality Art Kits</h3>
             <p>Bring the magic of art into your home with our thoughtfully curated art kits...</p>
             <a href="services.html" class="service-button">More Info</a>
         </div>
         <div class="service-box">
-            <img src="lighthouse.jpg" alt="Custom Artwork & Commissions" width="100%">
+            <img src="lighthouse.jpg" alt="Custom Artwork & Commissions">
             <h3>Custom Artwork & Commissions</h3>
             <p>Looking for a unique piece that speaks to your passion?...</p>
             <a href="gallery.html" class="service-button">More Info</a>
@@ -165,6 +210,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
