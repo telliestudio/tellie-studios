@@ -51,15 +51,28 @@
             padding: 20px;
         }
 
-        .gallery-container img {
+        .gallery-item {
             width: 300px;
-            height: auto;
             border-radius: 8px;
             transition: transform 0.3s ease;
+            padding: 10px;
+            background: white;
+            text-align: center;
         }
 
-        .gallery-container img:hover {
-            transform: scale(1.05);
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .gallery-item button {
+            background: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
         footer {
@@ -79,6 +92,7 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
         </ul>
     </nav>
 </header>
@@ -92,47 +106,26 @@
 </section>
 
 <section class="gallery-container">
-    <img src="city.jpg" alt="Cityscapes">
-    <img src="deer.jpg" alt="Deer Art">
-    <img src="moon.jpg" alt="Moon Art">
-    <img src="mountain.jpg" alt="Mountain Art">
-    <img src="religion.jpg" alt="Religious Art">
-    <img src="tree.jpg" alt="Tree Art">
-    <img src="elephant.jpg" alt="Elephant">
-    <img src="London street.jpg" alt="London Street">
-    <img src="hogwarts.jpg" alt="Hogwart">
-    <img src="rainbow tree.jpg" alt="Rainbow Tree">
-    <img src="white flower girl.jpg" alt="White Flower Girl">
-    <img src="butterfly.jpg" alt="Butterfly">
-    <img src="dark couple.jpg" alt="Dark Couple">
-    <img src="swirl eyeball.jpg" alt="Swirl Eyeball">
-    <img src="mountain lake.jpg" alt="Mountain Lake">
-    <img src="mountain creek.jpg" alt="Mountain Creek">
-    <img src="fairy tree.jpg" alt="Fairy Tree">
-    <img src="fall road.jpg" alt="Fall Road">
-    <img src="night london.jpg" alt="Night London">
-    <img src="butterfly eyeball.jpg" alt="Butterfly Eyeball">
-    <img src="lighthouse.jpg" alt="Lighthouse">
-    <img src="angel.jpg" alt="Angel">
-    <img src="underwater fairy.jpg" alt="Underwater Fairy">
-    <img src="Jesus at the well.jpg" alt="Jesus at the Well">
-    <img src="paris street.jpg" alt="Paris Street">
-    <img src="Jesus reaching in.jpg" alt="Jesus Reaching In">
-    <img src="inner bear.jpg" alt="Inner Bear">
-    <img src="pulled safety.jpg" alt="Pulled Safety">
-    <img src="rock art.jpg" alt="Rock Art">
-    <img src="galaxy couple.jpg" alt="Galaxy Couple">
-    <img src="lava clouds.jpg" alt="Lava Clouds">
-    <img src="red eyeball.jpg" alt="Red Eyeball">
-    <img src="highland cows.jpg" alt="Highland Cows">
-    <img src="highland tub.jpg" alt="Highland Tub">
-    <img src="porch.jpg" alt="Porch">
-    <img src="flowerstreet.jpg" alt="Flower Street">
-    <img src="artist.jpg" alt="Artist">
-    <img src="tree relection.jpg" alt="Tree Reflection">
-    <img src="mooncouple.jpg" alt="Moon Couple">
-    <img src="anime.jpg" alt="Anime">
-    <img src="tree and moon.jpg" alt="Tree and Moon">
+    <div class="gallery-item">
+        <img src="city.jpg" alt="Cityscapes">
+        <p>Cityscapes</p>
+        <button onclick="addToCart('Cityscapes', 50)">Add to Cart</button>
+    </div>
+    <div class="gallery-item">
+        <img src="deer.jpg" alt="Deer Art">
+        <p>Deer Art</p>
+        <button onclick="addToCart('Deer Art', 50)">Add to Cart</button>
+    </div>
+    <div class="gallery-item">
+        <img src="moon.jpg" alt="Moon Art">
+        <p>Moon Art</p>
+        <button onclick="addToCart('Moon Art', 50)">Add to Cart</button>
+    </div>
+    <div class="gallery-item">
+        <img src="mountain.jpg" alt="Mountain Art">
+        <p>Mountain Art</p>
+        <button onclick="addToCart('Mountain Art', 50)">Add to Cart</button>
+    </div>
 </section>
 
 <footer>
@@ -141,11 +134,17 @@
     <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
+<script>
+    function addToCart(name, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name, price, quantity: 1 });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+    }
+</script>
+
 </body>
 </html>
 
-
-</body>
-</html>
 
                 
