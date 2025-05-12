@@ -55,6 +55,26 @@
             border-radius: 8px;
         }
 
+        .cart-section {
+            margin: 50px auto;
+            width: 80%;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .cart-items {
+            text-align: left;
+        }
+
+        button {
+            background: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
         footer {
             padding: 20px;
             background: white;
@@ -68,10 +88,11 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li> <!-- Added About button -->
+            <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li> <!-- Added Cart Button -->
         </ul>
     </nav>
 </header>
@@ -82,41 +103,30 @@
     <div class="service">
         <h2>Custom Art Kits</h2>
         <img src="kit.jpg" alt="Custom Art Kits">
-        <p>We offer personalized art kits tailored to your preferences and needs. Whether you're a beginner or an experienced artist, we have something for everyone.</p>
-        <p><strong>Contact us to set up your order:</strong> <a href="contact.html">Contact Page</a></p>
+        <p>We offer personalized art kits tailored to your preferences and needs.</p>
+        <button onclick="addToCart('Custom Art Kit', 50)">Add to Cart</button>
     </div>
 
     <div class="service">
         <h2>Workshops and Classes</h2>
         <img src="workshop.jpg" alt="Workshops and Classes">
-        <p>Join our online workshops and classes via Zoom to learn new techniques and improve your skills.</p>
-        <p><strong>Price:</strong> $30 per session</p>
-        <p><strong>Sign up here:</strong> <a href="contact.html">Contact Page</a></p>
+        <p>Join our online workshops via Zoom to learn new techniques.</p>
+        <button onclick="addToCart('Workshop', 30)">Add to Cart</button>
     </div>
 
     <div class="service">
         <h2>Art Therapy Sessions</h2>
         <img src="thearpy.jpg" alt="Art Therapy Sessions">
-        <p>Experience the therapeutic benefits of art with our guided art therapy sessions.</p>
-        <p><strong>Price:</strong> $40 per session</p>
-        <p><strong>Schedule your session:</strong> <a href="contact.html">Contact Page</a></p>
+        <p>Experience the therapeutic benefits of guided art therapy sessions.</p>
+        <button onclick="addToCart('Art Therapy Session', 40)">Add to Cart</button>
     </div>
+</section>
 
-    <div class="service">
-        <h2>Book Layout and Design</h2>
-        <img src="writing.jpg" alt="Book Layout and Design Services">
-        <p>We offer professional book layout and design services, from cover art to formatting.</p>
-        <p><strong>Starting Price:</strong> $100+</p>
-        <p><strong>Discuss your project:</strong> <a href="contact.html">Contact Page</a></p>
-    </div>
-
-    <div class="service">
-        <h2>Webpage Design</h2>
-        <img src="web.jpg" alt="Webpage Design">
-        <p>Our website design package includes **unlimited edits** and **24/7 support** for $150/month.</p>
-        <p><strong>Get started today:</strong> <a href="contact.html">Contact Page</a></p>
-    </div>
-
+<section class="cart-section">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items" class="cart-items"></div>
+    <button onclick="clearCart()">Clear Cart</button>
+    <a href="checkout.html"><button>Proceed to Checkout</button></a>
 </section>
 
 <footer>
@@ -125,6 +135,53 @@
     <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
+<script>
+    function addToCart(name, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name, price, quantity: 1 });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+    }
+
+    function displayCartItems() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';
+
+        if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            return;
+        }
+
+        let total = 0;
+        cartItems.forEach((item, index) => {
+            const itemTotal = item.quantity * item.price;
+            total += itemTotal;
+            cartItemsContainer.innerHTML += `
+                <p><strong>${item.name}</strong> - $${item.price}</p>
+                <button onclick="removeFromCart(${index})">Remove</button>
+            `;
+        });
+
+        cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+    }
+
+    function removeFromCart(index) {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        displayCartItems();
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        displayCartItems();
+    }
+
+    displayCartItems();
+</script>
+
 </body>
 </html>
+
 
