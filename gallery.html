@@ -54,25 +54,21 @@
         .gallery-item {
             width: 300px;
             border-radius: 8px;
-            transition: transform 0.3s ease;
             padding: 10px;
             background: white;
             text-align: center;
+            cursor: pointer;
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
             border-radius: 8px;
+            transition: transform 0.3s ease;
         }
 
-        .gallery-item button {
-            background: purple;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
+        .gallery-item img:hover {
+            transform: scale(1.05);
         }
 
         footer {
@@ -92,7 +88,7 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="cart.html">Cart</a></li>
+            <li><a href="cart.html">Cart</a></li> <!-- Added Cart Button -->
         </ul>
     </nav>
 </header>
@@ -106,25 +102,41 @@
 </section>
 
 <section class="gallery-container">
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="addToCart('Cityscapes', 50)">
         <img src="city.jpg" alt="Cityscapes">
-        <p>Cityscapes</p>
-        <button onclick="addToCart('Cityscapes', 50)">Add to Cart</button>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="addToCart('Deer Art', 50)">
         <img src="deer.jpg" alt="Deer Art">
-        <p>Deer Art</p>
-        <button onclick="addToCart('Deer Art', 50)">Add to Cart</button>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="addToCart('Moon Art', 50)">
         <img src="moon.jpg" alt="Moon Art">
-        <p>Moon Art</p>
-        <button onclick="addToCart('Moon Art', 50)">Add to Cart</button>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="addToCart('Mountain Art', 50)">
         <img src="mountain.jpg" alt="Mountain Art">
-        <p>Mountain Art</p>
-        <button onclick="addToCart('Mountain Art', 50)">Add to Cart</button>
+    </div>
+    <div class="gallery-item" onclick="addToCart('Religious Art', 50)">
+        <img src="religion.jpg" alt="Religious Art">
+    </div>
+    <div class="gallery-item" onclick="addToCart('Tree Art', 50)">
+        <img src="tree.jpg" alt="Tree Art">
+    </div>
+    <div class="gallery-item" onclick="addToCart('Elephant Art', 50)">
+        <img src="elephant.jpg" alt="Elephant">
+    </div>
+    <div class="gallery-item" onclick="addToCart('London Street Art', 50)">
+        <img src="London street.jpg" alt="London Street">
+    </div>
+    <div class="gallery-item" onclick="addToCart('Hogwarts Art', 50)">
+        <img src="hogwarts.jpg" alt="Hogwarts">
+    </div>
+    <div class="gallery-item" onclick="addToCart('Rainbow Tree Art', 50)">
+        <img src="rainbow tree.jpg" alt="Rainbow Tree">
+    </div>
+    <div class="gallery-item" onclick="addToCart('White Flower Girl', 50)">
+        <img src="white flower girl.jpg" alt="White Flower Girl">
+    </div>
+    <div class="gallery-item" onclick="addToCart('Butterfly Art', 50)">
+        <img src="butterfly.jpg" alt="Butterfly">
     </div>
 </section>
 
@@ -145,6 +157,7 @@
 
 </body>
 </html>
+
 
 
                 
