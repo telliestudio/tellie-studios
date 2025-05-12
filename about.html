@@ -3,74 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TellieStudios</title>
     <style>
-        body, html {
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, lightblue, pink, purple);
+            color: #333;
+            text-align: center;
             margin: 0;
             padding: 0;
-            height: 100%;
-            width: 100%;
         }
-        .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('about me.png') no-repeat center center;
-            background-size: contain; /* Ensures the entire image fits within the viewport */
-            z-index: -1;
-        }
-        .nav-links {
+
+        header {
             display: flex;
-            justify-content: center;
-            position: relative;
-            top: 20px; /* Adjust as needed */
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px;
         }
-        .nav-links a {
-            margin: 0 10px; /* Adjust spacing between links as needed */
-            text-decoration: none;
-            color: black; /* Adjust link color as needed */
-            font-size: 18px; /* Adjust font size as needed */
+
+        .logo {
+            width: 120px;
+            height: auto;
         }
-        .header {
-            position: relative;
-            text-align: center;
-            color: black;
-            padding-top: 20px; /* Adjust as needed */
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
         }
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            .nav-links a {
-                margin: 5px 0; /* Adjust spacing for mobile view */
-                font-size: 16px; /* Adjust font size for mobile view */
-            }
-            .header {
-                padding-top: 10px; /* Adjust padding for mobile view */
-            }
+
+        .about-section {
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .mission {
+            font-size: 22px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .story {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .background-image {
+            background: url('about-me.png') no-repeat center/cover;
+            height: 400px;
+        }
+
+        footer {
+            padding: 20px;
+            background: white;
         }
     </style>
 </head>
 <body>
+    <header>
+        <img src="logo.png" alt="TellieStudios Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services Offered</a></li>
+                <li><a href="gallery.html">Gallery Showcase</a></li>
+                <li><a href="contact.html">Contact Page</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="background-image"></div>
+    <div class="background-image"></div>
 
-<div class="header">
-</div>
+    <section class="about-section">
+        <h1>About TellieStudios</h1>
+        <p class="mission">Bringing art to life, one brushstroke at a time.</p>
+        <p class="story">TellieStudios was founded with a passion for inspiring creativity. We believe in the power of art to connect, heal, and uplift. Through our engaging workshops, high-quality art kits, and personalized commissions, we aim to cultivate a space where creativity thrives.</p>
+    </section>
 
-<div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-    <a href="webdesign.html">Web Design</a>
-    <a href="cart.html">Cart</a>
-</div>
-
+    <footer>
+        <p>Hours: Mon-Fri 9am-5pm</p>
+        <p>Email: telliestudios@gmail.com</p>
+        <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+    </footer>
 </body>
 </html>
+
 
 
