@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pottery - Tellie Studios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .description {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.1em;
+      color: #555;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    .navbar {
+      background-color: #4682B4;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .navbar-brand .logo {
+      height: 100px;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-size: 1.2em;
+      margin-right: 15px;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #4169E1 !important;
+    }
+    .footer {
+      background-color: #D3D3D3;
+      padding: 20px 0;
+    }
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer .contact-info p, .footer .contact-info a {
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo.jpg" alt="Tellie Studios logo" class="logo">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="pottery.html">Pottery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="webdesign.html">Web Design</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Pottery Collection</h1>
+    <div class="description">
+      Each piece is ready to paint and can be shipped or picked up locally from our Bismarck, ND store. You can select paint to be included with your order. When finished, simply use the included return label to send your item back for professional firing and final return to you.
+    </div>
+
+    <div class="product-grid">
+      <div class="product">
+        <h2>Apples</h2>
+        <img src="apples.png" alt="Apples">
+        <p>$12 each or $66 for set of six</p>
+        <button onclick="addToCart('Apples', 12)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Astro</h2>
+        <img src="astro.png" alt="Astro">
+        <p>$45 each or $85 for 2</p>
+        <button onclick="addToCart('Astro', 45)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Flag</h2>
+        <img src="flag.png" alt="Flag">
+        <p>$10</p>
+        <button onclick="addToCart('Flag', 10)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Mushroom House</h2>
+        <img src="mushroomhouse.png" alt="Mushroom House">
+        <p>$18</p>
+        <button onclick="addToCart('Mushroom House', 18)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Light Switch</h2>
+        <img src="lightswitch.png" alt="Light Switch">
+        <p>$18</p>
+        <button onclick="addToCart('Light Switch', 18)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Beehive</h2>
+        <img src="beehive.png" alt="Beehive">
+        <p>$14</p>
+        <button onclick="addToCart('Beehive', 14)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Shotglass</h2>
+        <img src="shotglass.png" alt="Shotglass">
+        <p>$18</p>
+        <button onclick="addToCart('Shotglass', 18)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Mushrooms</h2>
+        <img src="mushroms.png" alt="Mushrooms">
+        <p>$14 small / $18 large / $28 set</p>
+        <button onclick="addToCart('Mushrooms', 14)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Skulls</h2>
+        <img src="skulls.png" alt="Skulls">
+        <p>$8 small / $16 large / $24 set</p>
+        <button onclick="addToCart('Skulls', 8)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Hat Bunny</h2>
+        <img src="hatbunny.png" alt="Hat Bunny">
+        <p>$16 or $26 for set / $45 for 3</p>
+        <button onclick="addToCart('Hat Bunny', 16)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Old Bunny</h2>
+        <img src="oldbunny.png" alt="Old Bunny">
+        <p>$16 or $26 for set / $45 for 3</p>
+        <button onclick="addToCart('Old Bunny', 16)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Bees</h2>
+        <img src="bees.jpg" alt="Bees">
+        <p>$8 / $10 / $12 / $14 by size</p>
+        <button onclick="addToCart('Bees', 8)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Pineapple</h2>
+        <img src="pineapple.jpg" alt="Pineapple">
+        <p>$12</p>
+        <button onclick="addToCart('Pineapple', 12)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Cactus</h2>
+        <img src="catus.jpg" alt="Cactus">
+        <p>$12</
+        <button onclick="addToCart('Cactus', 12)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Flowers</h2>
+        <img src="flowers.jpg" alt="Flowers">
+        <p>$10 / $12 / $14 by size or $25 set</p>
+        <button onclick="addToCart('Flowers', 10)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Hearts</h2>
+        <img src="hearts.jpg" alt="Hearts">
+        <p>$14 or $24 for set of 2</p>
+        <button onclick="addToCart('Hearts', 14)">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted">© 2024 Tellie Studios. All rights reserved.</span>
+      <div class="contact-info">
+        <p>Hours: Mon–Fri 9am–5pm</p>
+        <p>Email: telliestudios@gmail.com</p>
+        <a href="https://www.facebook.com/profile.php?id=61569383602060" class="text-muted me-2"><i class="bi bi-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} has been added to your cart!`);
+    }
+  </script>
+</body>
+</html>
