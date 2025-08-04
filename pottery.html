@@ -68,18 +68,39 @@
       transform: scale(1.05);
     }
 
-    .color-picker {
+    .glaze-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+      justify-content: center;
+    }
+
+    .glaze-options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.7);
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .glaze-dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid #555;
+    }
+
+    .variant-picker {
       margin-top: 10px;
     }
 
-    .color-picker label {
-      font-weight: bold;
-    }
-
-    .color-picker select {
+    .variant-picker select {
       padding: 5px;
-      margin-top: 5px;
-      border-radius: 4px;
+      border-radius: 6px;
     }
 
     .product-buttons {
@@ -128,203 +149,657 @@
 <main class="container">
   <h1>Pottery Collection</h1>
   <div class="description">
+    <strong>Don't forget to pick the colors you want as you add them to your cart!</strong><br><br>
     Each piece is ready to paint and can be shipped or picked up locally from our Bismarck, ND store. You can select paint to be included with your order. When finished, simply use the included return label to send your item back for professional firing and final return to you.
   </div>
+
+  <div class="product-grid">
 <div class="product">
-  <h2>Mushroom House</h2>
-  <img src="mushroomhouse.png" alt="Mushroom House">
-  <p>$18</p>
-  <div class="color-picker">
-    <label for="color">Glaze:</label>
-    <select name="color">
-      <option value="">Select a Color</option>
-      <option value="Cactus">Cactus</option>
-      <option value="Almond">Almond</option>
-      <option value="White">White</option>
-      <option value="Dark Green">Dark Green</option>
-      <option value="Black">Black</option>
-      <option value="Red">Red</option>
-      <option value="Purple">Purple</option>
-      <option value="Crocus">Crocus</option>
-      <option value="Ocher">Ocher</option>
-      <option value="Hollyhock">Hollyhock</option>
-      <option value="Emerald">Emerald</option>
-      <option value="Ultra Blue">Ultra Blue</option>
-      <option value="Dark Brown">Dark Brown</option>
-      <option value="China White">China White</option>
-      <option value="Copper">Copper</option>
-      <option value="Bright Yellow">Bright Yellow</option>
-      <option value="Yellow">Yellow</option>
+  <h2>Apples</h2>
+  <img src="apples.png" alt="Apples">
+  <p>$12 each or $66 for set of six</p>
+
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="apple-variant"><strong>Apple Style:</strong></label>
+    <select id="apple-variant">
+      <option value="">Choose one</option>
+      <option value="Joyful Grin">Joyful Grin</option>
+      <option value="Cheerful Wink">Cheerful Wink</option>
+      <option value="Gentle Smile">Gentle Smile</option>
+      <option value="Squish Giggle">Squish Giggle</option>
+      <option value="Silly Blurp">Silly Blurp</option>
+      <option value="Radiant Cheer">Radiant Cheer</option>
     </select>
   </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Buttons -->
   <div class="product-buttons">
-    <button onclick="addToCart('Mushroom House', 18)">Add to Cart</button>
+    <button onclick="addToCart('Apple Individual', 12)">Add Individual</button>
+    <button onclick="addToCart('Apples Set of 6', 66)">Add Set</button>
+  </div>
+  <div class="product">
+  <h2>Mushroom House</h2>
+  <img src="mushroom-house.png" alt="Mushroom House">
+  <p>$28 each</p>
+
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="mushroom-variant"><strong>Style:</strong></label>
+    <select id="mushroom-variant">
+      <option value="">Choose one</option>
+      <option value="Pebble Chimney">Pebble Chimney</option>
+      <option value="Plum Door">Plum Door</option>
+      <option value="Climbing Vines">Climbing Vines</option>
+      <option value="Moss Hat">Moss Hat</option>
+      <option value="Dewy Steps">Dewy Steps</option>
+      <option value="Evening Glow">Evening Glow</option>
+    </select>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
+  <div class="product-buttons">
+    <button onclick="addToCart('Mushroom House', 28)">Add to Cart</button>
   </div>
 </div>
 <div class="product">
   <h2>Astro</h2>
   <img src="astro.png" alt="Astro">
-  <p>$25 each or $50 for 2</p>
-  <div class="color-picker">... (same dropdown)</div>
-  <div class="product-buttons">
-    <button onclick="addToCart('Astro Single', 25)">Add One</button>
-    <button onclick="addToCart('Astro Pair', 50)">Add Pair</button>
+  <p>$30 each</p>
+
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="astro-variant"><strong>Style:</strong></label>
+    <select id="astro-variant">
+      <option value="">Choose one</option>
+      <option value="Star Gazer">Star Gazer</option>
+      <option value="Nova Belly">Nova Belly</option>
+      <option value="Rocket Boots">Rocket Boots</option>
+      <option value="Orbit Pup">Orbit Pup</option>
+      <option value="Twilight Wiggle">Twilight Wiggle</option>
+      <option value="Dusty Moon">Dusty Moon</option>
+    </select>
   </div>
-</div>
-<div class="product">
-  <h2>Apples</h2>
-  <img src="apples.png" alt="Apples">
-  <p>$12 each or $66 for set of six</p>
-  <div class="color-picker">... </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
   <div class="product-buttons">
-    <button onclick="addToCart('Apples', 12)">Add Individual</button>
-    <button onclick="addToCart('Apples Set of 6', 66)">Add Set</button>
+    <button onclick="addToCart('Astro', 30)">Add to Cart</button>
   </div>
 </div>
 <div class="product">
   <h2>Flag</h2>
   <img src="flag.png" alt="Flag">
-  <p>$8</p>
-  <div class="color-picker">... </div>
+  <p>$22 each</p>
+
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="flag-variant"><strong>Style:</strong></label>
+    <select id="flag-variant">
+      <option value="">Choose one</option>
+      <option value="Little Victory">Little Victory</option>
+      <option value="Soft Breeze">Soft Breeze</option>
+      <option value="Whistle Patch">Whistle Patch</option>
+      <option value="Brave Spot">Brave Spot</option>
+      <option value="Gentle Signal">Gentle Signal</option>
+      <option value="Wiggly Banner">Wiggly Banner</option>
+    </select>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
   <div class="product-buttons">
-    <button onclick="addToCart('Flag', 8)">Add to Cart</button>
+    <button onclick="addToCart('Flag', 22)">Add to Cart</button>
   </div>
 </div>
 <div class="product">
   <h2>Shotglass</h2>
   <img src="shotglass.png" alt="Shotglass">
-  <p>$8</p>
-  <div class="color-picker">... </div>
+  <p>$18 each</p>
+
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="shotglass-variant"><strong>Style:</strong></label>
+    <select id="shotglass-variant">
+      <option value="">Choose one</option>
+      <option value="Tippy Blink">Tippy Blink</option>
+      <option value="Round Bottom">Round Bottom</option>
+      <option value="Chatter Face">Chatter Face</option>
+      <option value="Tilted Sipper">Tilted Sipper</option>
+      <option value="Squash Squint">Squash Squint</option>
+      <option value="Tiny Gulp">Tiny Gulp</option>
+    </select>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
   <div class="product-buttons">
-    <button onclick="addToCart('Shotglass', 8)">Add to Cart</button>
+    <button onclick="addToCart('Shotglass', 18)">Add to Cart</button>
   </div>
 </div>
 <div class="product">
   <h2>Beehive</h2>
   <img src="beehive.png" alt="Beehive">
-  <p>$6</p>
-  <div class="color-picker">... </div>
+  <p>$24 each</p>
+
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="beehive-variant"><strong>Style:</strong></label>
+    <select id="beehive-variant">
+      <option value="">Choose one</option>
+      <option value="Honey Wiggle">Honey Wiggle</option>
+      <option value="Buzz Patch">Buzz Patch</option>
+      <option value="Garden Drone">Garden Drone</option>
+      <option value="Loop Loop">Loop Loop</option>
+      <option value="Bumble Nook">Bumble Nook</option>
+      <option value="Golden Whirl">Golden Whirl</option>
+    </select>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
   <div class="product-buttons">
-    <button onclick="addToCart('Beehive', 6)">Add to Cart</button>
+    <button onclick="addToCart('Beehive', 24)">Add to Cart</button>
   </div>
 </div>
 <div class="product">
   <h2>Mushrooms</h2>
   <img src="mushrooms.png" alt="Mushrooms">
-  <p>$5 small / $8 large / $10 set</p>
-  <div class="color-picker">... </div>
+  <p>$16 each</p>
+
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="mushroom-variant"><strong>Style:</strong></label>
+    <select id="mushroom-variant">
+      <option value="">Choose one</option>
+      <option value="Squat Cap">Squat Cap</option>
+      <option value="Tall Wobble">Tall Wobble</option>
+      <option value="Bendy Stem">Bendy Stem</option>
+      <option value="Puff Dot">Puff Dot</option>
+      <option value="Gentle Curve">Gentle Curve</option>
+      <option value="Shadow Hat">Shadow Hat</option>
+    </select>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
   <div class="product-buttons">
-    <button onclick="addToCart('Mushroom Small', 5)">Add Small</button>
-    <button onclick="addToCart('Mushroom Large', 8)">Add Large</button>
-    <button onclick="addToCart('Mushroom Set', 10)">Add Set</button>
+    <button onclick="addToCart('Mushroom', 16)">Add to Cart</button>
   </div>
 </div>
+<div class="product">
+  <h2>Skulls</h2>
+  <img src="skulls.png" alt="Skulls">
+  <p>$16 each</p>
 
-  <div class="product-grid">
-    <!-- Product 9 -->
-    <div class="product">
-      <h2>Skulls</h2>
-      <img src="skulls.png" alt="Skulls">
-      <p>$8 small / $12 large / $20 set</p>
-      <div class="color-picker">
-        <label for="color">Glaze:</label>
-        <select name="color"> ... (same 17 color options) </select>
-      </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Skulls Small', 8)">Add Small</button>
-        <button onclick="addToCart('Skulls Large', 12)">Add Large</button>
-        <button onclick="addToCart('Skulls Set', 20)">Add Set</button>
-      </div>
+  <!-- Variant Picker -->
+  <div class="variant-picker">
+    <label for="skull-variant"><strong>Style:</strong></label>
+    <select id="skull-variant">
+      <option value="">Choose one</option>
+      <option value="Wink Skull">Wink Skull</option>
+      <option value="Tumble Jaw">Tumble Jaw</option>
+      <option value="Gentle Gnarl">Gentle Gnarl</option>
+      <option value="Crooked Chuckle">Crooked Chuckle</option>
+      <option value="Chatter Skull">Chatter Skull</option>
+      <option value="Sleepy Grin">Sleepy Grin</option>
+    </select>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
+  <div class="product-buttons">
+    <button onclick="addToCart('Skull', 16)">Add to Cart</button>
+  </div>
+<div class="product">
+  <h2>Hat Bunny</h2>
+  <img src="hat-bunny.png" alt="Hat Bunny">
+  <p>$16 each · $26 for 2 · $45 for 3</p>
+
+  <!-- Style Picker -->
+  <div class="style-picker">
+    <h3><strong>Choose a Style & Add:</strong></h3>
+
+    <div class="bunny-option">
+      <h4>Velvet Flop</h4>
+      <button onclick="addToCart('Hat Bunny – Velvet Flop (1)', 16)">Add One</button>
+      <button onclick="addToCart('Hat Bunny – Velvet Flop (Set of 2)', 26)">Add Set of 2</button>
+      <button onclick="addToCart('Hat Bunny – Velvet Flop (Set of 3)', 45)">Add Set of 3</button>
     </div>
 
-    <!-- Product 10 -->
-    <div class="product">
-      <h2>Hat Bunny</h2>
-      <img src="hatbunny.png" alt="Hat Bunny">
-      <p>$16 or $26 for set / $45 for 3</p>
-      <div class="color-picker"> ... </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Hat Bunny Single', 16)">Add Single</button>
-        <button onclick="addToCart('Hat Bunny Set of 2', 26)">Add Set of 2</button>
-        <button onclick="addToCart('Hat Bunny Set of 3', 45)">Add Set of 3</button>
-      </div>
+    <div class="bunny-option">
+      <h4>Whisker Wiggle</h4>
+      <button onclick="addToCart('Hat Bunny – Whisker Wiggle (1)', 16)">Add One</button>
+      <button onclick="addToCart('Hat Bunny – Whisker Wiggle (Set of 2)', 26)">Add Set of 2</button>
+      <button onclick="addToCart('Hat Bunny – Whisker Wiggle (Set of 3)', 45)">Add Set of 3</button>
     </div>
 
-    <!-- Product 11 -->
-    <div class="product">
-      <h2>Old Bunny</h2>
-      <img src="oldbunny.png" alt="Old Bunny">
-      <p>$16 or $26 for set / $45 for 3</p>
-      <div class="color-picker"> ... </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Old Bunny Single', 16)">Add Single</button>
-        <button onclick="addToCart('Old Bunny Set of 2', 26)">Add Set of 2</button>
-        <button onclick="addToCart('Old Bunny Set of 3', 45)">Add Set of 3</button>
-      </div>
+    <div class="bunny-option">
+      <h4>Top Hat Tuck</h4>
+      <button onclick="addToCart('Hat Bunny – Top Hat Tuck (1)', 16)">Add One</button>
+      <button onclick="addToCart('Hat Bunny – Top Hat Tuck (Set of 2)', 26)">Add Set of 2</button>
+      <button onclick="addToCart('Hat Bunny – Top Hat Tuck (Set of 3)', 45)">Add Set of 3</button>
+    </div>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+<div class="product">
+  <h2>Old Bunny</h2>
+  <img src="old-bunny.png" alt="Old Bunny Pair">
+  <p>$16 each · $26 for set of 2</p>
+
+  <!-- Style Picker -->
+  <div class="style-picker">
+    <h3><strong>Choose a Style & Add:</strong></h3>
+
+    <div class="bunny-option">
+      <h4>Sitting Bunny — “Evening Doze”</h4>
+      <button onclick="addToCart('Old Bunny – Evening Doze (1)', 16)">Add One</button>
+      <button onclick="addToCart('Old Bunny – Evening Doze (Set of 2)', 26)">Add Set of 2</button>
     </div>
 
-    <!-- Product 12 -->
-    <div class="product">
-      <h2>Bees</h2>
-      <img src="bees.jpg" alt="Bees">
-      <p>$4 / $5 / $6 / $7 by size</p>
-      <div class="color-picker"> ... </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Bee Small', 4)">Add Small</button>
-        <button onclick="addToCart('Bee Medium', 5)">Add Medium</button>
-        <button onclick="addToCart('Bee Large', 6)">Add Large</button>
-        <button onclick="addToCart('Bee XL', 7)">Add XL</button>
-      </div>
+    <div class="bunny-option">
+      <h4>Kneeling Bunny — “Gentle Task”</h4>
+      <button onclick="addToCart('Old Bunny – Gentle Task (1)', 16)">Add One</button>
+      <button onclick="addToCart('Old Bunny – Gentle Task (Set of 2)', 26)">Add Set of 2</button>
+    </div>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+<div class="product">
+  <h2>Bees</h2>
+  <img src="bees.png" alt="Bees">
+  <p>$18 each</p>
+
+  <!-- Style Picker -->
+  <div class="style-picker">
+    <h3><strong>Choose a Style & Add:</strong></h3>
+
+    <div class="bee-option">
+      <h4>Fuzzy Squiggle</h4>
+      <button onclick="addToCart('Bee – Fuzzy Squiggle', 18)">Add to Cart</button>
     </div>
 
-    <!-- Product 13 -->
-    <div class="product">
-      <h2>Pineapple</h2>
-      <img src="pineapple.jpg" alt="Pineapple">
-      <p>$4</p>
-      <div class="color-picker"> ... </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Pineapple', 4)">Add to Cart</button>
-      </div>
+    <div class="bee-option">
+      <h4>Flutter Dot</h4>
+      <button onclick="addToCart('Bee – Flutter Dot', 18)">Add to Cart</button>
     </div>
 
-    <!-- Product 14 -->
-    <div class="product">
-      <h2>Cactus</h2>
-      <img src="catus.jpg" alt="Cactus">
-      <p>$4</p>
-      <div class="color-picker"> ... </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Cactus', 4)">Add to Cart</button>
-      </div>
+    <div class="bee-option">
+      <h4>Bop Stripe</h4>
+      <button onclick="addToCart('Bee – Bop Stripe', 18)">Add to Cart</button>
     </div>
 
-    <!-- Product 15 -->
-    <div class="product">
-      <h2>Flowers</h2>
-      <img src="flowers.jpg" alt="Flowers">
-      <p>$4 / $6 / $8 by size or $18 set of 3</p>
-      <div class="color-picker"> ... </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Flower Small', 4)">Add Small</button>
-        <button onclick="addToCart('Flower Medium', 6)">Add Medium</button>
-        <button onclick="addToCart('Flower Large', 8)">Add Large</button>
-        <button onclick="addToCart('Flower Set', 18)">Add Set</button>
-      </div>
+    <div class="bee-option">
+      <h4>Wobble Buzz</h4>
+      <button onclick="addToCart('Bee – Wobble Buzz', 18)">Add to Cart</button>
     </div>
 
-    <!-- Product 16 -->
-    <div class="product">
-      <h2>Hearts</h2>
-      <img src="hearts.jpg" alt="Hearts">
-      <p>$4 or $8 for set of 2</p>
-      <div class="color-picker"> ... </div>
-      <div class="product-buttons">
-        <button onclick="addToCart('Heart Single', 4)">Add Single</button>
-        <button onclick="addToCart('Heart Set of 2', 8)">Add Set</button>
-      </div>
+    <div class="bee-option">
+      <h4>Soft Wing</h4>
+      <button onclick="addToCart('Bee – Soft Wing', 18)">Add to Cart</button>
     </div>
-  </div> <!-- End of product-grid -->
+
+    <div class="bee-option">
+      <h4>Gentle Hum</h4>
+      <button onclick="addToCart('Bee – Gentle Hum', 18)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+<div class="product">
+  <h2>Cactus</h2>
+  <img src="cactus.png" alt="Cactus">
+  <p>$4 each</p>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
+  <div class="product-buttons">
+    <button onclick="addToCart('Cactus', 4)">Add to Cart</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Pineapple</h2>
+  <img src="pineapple.png" alt="Pineapple">
+  <p>$4 each</p>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+
+  <!-- Cart Button -->
+  <div class="product-buttons">
+    <button onclick="addToCart('Pineapple', 4)">Add to Cart</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Flower Bells</h2>
+  <img src="flower-bells.png" alt="Flower Bells">
+  <p>$4 / Small · $6 / Medium · $7 / Large</p>
+
+  <!-- Style Picker -->
+  <div class="style-picker">
+    <h3><strong>Choose Size & Add:</strong></h3>
+
+    <div class="flowerbell-option">
+      <h4>Small</h4>
+      <button onclick="addToCart('Flower Bell – Small', 4)">Add Small</button>
+    </div>
+
+    <div class="flowerbell-option">
+      <h4>Medium</h4>
+      <button onclick="addToCart('Flower Bell – Medium', 6)">Add Medium</button>
+    </div>
+
+    <div class="flowerbell-option">
+      <h4>Large</h4>
+      <button onclick="addToCart('Flower Bell – Large', 7)">Add Large</button>
+    </div>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+</div>
+<div class="product">
+  <h2>Hearts</h2>
+  <img src="hearts.png" alt="Hearts">
+  <p>$4 each</p>
+
+  <!-- Style Picker -->
+  <div class="style-picker">
+    <h3><strong>Choose a Style & Add:</strong></h3>
+
+    <div class="heart-option">
+      <h4>Curved Heart</h4>
+      <button onclick="addToCart('Heart – Curved', 4)">Add Curved Heart</button>
+    </div>
+
+    <div class="heart-option">
+      <h4>Tilted Heart</h4>
+      <button onclick="addToCart('Heart – Tilted', 4)">Add Tilted Heart</button>
+    </div>
+  </div>
+
+  <!-- Glaze Color Picker -->
+  <div class="color-picker">
+    <label><strong>Choose Glaze Colors:</strong></label>
+    <div class="glaze-options">
+      <label><input type="checkbox" value="Cactus"><span class="glaze-dot" style="background:#3c804f;"></span> Cactus</label>
+      <label><input type="checkbox" value="Almond"><span class="glaze-dot" style="background:#eee0c9;"></span> Almond</label>
+      <label><input type="checkbox" value="White"><span class="glaze-dot" style="background:#ffffff;"></span> White</label>
+      <label><input type="checkbox" value="Dark Green"><span class="glaze-dot" style="background:#124d36;"></span> Dark Green</label>
+      <label><input type="checkbox" value="Red"><span class="glaze-dot" style="background:#d32727;"></span> Red</label>
+      <label><input type="checkbox" value="Purple"><span class="glaze-dot" style="background:#800080;"></span> Purple</label>
+      <label><input type="checkbox" value="Ocher"><span class="glaze-dot" style="background:#c98719;"></span> Ocher</label>
+      <label><input type="checkbox" value="Ultra Blue"><span class="glaze-dot" style="background:#4d6fe3;"></span> Ultra Blue</label>
+      <label><input type="checkbox" value="China White"><span class="glaze-dot" style="background:#f5f5f5;"></span> China White</label>
+      <label><input type="checkbox" value="Copper"><span class="glaze-dot" style="background:#b87333;"></span> Copper</label>
+      <label><input type="checkbox" value="Bright Yellow"><span class="glaze-dot" style="background:#ffe600;"></span> Bright Yellow</label>
+      <label><input type="checkbox" value="Hollyhock"><span class="glaze-dot" style="background:#db70b8;"></span> Hollyhock</label>
+      <label><input type="checkbox" value="Emerald"><span class="glaze-dot" style="background:#50c878;"></span> Emerald</label>
+    </div>
+  </div>
+</div>
 </main>
 
 <section class="cart-section">
@@ -388,4 +863,5 @@
 
 </body>
 </html>
+
 
