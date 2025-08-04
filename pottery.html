@@ -88,6 +88,12 @@
       font-size: 14px;
     }
 
+    .price-display {
+      margin-top: 6px;
+      font-weight: bold;
+      color: #555;
+    }
+
     button {
       background-color: #f2c8f4;
       border: none;
@@ -100,6 +106,36 @@
 
     button:hover {
       background-color: #e8aee0;
+    }
+
+    #cart-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f2c8f4;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .color-swatch {
+        width: 20px;
+        height: 20px;
+      }
     }
   </style>
 </head>
@@ -127,32 +163,21 @@
 
 <section class="gallery-container">
 
-  <label for="itemSelect">Choose a pottery piece:</label>
-  <select id="itemSelect" name="itemSelect">
-    <option value="astro.png">$25 – Astro</option>
-    <option value="beehive.png">$6 – Beehive</option>
-    <option value="cactus.jpg">$4 – Cactus</option>
-    <option value="flag.png">$5 – Flag</option>
-    <option value="flowers.jpg">$8 – Flowers</option>
-    <option value="mushroomhouse.png">$16 – Mushroom House</option>
-    <option value="pineapple.jpg">$4 – Pineapple</option>
-    <option value="shotglass.png">$12 – Shotglass</option>
-  </select>
+  <!-- Mushroom -->
+  <div class="gallery-item">
+    <img src="mushroom.png" alt="Mushrooms pottery piece">
+    <select id="mushroomSelect" aria-label="Select mushroom size" onchange="updatePrice('mushroomSelect','mushroomPrice')">
+      <option>Small</option>
+      <option>Large</option>
+    </select>
+    <div id="mushroomPrice" class="price-display">$5</div>
+    <button onclick="addVariantToCart('Mushrooms', 5, 'mushroomSelect')">Add to Cart</button>
+  </div>
 
-  <!--Mushrooms-->
+  <!-- Apple -->
   <div class="gallery-item">
-    <img src="mushroom.png" alt="Mushrooms">
-    <option> Small</option>
-    <option>Large</option>
-  </select>
-    <p> $5</p>
-    <p>$8</p>
-    <button onclick="addVariantToCart('Mushrroms", 5, "mushroomSelect')>Add to Cart</button>
-    
-  <!-- Apples -->
-  <div class="gallery-item">
-    <img src="apples.png" alt="Apples">
-    <select id="appleSelect">
+    <img src="apples.png" alt="Apples pottery piece">
+    <select id="appleSelect" aria-label="Select apple style">
       <option>Joyful</option>
       <option>Cheerful</option>
       <option>Gentle</option>
@@ -160,75 +185,78 @@
       <option>Silly</option>
       <option>Radiant</option>
     </select>
-    <p>$12</p>
+    <div class="price-display">$12</div>
     <button onclick="addVariantToCart('Apples', 12, 'appleSelect')">Add to Cart</button>
   </div>
 
-  <!-- Skulls -->
+  <!-- Skull -->
   <div class="gallery-item">
-    <img src="skulls.png" alt="Skulls">
-    <select id="skullSelect">
+    <img src="skulls.png" alt="Skulls pottery piece">
+    <select id="skullSelect" aria-label="Select skull size" onchange="updatePrice('skullSelect','skullPrice')">
       <option>Small</option>
       <option>Large</option>
     </select>
-    <p>$5 / $12</p>
-    <button onclick="addVariantToCart('Skulls', 0, 'skullSelect')">Add to Cart</button>
+    <div id="skullPrice" class="price-display">$5</div>
+    <button onclick="addVariantToCart('Skulls', 5, 'skullSelect')">Add to Cart</button>
   </div>
 
   <!-- Bee -->
   <div class="gallery-item">
-    <img src="bee.jpg" alt="Bee">
-    <select id="beeSelect">
+    <img src="bee.jpg" alt="Bee pottery piece">
+    <select id="beeSelect" aria-label="Select bee size" onchange="updatePrice('beeSelect', 'beePrice')">
       <option>Small ($4)</option>
       <option>Medium ($5)</option>
       <option>Large ($6)</option>
       <option>XL ($7)</option>
     </select>
+    <div id="beePrice" class="price-display">$4</div>
     <button onclick="addVariantToCart('Bee', 0, 'beeSelect')">Add to Cart</button>
   </div>
 
   <!-- Flowers -->
   <div class="gallery-item">
-    <img src="flowers.png" alt="Flowers">
-    <select id="flowerSelect">
+    <img src="flowers.png" alt="Flowers pottery piece">
+    <select id="flowerSelect" aria-label="Select flower size" onchange="updatePrice('flowerSelect', 'flowerPrice')">
       <option>Small ($4)</option>
       <option>Medium ($6)</option>
       <option>Large ($8)</option>
     </select>
+    <div id="flowerPrice" class="price-display">$4</div>
     <button onclick="addVariantToCart('Flowers', 0, 'flowerSelect')">Add to Cart</button>
   </div>
 
   <!-- Hat Bunny -->
   <div class="gallery-item">
-    <img src="hatbunny.png" alt="Hat Bunny">
-    <select id="hatbunnySelect">
+    <img src="hatbunny.png" alt="Hat Bunny pottery piece">
+    <select id="hatbunnySelect" aria-label="Select bunny style">
       <option>Velvet</option>
       <option>Whisker</option>
       <option>Top Hat</option>
     </select>
-    <p>$8</p>
+    <div class="price-display">$8</div>
     <button onclick="addVariantToCart('Hat Bunny', 8, 'hatbunnySelect')">Add to Cart</button>
   </div>
 
   <!-- Old Bunny -->
   <div class="gallery-item">
-    <img src="oldbunny.png" alt="Old Bunny">
-    <select id="oldbunnySelect">
+    <img src="oldbunny.png" alt="Old Bunny pottery piece">
+    <select id="oldbunnySelect" aria-label="Select old bunny pose">
       <option>Kneeling</option>
       <option>Sitting</option>
     </select>
-    <p>$8</p>
-    <button onclick="addVariantToCart('Old Bunny', 8, 'oldbunnySelect')">Add to Cart</button>
+    <div class="price-display">$8</div>
+    <button onclick="addVariantToCart('Old Bunny', 8, 'oldbunnySelect")">Add to Cart</button>
+        <button onclick="addVariantToCart('Old Bunny', 8, 'oldbunnySelect')">Add to Cart</button>
   </div>
 
   <!-- Hearts -->
   <div class="gallery-item">
-    <img src="hearts.jpg" alt="Hearts">
-    <select id="heartSelect">
+    <img src="hearts.jpg" alt="Hearts pottery piece">
+    <select id="heartSelect" aria-label="Select heart shape">
       <option>Tilted</option>
       <option>Curved</option>
     </select>
-    <p>$8</p>
+    <div class="price-display">$8</div>
     <button onclick="addVariantToCart('Hearts', 8, 'heartSelect')">Add to Cart</button>
   </div>
 
@@ -238,23 +266,23 @@
   <h2>Glaze Color Options</h2>
   <p>Select from our vibrant palette, shown below:</p>
   <div>
-    <span class="swatch-label">Medium Yellow</span><span class="color-swatch" style="background-color:#fce205;"></span>
-    <span class="swatch-label">Bright Yellow</span><span class="color-swatch" style="background-color:#fff700;"></span>
-    <span class="swatch-label">Copper</span    <span class="swatch-label">Copper</span><span class="color-swatch" style="background-color:#b87333;"></span>
-    <span class="swatch-label">China White</span><span class="color-swatch" style="background-color:#e5e4e2;"></span>
-    <span class="swatch-label">White</span><span class="color-swatch" style="background-color:#ffffff;"></span>
-    <span class="swatch-label">Red</span><span class="color-swatch" style="background-color:#ff0000;"></span>
-    <span class="swatch-label">Black</span><span class="color-swatch" style="background-color:#000000;"></span>
-    <span class="swatch-label">Dark Brown</span><span class="color-swatch" style="background-color:#654321;"></span>
-    <span class="swatch-label">Ultramarine Blue</span><span class="color-swatch" style="background-color:#3f00ff;"></span>
-    <span class="swatch-label">Emerald Green</span><span class="color-swatch" style="background-color:#50c878;"></span>
-    <span class="swatch-label">Hollyhock Purple</span><span class="color-swatch" style="background-color:#7851a9;"></span>
-    <span class="swatch-label">Ocher</span><span class="color-swatch" style="background-color:#cc7722;"></span>
-    <span class="swatch-label">Crocus</span><span class="color-swatch" style="background-color:#9966cc;"></span>
-    <span class="swatch-label">Purple</span><span class="color-swatch" style="background-color:#800080;"></span>
-    <span class="swatch-label">Dark Green</span><span class="color-swatch" style="background-color:#006400;"></span>
-    <span class="swatch-label">Toasted Almond</span><span class="color-swatch" style="background-color:#d2b48c;"></span>
-    <span class="swatch-label">Cactus Flower</span><span class="color-swatch" style="background-color:#ff69b4;"></span>
+    <span class="swatch-label">Medium Yellow</span><span class="color-swatch" style="background-color:#fce205;" aria-label="Medium Yellow glaze"></span>
+    <span class="swatch-label">Bright Yellow</span><span class="color-swatch" style="background-color:#fff700;" aria-label="Bright Yellow glaze"></span>
+    <span class="swatch-label">Copper</span><span class="color-swatch" style="background-color:#b87333;" aria-label="Copper glaze"></span>
+    <span class="swatch-label">China White</span><span class="color-swatch" style="background-color:#e5e4e2;" aria-label="China White glaze"></span>
+    <span class="swatch-label">White</span><span class="color-swatch" style="background-color:#ffffff;" aria-label="White glaze"></span>
+    <span class="swatch-label">Red</span><span class="color-swatch" style="background-color:#ff0000;" aria-label="Red glaze"></span>
+    <span class="swatch-label">Black</span><span class="color-swatch" style="background-color:#000000;" aria-label="Black glaze"></span>
+    <span class="swatch-label">Dark Brown</span><span class="color-swatch" style="background-color:#654321;" aria-label="Dark Brown glaze"></span>
+    <span class="swatch-label">Ultramarine Blue</span><span class="color-swatch" style="background-color:#3f00ff;" aria-label="Ultramarine Blue glaze"></span>
+    <span class="swatch-label">Emerald Green</span><span class="color-swatch" style="background-color:#50c878;" aria-label="Emerald Green glaze"></span>
+    <span class="swatch-label">Hollyhock Purple</span><span class="color-swatch" style="background-color:#7851a9;" aria-label="Hollyhock Purple glaze"></span>
+    <span class="swatch-label">Ocher</span><span class="color-swatch" style="background-color:#cc7722;" aria-label="Ocher glaze"></span>
+    <span class="swatch-label">Crocus</span><span class="color-swatch" style="background-color:#9966cc;" aria-label="Crocus glaze"></span>
+    <span class="swatch-label">Purple</span><span class="color-swatch" style="background-color:#800080;" aria-label="Purple glaze"></span>
+    <span class="swatch-label">Dark Green</span><span class="color-swatch" style="background-color:#006400;" aria-label="Dark Green glaze"></span>
+    <span class="swatch-label">Toasted Almond</span><span class="color-swatch" style="background-color:#d2b48c;" aria-label="Toasted Almond glaze"></span>
+    <span class="swatch-label">Cactus Flower</span><span class="color-swatch" style="background-color:#ff69b4;" aria-label="Cactus Flower glaze"></span>
   </div>
 </section>
 
@@ -264,34 +292,75 @@
   <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
+<!-- 🛒 Floating Cart Icon -->
+<div id="cart-icon" onclick="location.href='cart.html';">
+  🛒 <span id="cart-count">0</span>
+</div>
+
 <script>
+  function updatePrice(selectId, priceId) {
+    const variant = document.getElementById(selectId).value;
+    let price = 0;
+
+    if (selectId === 'beeSelect') {
+      if (variant.includes('$4')) price = 4;
+      else if (variant.includes('$5')) price = 5;
+      else if (variant.includes('$6')) price = 6;
+      else if (variant.includes('$7')) price = 7;
+    }
+    if (selectId === 'flowerSelect') {
+      if (variant.includes('$4')) price = 4;
+      else if (variant.includes('$6')) price = 6;
+      else if (variant.includes('$8')) price = 8;
+    }
+    if (selectId === 'mushroomSelect') {
+      price = variant === 'Large' ? 8 : 5;
+    }
+    if (selectId === 'skullSelect') {
+      price = variant === 'Large' ? 12 : 5;
+    }
+
+    document.getElementById(priceId).textContent = `$${price}`;
+  }
+
   function addVariantToCart(name, basePrice, selectId) {
     const variant = document.getElementById(selectId).value;
     let price = basePrice;
 
-    // Handle custom pricing logic for dropdowns with variant-based prices
     if (selectId === 'skullSelect') {
       price = variant === 'Large' ? 12 : 5;
     }
     if (selectId === 'beeSelect') {
-      if (variant.includes('($4)')) price = 4;
-      else if (variant.includes('($5)')) price = 5;
-      else if (variant.includes('($6)')) price = 6;
-      else if (variant.includes('($7)')) price = 7;
+      if (variant.includes('$4')) price = 4;
+      else if (variant.includes('$5')) price = 5;
+      else if (variant.includes('$6')) price = 6;
+      else if (variant.includes('$7')) price = 7;
     }
     if (selectId === 'flowerSelect') {
-      if (variant.includes('($4)')) price = 4;
-      else if (variant.includes('($6)')) price = 6;
-      else if (variant.includes('($8)')) price = 8;
+      if (variant.includes('$4')) price = 4;
+      else if (variant.includes('$6')) price = 6;
+      else if (variant.includes('$8')) price = 8;
+    }
+    if (selectId === 'mushroomSelect') {
+      price = variant === 'Large' ? 8 : 5;
     }
 
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push({ name: `${name} - ${variant}`, price, quantity: 1 });
     localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
     alert(`${name} (${variant}) added to cart!`);
   }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').textContent = cart.length;
+  }
+
+  window.onload = updateCartCount;
 </script>
 
 </body>
 </html>
+
 
