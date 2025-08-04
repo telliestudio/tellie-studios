@@ -432,134 +432,131 @@
         <button class="color-choice" onclick="selectColor('Crocus')" style="background-color:#a984bc;" title="Crocus"></button>
         <button class="color-choice" onclick="selectColor('Purple')" style="background-color:purple;" title="Purple"></button>
     </div>
-</section>
-
 <section class="cart-section">
-    <h2>Shopping Cart</h2>
-    <div id="cart-items" class="cart-items"></div>
-    <button onclick="clearCart()">Clear Cart</button>
-    <a href="checkout.html"><button>Proceed to Checkout</button></a>
+  <h2>Shopping Cart</h2>
+  <div id="cart-items" class="cart-items"></div>
+  <button onclick="clearCart()">Clear Cart</button>
+  <button onclick="proceedToCheckout()">Proceed to Checkout</button>
 </section>
 
 <footer>
-    <p>Hours: Mon–Fri 9am–5pm</p>
-    <p>Email: <a href="mailto:telliestudios@gmail.com">telliestudios@gmail.com</a></p>
-    <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+  <p>Hours: Mon–Fri 9am–5pm</p>
+  <p>Email: <a href="mailto:telliestudios@gmail.com">telliestudios@gmail.com</a></p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
 <style>
-    .color-options {
-        text-align: center;
-        margin: 2em 0;
-        font-family: Arial, sans-serif;
-    }
+  .color-options {
+    text-align: center;
+    margin: 2em 0;
+    font-family: Arial, sans-serif;
+  }
 
-    .color-picker {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1em;
-        margin-top: 1em;
-    }
+  .color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+  }
 
-    .color-choice {
-        border: 2px solid #555;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-        transition: transform 0.2s ease;
-    }
+  .color-choice {
+    border: 2px solid #555;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
 
-    .color-choice:hover {
-        transform: scale(1.2);
-        box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    }
+  .color-choice:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
 
-    .cart-section {
-        margin: 3em auto;
-        padding: 1em;
-        text-align: center;
-        font-family: Arial, sans-serif;
-    }
+  .cart-section {
+    margin: 3em auto;
+    padding: 1em;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
 
-    .cart-items p {
-        margin: 0.5em 0;
-    }
+  .cart-items p {
+    margin: 0.5em 0;
+  }
 
-    footer {
-        text-align: center;
-        margin-top: 2em;
-        padding: 1em;
-        background-color: #f3f3f3;
-        font-size: 0.9em;
-    }
+  footer {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #f3f3f3;
+    font-size: 0.9em;
+  }
 
-    footer a {
-        color: #444;
-        text-decoration: none;
-    }
+  footer a {
+    color: #444;
+    text-decoration: none;
+  }
 </style>
 
 <script>
-    let selectedColor = null;
+  let selectedColor = null;
 
-    function selectColor(color) {
-        selectedColor = color;
-        alert(`Color selected: ${color}`);
-    }
+  function selectColor(color) {
+    selectedColor = color;
+    alert(`Color selected: ${color}`);
+  }
 
-    function addToCart(name, price) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const itemName = selectedColor ? `${name} - ${selectedColor}` : name;
-        cart.push({ name: itemName, price, quantity: 1 });
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${itemName} added to cart!`);
-        displayCartItems();
-    }
-
-    function displayCartItems() {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = '';
-
-        if (cartItems.length === 0) {
-            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-            return;
-        }
-
-        let total = 0;
-        cartItems.forEach((item, index) => {
-            const itemTotal = item.quantity * item.price;
-            total += itemTotal;
-            cartItemsContainer.innerHTML += `
-                <p><strong>${item.name}</strong> - $${item.price.toFixed(2)}</p>
-                <button onclick="removeFromCart(${index})">Remove</button>
-            `;
-        });
-
-        cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
-    }
-
-    function removeFromCart(index) {
-        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        cartItems.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-        displayCartItems();
-    }
-
-    function clearCart() {
-        localStorage.removeItem('cart');
-        displayCartItems();
-    }
-
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const itemName = selectedColor ? `${name} - ${selectedColor}` : name;
+    cart.push({ name: itemName, price, quantity: 1 });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${itemName} added to cart!`);
     displayCartItems();
+  }
+
+  function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+      return;
+    }
+
+    let total = 0;
+    cartItems.forEach((item, index) => {
+      const itemTotal = item.quantity * item.price;
+      total += itemTotal;
+      cartItemsContainer.innerHTML += `
+        <p><strong>${item.name}</strong> - $${item.price.toFixed(2)}</p>
+        <button onclick="removeFromCart(${index})">Remove</button>
+      `;
+    });
+
+    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+  }
+
+  function removeFromCart(index) {
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    cartItems.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    displayCartItems();
+  }
+
+  function clearCart() {
+    localStorage.removeItem('cart');
+    displayCartItems();
+  }
+
+  function proceedToCheckout() {
+    window.location.href = "checkout.html";
+  }
+
+  displayCartItems();
 </script>
-
+</section>
 </body>
-</html>
-
-
-   
-
-
+  </html>
