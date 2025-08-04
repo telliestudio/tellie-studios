@@ -140,30 +140,44 @@
   <script>
     function displayCartItems() {
       const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const glazeItems = JSON.parse(localStorage.getItem('selectedGlazes')) || [];
       const cartItemsContainer = document.getElementById('cart-items');
       cartItemsContainer.innerHTML = '';
 
-      if (cartItems.length === 0) {
+      if (cartItems.length === 0 && glazeItems.length === 0) {
         cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
         return;
       }
 
       let total = 0;
+
+      // Display pottery items
       cartItems.forEach(item => {
         const itemTotal = item.quantity * item.price;
         total += itemTotal;
         cartItemsContainer.innerHTML += `
           <div style="margin-bottom: 10px;">
-            <p><strong>${item.name}</strong> (${item.glaze}) – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p>
+            <p><strong>${item.name}</strong> – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p>
           </div>
         `;
       });
+
+      // Display glaze selections
+      if (glazeItems.length > 0) {
+        cartItemsContainer.innerHTML += `
+          <div style="margin-top: 20px;">
+            <p><strong>Included Glazes:</strong> ${glazeItems.join(', ')}</p>
+            <p><em>(All glaze choices come free with your kit!)</em></p>
+          </div>
+        `;
+      }
 
       cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
     }
 
     function clearCart() {
       localStorage.removeItem('cart');
+      localStorage.removeItem('selectedGlazes');
       displayCartItems();
     }
 
@@ -172,6 +186,3 @@
 
 </body>
 </html>
-
-
-
