@@ -191,13 +191,12 @@
   <script>
     function displayCartItems() {
       const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-      const glazeItems = JSON.parse(localStorage.getItem('selectedGlazes')) || [];
       const cartItemsContainer = document.getElementById('cart-items');
       cartItemsContainer.innerHTML = '';
 
       let total = 0;
 
-      if (cartItems.length === 0 && glazeItems.length === 0) {
+      if (cartItems.length === 0) {
         cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
         return;
       }
@@ -212,21 +211,11 @@
         `;
       });
 
-      if (glazeItems.length > 0) {
-        cartItemsContainer.innerHTML += `
-          <div class="included-glazes">
-            <p><strong>Included Glazes:</strong> ${glazeItems.join(', ')}</p>
-            <p><em>(No extra charge — every kit comes with unlimited glaze selections!)</em></p>
-          </div>
-        `;
-      }
-
       cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
     }
 
     function clearCart() {
       localStorage.removeItem('cart');
-      localStorage.removeItem('selectedGlazes');
       displayCartItems();
     }
 
@@ -235,4 +224,3 @@
 
 </body>
 </html>
-
