@@ -1,609 +1,169 @@
-<div class="product-grid">
-  <div class="product">
-    <img src="mug1.jpg" alt="Ceramic Mug">
-    <h3>Snowberry Mug</h3>
-    <p>$24</p>
-    <div class="glaze-options">
-      <label><span class="glaze-dot" style="background-color: #e5e4e2;"></span> Snow</label>
-      <label><span class="glaze-dot" style="background-color: #dab6fc;"></span> Violet Mist</label>
-      <label><span class="glaze-dot" style="background-color: #ffb6c1;"></span> Petal Pink</label>
-    </div>
-    <div class="variant-picker">
-      <select>
-        <option value="no-paint">No Paint</option>
-        <option value="include-paint">Include Paint</option>
-      </select>
-    </div>
-    <div class="product-buttons">
-      <button>Add to Cart</button>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pottery - TellieStudios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, lightblue, pink, purple);
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-  <div class="product">
-    <img src="mug2.jpg" alt="Ceramic Bowl">
-    <h3>Sunrise Bowl</h3>
-    <p>$28</p>
-    <div class="glaze-options">
-      <label><span class="glaze-dot" style="background-color: #ffd700;"></span> Goldenrod</label>
-      <label><span class="glaze-dot" style="background-color: #ffa07a;"></span> Peach Blush</label>
-      <label><span class="glaze-dot" style="background-color: #add8e6;"></span> Sky Blue</label>
-    </div>
-    <div class="variant-picker">
-      <select>
-        <option value="no-paint">No Paint</option>
-        <option value="include-paint">Include Paint</option>
-      </select>
-    </div>
-    <div class="product-buttons">
-      <button>Add to Cart</button>
-    </div>
-  </div>
-</div>
-<div class="product-grid">
-<div class="product">
-  <h2>Apples</h2>
-  <img src="apples.png" alt="Apples">
-  <p>$12 each or $66 for set of six</p>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px;
+    }
 
-  <!-- Variant Picker -->
-  <div class="variant-picker">
-    <label for="apple-variant"><strong>Apple Style:</strong></label>
-    <select id="apple-variant">
-      <option value="">Choose one</option>
-      <option value="Joyful Grin">Joyful Grin</option>
-      <option value="Cheerful Wink">Cheerful Wink</option>
-      <option value="Gentle Smile">Gentle Smile</option>
-      <option value="Squish Giggle">Squish Giggle</option>
-      <option value="Silly Blurp">Silly Blurp</option>
-      <option value="Radiant Cheer">Radiant Cheer</option>
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .intro {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.85);
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      width: 300px;
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    select {
+      margin: 10px 0;
+      padding: 6px;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #d2b48c;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #c0a377;
+    }
+
+    footer {
+      padding: 20px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.jpg" alt="TellieStudios Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pottery.html">Pottery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="intro">
+  <h1>Handmade Pottery</h1>
+  <p>Every piece is sculpted with love and designed to spark joy.</p>
+  <p>Choose your favorite and pick one or more glaze colors!</p>
+</section>
+
+<section class="gallery-container">
+
+  <!-- 🏺 Mushroom House -->
+  <div class="gallery-item">
+    <img src="mushroom house.jpg" alt="Mushroom House">
+    <p><strong>Mushroom House</strong> – $16</p>
+    <select multiple>
+      <option value="Cactus">🟢 Cactus</option>
+      <option value="Almond">🤍 Almond</option>
+      <option value="White">⬜ White</option>
+      <option value="Dark Green">🌲 Dark Green</option>
+      <option value="Red">🔴 Red</option>
+      <option value="Purple">🟣 Purple</option>
+      <option value="Ocher">🟠 Ocher</option>
+      <option value="Ultra Blue">🔵 Ultra Blue</option>
+      <option value="China White">☁️ China White</option>
+      <option value="Copper">🟤 Copper</option>
+      <option value="Bright Yellow">💛 Bright Yellow</option>
+      <option value="Hollyhock">💖 Hollyhock</option>
+      <option value="Emerald">💚 Emerald</option>
     </select>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-   <label for="glaze-select">Choose any Glaze Colors:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Buttons -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Apple Individual', 12)">Add Individual</button>
-    <button onclick="addToCart('Apples Set of 6', 66)">Add Set</button>
-  </div>
-  <div class="product">
-  <h2>Mushroom House</h2>
-  <img src="mushroom-house.png" alt="Mushroom House">
-  <p>$16 each</p>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-      <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
     <button onclick="addToCart('Mushroom House', 16)">Add to Cart</button>
   </div>
-</div>
-<div class="product">
-  <h2>Astro</h2>
-  <img src="astro.png" alt="Astro">
-  <p>$25 each</p>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-     <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
+
+  <!-- ⭐ Astro -->
+  <div class="gallery-item">
+    <img src="astro.jpg" alt="Astro">
+    <p><strong>Astro</strong> – $25</p>
+    <select multiple>...same options...</select>
     <button onclick="addToCart('Astro', 25)">Add to Cart</button>
   </div>
-</div>
-<div class="product">
-  <h2>Flag</h2>
-  <img src="flag.png" alt="Flag">
-  <p>$8 each</p
-  </div>
-<!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-     <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Flag', 8)">Add to Cart</button>
-  </div>
-</div>
-<div class="product">
-  <h2>Shotglass</h2>
-  <img src="shotglass.png" alt="Shotglass">
-  <p>$12 each</p>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-      <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Shotglass', 12)">Add to Cart</button>
-  </div>
-</div>
-<div class="product">
-  <h2>Beehive</h2>
-  <img src="beehive.png" alt="Beehive">
-  <p>$6 each</p>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-     <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Beehive', 6)">Add to Cart</button>
-  </div>
-</div>
-<div class="product">
-  <h2>Mushrooms</h2>
-  <img src="mushrooms.png" alt="Mushrooms">
-  <p>$5 each</p>
-  <p>$8</p>
-  <!-- Variant Picker -->
-  <div class="variant-picker">
-    <label for="mushroom-variant"><strong>Style:</strong></label>
-    <select id="mushroom-variant">
-      <option value="">Choose one</option>
-      <option value="Tall Wobble">Tall Wobble</option>
-      <option value="Puff Dot">Puff Dot</option>
-    </select>
+
+  <!-- 🍎 Apples – $12 each -->
+  <div class="gallery-item">
+    <img src="apples.jpg" alt="Joyful Apple">
+    <p><strong>Apple – Joyful</strong> – $12</p>
+    <select multiple>...same options...</select>
+    <button onclick="addToCart('Apple – Joyful', 12)">Add to Cart</button>
   </div>
 
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
- <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Mushroom', 5)">Add to Cart</button>
-    <button onclick="addToCart('Mushroom' 8)>Add to cart</button>
-  </div>
-</div>
-<div class="product">
-  <h2>Skulls</h2>
-  <img src="skulls.png" alt="Skulls">
-  <p>$5 </p>
-      <p>$12</p>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-      <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Skull', 5)">Add to Cart</button
-    <button onclick=addToCart('Skull', 12)"Add to Cart</button
-  </div>
-<div class="product">
-  <h2>Hat Bunny</h2>
-  <img src="hat-bunny.png" alt="Hat Bunny">
-  <p>$16 each · $26 for 2 · $45 for 3</p>
-  <!-- Style Picker -->
-  <div class="style-picker">
-    <h3><strong>Choose a Style & Add:</strong></h3>
-    <div class="bunny-option">
-      <h4>Velvet Flop</h4>
-      <button onclick="addToCart('Hat Bunny – Velvet Flop (1)', 16)">Add One</button>
-    </div>
-    <div class="bunny-option">
-      <h4>Whisker Wiggle</h4>
-      <button onclick="addToCart('Hat Bunny – Whisker Wiggle (1)', 16)">Add One</button>
-    </div>
-    <div class="bunny-option">
-      <h4>Top Hat Tuck</h4>
-      <button onclick="addToCart('Hat Bunny – Top Hat Tuck (1)', 16)">Add One</button>
-      <button onclick="addToCart('Hat Bunny – Top Hat Tuck (Set of 2)', 26)">Add Set of 2</button>
-      <button onclick="addToCart('Hat Bunny – Top Hat Tuck (Set of 3)', 45)">Add Set of 3</button>
-    </div>
-  </div>
- <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-     <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-<div class="product">
-  <h2>Old Bunny</h2>
-  <img src="old-bunny.png" alt="Old Bunny Pair">
-  <p>$16 each · $26 for set of 2</p>
-  <!-- Style Picker -->
-  <div class="style-picker">
-    <h3><strong>Choose a Style & Add:</strong></h3>
+  <!-- ➕ Add other apples (Cheerful, Gentle, Squish, Silly, Radiant) & full set if you like -->
 
-    <div class="bunny-option">
-      <h4>Sitting Bunny — “Evening Doze”</h4>
-      <button onclick="addToCart('Old Bunny – Evening Doze (1)', 16)">Add One</button>
-    </div>
-    <div class="bunny-option">
-      <h4>Kneeling Bunny — “Gentle Task”</h4>
-      <button onclick="addToCart('Old Bunny – Gentle Task (1)', 16)">Add One</button>
-      <button onclick="addToCart('Old Bunny – Gentle Task (Set of 2)', 26)">Add Set of 2</button>
-    </div>
+  <!-- 🐰 Hat Bunny – Velvet -->
+  <div class="gallery-item">
+    <img src="hatbunny velvet.jpg" alt="Hatbunny Velvet">
+    <p><strong>Hatbunny – Velvet</strong> – $16</p>
+    <select multiple>...same options...</select>
+    <button onclick="addToCart('Hatbunny – Velvet', 16)">Add to Cart</button>
   </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-    <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-<div class="product">
-  <h2>Bees</h2>
-  <img src="bees.png" alt="Bees">
-  <p>small $4</p
-  <p> medium $5</p>
-  <p>large $6</p>
-  <p>X-large $7</p>
-  <!-- Style Picker -->
-  <div class="style-picker">
-    <h3><strong>Choose a Style & Add:</strong></h3>
-    <div class="bee-option">
-      <h4>Fuzzy Squiggle</h4>
-      <button onclick="addToCart('Bee – Fuzzy Squiggle', 4)">Add to Cart</button>
-    </div>
-    <div class="bee-option">
-      <h4>Flutter Dot</h4>
-      <button onclick="addToCart('Bee – Flutter Dot', 5)">Add to Cart</button>
-    </div>
-    <div class="bee-option">
-      <h4>Bop Stripe</h4>
-      <button onclick="addToCart('Bee – Bop Stripe', 6)">Add to Cart</button>
-    </div>
-    <div class="bee-option">
-      <h4>Wobble Buzz</h4>
-      <button onclick="addToCart('Bee – Wobble Buzz', 7)">Add to Cart</button>
-    </div>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-   <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-<div class="product">
-  <h2>Cactus</h2>
-  <img src="cactus.png" alt="Cactus">
-  <p>$4 each</p>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-      <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Cactus', 4)">Add to Cart</button>
-  </div>
-</div>
-<div class="product">
-  <h2>Pineapple</h2>
-  <img src="pineapple.png" alt="Pineapple">
-  <p>$4 each</p>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-   <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-  <!-- Cart Button -->
-  <div class="product-buttons">
-    <button onclick="addToCart('Pineapple', 4)">Add to Cart</button>
-  </div>
-</div>
-<div class="product">
-  <h2>Flowers</h2>
-  <img src="flower-bells.png" alt="Flower Bells">
-  <p>$4 / Small · $6 / Medium · $7 / Large</p>
-  <!-- Style Picker -->
-  <div class="style-picker">
-    <h3><strong>Choose Size & Add:</strong></h3>
-    <div class="flowerbell-option">
-      <h4>Small</h4>
-      <button onclick="addToCart('Flower Bell – Small', 4)">Add Small</button>
-    </div>
-    <div class="flowerbell-option">
-      <h4>Medium</h4>
-      <button onclick="addToCart('Flower Bell – Medium', 6)">Add Medium</button>
-    </div>
-    <div class="flowerbell-option">
-      <h4>Large</h4>
-      <button onclick="addToCart('Flower Bell – Large', 7)">Add Large</button>
-    </div>
- </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-    <label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-</div>
-<div class="product">
-  <h2>Hearts</h2>
-  <img src="hearts.png" alt="Hearts">
-  <p>$4 each</p>
-  <!-- Style Picker -->
-  <div class="style-picker">
-    <h3><strong>Choose a Style & Add:</strong></h3>
-    <div class="heart-option">
-      <h4>Curved Heart</h4>
-      <button onclick="addToCart('Heart – Curved', 4)">Add Curved Heart</button>
-    </div>
-    <div class="heart-option">
-      <h4>Tilted Heart</h4>
-      <button onclick="addToCart('Heart – Tilted', 4)">Add Tilted Heart</button>
-    </div>
-  </div>
-  <!-- Glaze Color Picker -->
-  <div class="color-picker">
-    <label><strong>Choose Glaze Colors:</strong></label>
-    <div class="glaze-options">
-<label for="glaze-select">Choose a Glaze Color:</label>
-<select id="glaze-select" name="glaze-select" style="padding: 6px; border-radius: 6px;">
-  <option value="Cactus" data-color="#3c804f">🟢 Cactus</option>
-  <option value="Almond" data-color="#eee0c9">🤍 Almond</option>
-  <option value="White" data-color="#ffffff">⬜ White</option>
-  <option value="Dark Green" data-color="#124d36">🌲 Dark Green</option>
-  <option value="Red" data-color="#d32727">🔴 Red</option>
-  <option value="Purple" data-color="#800080">🟣 Purple</option>
-  <option value="Ocher" data-color="#c98719">🟠 Ocher</option>
-  <option value="Ultra Blue" data-color="#4d6fe3">🔵 Ultra Blue</option>
-  <option value="China White" data-color="#f5f5f5">☁️ China White</option>
-  <option value="Copper" data-color="#b87333">🟤 Copper</option>
-  <option value="Bright Yellow" data-color="#ffe600">💛 Bright Yellow</option>
-  <option value="Hollyhock" data-color="#db70b8">💖 Hollyhock</option>
-  <option value="Emerald" data-color="#50c878">💚 Emerald</option>
-</select>
-    </div>
-  </div>
-</div>
-</main>
-<section class="cart-section">
-  <h2>Shopping Cart</h2>
-  <div id="cart-items" class="cart-items"></div>
-  <button onclick="clearCart()">Clear Cart</button>
-  <a href="checkout.html"><button>Proceed to Checkout</button></a>
+
+ 
+
 </section>
 
 <footer>
@@ -613,57 +173,14 @@
 </footer>
 
 <script>
-  function addToCart(name, price, glaze = "No Glaze Selected") {
+  function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const match = cart.find(item => item.name === name && item.glaze === glaze);
-    if (match) {
-      match.quantity += 1;
-    } else {
-      cart.push({ name, price, glaze, quantity: 1 });
-    }
-
+    cart.push({ name, price, quantity: 1 });
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} with ${glaze} glaze added to cart!`);
-    displayCartItems();
+    alert(`${name} added to cart!`);
   }
-
-  function displayCartItems() {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
-
-    if (cartItems.length === 0) {
-      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-      return;
-    }
-
-    let total = 0;
-    cartItems.forEach((item, index) => {
-      const itemTotal = item.quantity * item.price;
-      total += itemTotal;
-      cartItemsContainer.innerHTML += `
-        <div style="margin-bottom: 10px;">
-          <p><strong>${item.name}</strong> (${item.glaze}) – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p>
-          <button onclick="removeFromCart(${index})">Remove</button>
-        </div>
-      `;
-    });
-
-    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
-  }
-
-  function removeFromCart(index) {
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    cartItems.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-    displayCartItems();
-  }
-
-  function clearCart() {
-    localStorage.removeItem('cart');
-    displayCartItems();
-  }
-
-  displayCartItems();
 </script>
+
+</body>
+</html>
+
