@@ -515,19 +515,13 @@
   </button>
 </section>
 
-
 </section>
-
 
 <section class="cart-section">
   <h2>Shopping Cart</h2>
   <div id="cart-items" class="cart-items"></div>
   <button onclick="clearCart()">Clear Cart</button>
-</section>
-<section class="cart-section">
-  <h2>Shopping Cart</h2>
-  <div id="cart-items" class="cart-items"></div>
-  <button onclick="clearCart()">Clear Cart</button>
+  <button onclick="proceedToCheckout()">Checkout</button>
 </section>
 
 <footer>
@@ -547,7 +541,14 @@
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const itemName = selectedColor ? `${name} - ${selectedColor}` : name;
-    cart.push({ name: itemName, price, quantity: 1 });
+
+    const existing = cart.find(item => item.name === itemName);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name: itemName, price, quantity: 1 });
+    }
+
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${itemName} added to cart!`);
     displayCartItems();
@@ -568,7 +569,7 @@
       const itemTotal = item.quantity * item.price;
       total += itemTotal;
       cartItemsContainer.innerHTML += `
-        <p><strong>${item.name}</strong> – $${item.price.toFixed(2)}</p>
+        <p><strong>${item.name}</strong> – $${item.price.toFixed(2)} × ${item.quantity}</p>
         <button onclick="removeFromCart(${index})">Remove</button>
       `;
     });
@@ -593,10 +594,6 @@
     if (cart.length === 0) {
       alert("Your cart is empty!");
     } else {
-      // Option A: If you have a checkout.html page
-      // window.location.href = "checkout.html";
-
-      // Option B: Direct Square link
       window.location.href = "https://square.link/u/26LsMyir";
     }
   }
@@ -604,4 +601,4 @@
   displayCartItems();
 </script>
 </body>
-  </html>
+</html>
