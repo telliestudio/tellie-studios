@@ -1,466 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pottery - TellieStudios</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, lightblue, pink, purple);
-      color: #333;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <title>Pottery Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
 
-    header, footer {
-      background: white;
-      padding: 15px;
-    }
+        header {
+            background-color: #f2eee3; /* soft gallery tone */
+            padding: 1em 2em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #ccc;
+        }
 
-    .logo {
-      width: 120px;
-      height: auto;
-    }
+        header img {
+            height: 60px;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      padding: 0;
-    }
+        nav {
+            display: flex;
+            gap: 1.5em;
+        }
 
-    .intro, .color-palette {
-      background: rgba(255, 255, 255, 0.85);
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 8px;
-      width: 80%;
-      font-size: 18px;
-    }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 0.5em 0.8em;
+            background-color: #e6ddce; /* gentle tab tone */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-    .gallery-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
+        nav a:hover {
+            background-color: #d4cbb7;
+        }
 
-    .gallery-item {
-      background: white;
-      border-radius: 8px;
-      padding: 10px;
-      width: 300px;
-      box-sizing: border-box;
-    }
+        h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
 
-    .gallery-item img {
-      width: 100%;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item img:hover {
-      transform: scale(1.05);
-    }
-
-    select {
-      margin: 8px 0;
-      padding: 5px;
-    }
-
-    .color-swatch.selected {
-  border: 3px solid #333;
-}
-
-    .color-swatch {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      margin: 5px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      cursor: pointer;
-    }
-
-    .swatch-label {
-      display: inline-block;
-      margin: 3px 10px;
-      font-size: 14px;
-    }
-
-    .price-display {
-      margin-top: 6px;
-      font-weight: bold;
-      color: #555;
-    }
-
-    button {
-      background-color: #f2c8f4;
-      border: none;
-      padding: 8px 12px;
-      margin-top: 6px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button:hover {
-      background-color: #e8aee0;
-    }
-
-    #cart-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #f2c8f4;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #333;
-      box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 999;
-    }
-
-    @media screen and (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      .color-swatch {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  </style>
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+            gap: 2em;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="pottery.html">Pottery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="cart.html">Cart</a></li>
-    </ul>
-  </nav>
-</header>
+    <header>
+        <img src="logo.jpg" alt="Gallery Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pottery.html">Pottery</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
 
-<section class="intro">
-  <h1>Whimsical Pottery by TellieStudios</h1>
-  <p>Choose your favorite ceramic pieces, select from delightful variations, and explore our vibrant glaze palette below.</p>
-</section>
+    <section class="gallery-container">
+        <section class="gallery-container">
 
-<section class="gallery-container">
+    <!-- Flower (3 sizes) -->
+    <div class="gallery-item">
+        <img src="flower.png" alt="Flower">
+        <select onchange="addToCart(`Flower (${this.value})`, flowerPrices[this.value])">
+            <option value="" disabled selected>Choose Size</option>
+            <option value="Small">Small - $4</option>
+            <option value="Medium">Medium - $5</option>
+            <option value="Large">Large - $6</option>
+        </select>
+    </div>
 
-  <!-- Mushroom -->
-  <div class="gallery-item">
-    <img src="mushroom.png" alt="Mushrooms pottery piece">
-    <select id="mushroomSelect" aria-label="Select mushroom size" onchange="updatePrice('mushroomSelect','mushroomPrice')">
-      <option>Small</option>
-      <option>Large</option>
-    </select>
-    <div id="mushroomPrice" class="price-display">$5</div>
-    <button onclick="addVariantToCart('Mushrooms', 5, 'mushroomSelect')">Add to Cart</button>
-  </div>
+    <!-- Astro -->
+    <div class="gallery-item">
+        <img src="astro.png" alt="Astro">
+        <button onclick="addToCart('Astro', 25)">Add Astro - $25</button>
+    </div>
 
-  <!-- Apple -->
-  <div class="gallery-item">
-    <img src="apples.png" alt="Apples pottery piece">
-    <select id="appleSelect" aria-label="Select apple style">
-      <option>Joyful</option>
-      <option>Cheerful</option>
-      <option>Gentle</option>
-      <option>Squish</option>
-      <option>Silly</option>
-      <option>Radiant</option>
-    </select>
-    <div class="price-display">$12</div>
-    <button onclick="addVariantToCart('Apples', 12, 'appleSelect')">Add to Cart</button>
-  </div>
+    <!-- Apples (6 variants) -->
+    <div class="gallery-item">
+        <img src="apples.png" alt="Apples">
+        <select onchange="addToCart(`Apples - ${this.value}`, 12)">
+            <option value="" disabled selected>Choose Variant</option>
+            <option value="Joyful">Joyful - $12</option>
+            <option value="Cheerful">Cheerful - $12</option>
+            <option value="Gentle">Gentle - $12</option>
+            <option value="Squish">Squish - $12</option>
+            <option value="Silly">Silly - $12</option>
+            <option value="Radiant">Radiant - $12</option>
+        </select>
+    </div>
 
-  <!-- Skull -->
-  <div class="gallery-item">
-    <img src="skulls.png" alt="Skulls pottery piece">
-    <select id="skullSelect" aria-label="Select skull size" onchange="updatePrice('skullSelect','skullPrice')">
-      <option>Small</option>
-      <option>Large</option>
-    </select>
-    <div id="skullPrice" class="price-display">$5</div>
-    <button onclick="addVariantToCart('Skulls', 5, 'skullSelect')">Add to Cart</button>
-  </div>
+    <!-- Bee (4 sizes) -->
+    <div class="gallery-item">
+        <img src="bee.jpg" alt="Bee">
+        <select onchange="addToCart(`Bee (${this.value})`, beePrices[this.value])">
+            <option value="" disabled selected>Choose Size</option>
+            <option value="Tiny">Tiny - $4</option>
+            <option value="Small">Small - $5</option>
+            <option value="Medium">Medium - $6</option>
+            <option value="Large">Large - $7</option>
+        </select>
+    </div>
 
-  <!-- Bee -->
-  <div class="gallery-item">
-    <img src="bee.jpg" alt="Bee pottery piece">
-    <select id="beeSelect" aria-label="Select bee size" onchange="updatePrice('beeSelect', 'beePrice')">
-      <option>Small ($4)</option>
-      <option>Medium ($5)</option>
-      <option>Large ($6)</option>
-      <option>XL ($7)</option>
-    </select>
-    <div id="beePrice" class="price-display">$4</div>
-    <button onclick="addVariantToCart('Bee', 0, 'beeSelect')">Add to Cart</button>
-  </div>
+    <!-- Cactus -->
+    <div class="gallery-item">
+        <img src="cactus.jpg" alt="Cactus">
+        <button onclick="addToCart('Cactus', 4)">Add Cactus - $4</button>
+    </div>
 
-  <!-- Flowers -->
-  <div class="gallery-item">
-    <img src="flowers.png" alt="Flowers pottery piece">
-    <select id="flowerSelect" aria-label="Select flower size" onchange="updatePrice('flowerSelect', 'flowerPrice')">
-      <option>Small ($4)</option>
-      <option>Medium ($6)</option>
-      <option>Large ($8)</option>
-    </select>
-    <div id="flowerPrice" class="price-display">$4</div>
-    <button onclick="addVariantToCart('Flowers', 0, 'flowerSelect')">Add to Cart</button>
-  </div>
+    <!-- Flag -->
+    <div class="gallery-item">
+        <img src="flag.png" alt="Flag">
+        <button onclick="addToCart('Flag', 6)">Add Flag - $6</button>
+    </div>
 
-  <!-- Hat Bunny -->
-  <div class="gallery-item">
-    <img src="hatbunny.png" alt="Hat Bunny pottery piece">
-    <select id="hatbunnySelect" aria-label="Select bunny style">
-      <option>Velvet</option>
-      <option>Whisker</option>
-      <option>Top Hat</option>
-    </select>
-    <div class="price-display">$8</div>
-    <button onclick="addVariantToCart('Hat Bunny', 8, 'hatbunnySelect')">Add to Cart</button>
-  </div>
+    <!-- Hat Bunny (3 variants) -->
+    <div class="gallery-item">
+        <img src="hatbunny.png" alt="Hat Bunny">
+        <select onchange="addToCart(`Hat Bunny - ${this.value}`, 16)">
+            <option value="" disabled selected>Choose Style</option>
+            <option value="Velvet">Velvet - $16</option>
+            <option value="Whisker">Whisker - $16</option>
+            <option value="Tophat">Tophat - $16</option>
+        </select>
+    </div>
 
-  <!-- Old Bunny -->
-  <div class="gallery-item">
-    <img src="oldbunny.png" alt="Old Bunny pottery piece">
-    <select id="oldbunnySelect" aria-label="Select old bunny pose">
-      <option>Kneeling</option>
-      <option>Sitting</option>
-    </select>
-    <div class="price-display">$8</div>
-    <button onclick="addVariantToCart('Old Bunny', 8, 'oldbunnySelect")">Add to Cart</button>
-        <button onclick="addVariantToCart('Old Bunny', 8, 'oldbunnySelect')">Add to Cart</button>
-  </div>
+    <!-- Mushroom House -->
+    <div class="gallery-item">
+        <img src="mushroomhouse.png" alt="Mushroom House">
+        <button onclick="addToCart('Mushroom House', 16)">Add Mushroom House - $16</button>
+    </div>
 
-  <!-- Hearts -->
-  <div class="gallery-item">
-    <img src="hearts.jpg" alt="Hearts pottery piece">
-    <select id="heartSelect" aria-label="Select heart shape">
-      <option>Tilted</option>
-      <option>Curved</option>
-    </select>
-    <div class="price-display">$8</div>
-    <button onclick="addVariantToCart('Hearts', 8, 'heartSelect')">Add to Cart</button>
-  </div>
-  <!-- Astro -->
-<div class="gallery-item">
-  <img src="astro.png" alt="Astro pottery piece">
-  <select id="astroSelect" aria-label="Select Astro variant">
-    <option>Classic</option>
-    <option>Starlight</option>
-  </select>
-  <div class="price-display">$25</div>
-  <button onclick="addVariantToCart('Astro', 25, 'astroSelect')">Add to Cart</button>
-</div>
+    <!-- Old Bunny (2 variants) -->
+    <div class="gallery-item">
+        <img src="oldbunny.png" alt="Old Bunny">
+        <select onchange="addToCart(`Old Bunny - ${this.value}`, 16)">
+            <option value="" disabled selected>Choose Pose</option>
+            <option value="Kneeling">Kneeling - $16</option>
+            <option value="Sitting">Sitting - $16</option>
+        </select>
+    </div>
 
-<!-- Beehive -->
-<div class="gallery-item">
-  <img src="beehive.png" alt="Beehive pottery piece">
-  <select id="beehiveSelect" aria-label="Select Beehive variant">
-    <option>Mini</option>
-    <option>Chunky</option>
-  </select>
-  <div class="price-display">$6</div>
-  <button onclick="addVariantToCart('Beehive', 6, 'beehiveSelect')">Add to Cart</button>
-</div>
+    <!-- Pineapple -->
+    <div class="gallery-item">
+        <img src="pineapple.jpg" alt="Pineapple">
+        <button onclick="addToCart('Pineapple', 4)">Add Pineapple - $4</button>
+    </div>
 
-<!-- Cactus -->
-<div class="gallery-item">
-  <img src="cactus.jpg" alt="Cactus pottery piece">
-  <select id="cactusSelect" aria-label="Select Cactus pose">
-    <option>Single</option>
-    <option>Double</option>
-  </select>
-  <div class="price-display">$4</div>
-  <button onclick="addVariantToCart('Cactus', 4, 'cactusSelect')">Add to Cart</button>
-</div>
+    <!-- Mushroom (2 sizes) -->
+    <div class="gallery-item">
+        <img src="mushroom.png" alt="Mushroom">
+        <select onchange="addToCart(`Mushroom - ${this.value}`, mushroomPrices[this.value])">
+            <option value="" disabled selected>Choose Size</option>
+            <option value="Small">Small - $5</option>
+            <option value="Large">Large - $8</option>
+        </select>
+    </div>
 
-<!-- Flag -->
-<div class="gallery-item">
-  <img src="flag.png" alt="Flag pottery piece">
-  <select id="flagSelect" aria-label="Select Flag style">
-    <option>Wavy</option>
-    <option>Folded</option>
-  </select>
-  <div class="price-display">$8</div>
-  <button onclick="addVariantToCart('Flag', 8, 'flagSelect')">Add to Cart</button>
-</div>
+    <!-- Shot Glass -->
+    <div class="gallery-item">
+        <img src="shotglass.png" alt="Shot Glass">
+        <button onclick="addToCart('Shot Glass', 12)">Add Shot Glass - $12</button>
+    </div>
 
-<!-- Mushroom House -->
-<div class="gallery-item">
-  <img src="mushroomhouse.png" alt="Mushroom House pottery piece">
-  <select id="mushroomhouseSelect" aria-label="Select Mushroom House vibe">
-    <option>Rustic</option>
-    <option>Storybook</option>
-  </select>
-  <div class="price-display">$16</div>
-  <button onclick="addVariantToCart('Mushroom House', 16, 'mushroomhouseSelect')">Add to Cart</button>
-</div>
-
-<!-- Pineapple -->
-<div class="gallery-item">
-  <img src="pineapple.jpg" alt="Pineapple pottery piece">
-  <select id="pineappleSelect" aria-label="Select Pineapple style">
-    <option>Smooth</option>
-    <option>Spiky</option>
-  </select>
-  <div class="price-display">$4</div>
-  <button onclick="addVariantToCart('Pineapple', 4, 'pineappleSelect')">Add to Cart</button>
-</div>
-
-<!-- Shotglass -->
-<div class="gallery-item">
-  <img src="shotglass.png" alt="Shotglass pottery piece">
-  <select id="shotglassSelect" aria-label="Select Shotglass color">
-    <option>Blush</option>
-    <option>Frost</option>
-  </select>
-  <div class="price-display">$12</div>
-  <button onclick="addVariantToCart('Shotglass', 12, 'shotglassSelect')">Add to Cart</button>
-</div>
-
+    <!-- Skulls (2 sizes) -->
+    <div class="gallery-item">
+        <img src="skulls.png" alt="Skulls">
+        <select onchange="addToCart(`Skull - ${this.value}`, skullPrices[this.value])">
+            <option value="" disabled selected>Choose Size</option>
+            <option value="Small">Small - $8</option>
+            <option value="Large">Large - $12</option>
+        </select>
+    </div>
 
 </section>
-
-<section class="color-palette">
-  <h2>Glaze Color Options</h2>
-  <p>Select from our vibrant palette, shown below:</p>
-  <div>
-    <span class="swatch-label">Medium Yellow</span><span class="color-swatch" style="background-color:#fce205;" aria-label="Medium Yellow glaze"></span>
-    <span class="swatch-label">Bright Yellow</span><span class="color-swatch" style="background-color:#fff700;" aria-label="Bright Yellow glaze"></span>
-    <span class="swatch-label">Copper</span><span class="color-swatch" style="background-color:#b87333;" aria-label="Copper glaze"></span>
-    <span class="swatch-label">China White</span><span class="color-swatch" style="background-color:#e5e4e2;" aria-label="China White glaze"></span>
-    <span class="swatch-label">White</span><span class="color-swatch" style="background-color:#ffffff;" aria-label="White glaze"></span>
-    <span class="swatch-label">Red</span><span class="color-swatch" style="background-color:#ff0000;" aria-label="Red glaze"></span>
-    <span class="swatch-label">Black</span><span class="color-swatch" style="background-color:#000000;" aria-label="Black glaze"></span>
-    <span class="swatch-label">Dark Brown</span><span class="color-swatch" style="background-color:#654321;" aria-label="Dark Brown glaze"></span>
-    <span class="swatch-label">Ultramarine Blue</span><span class="color-swatch" style="background-color:#3f00ff;" aria-label="Ultramarine Blue glaze"></span>
-    <span class="swatch-label">Emerald Green</span><span class="color-swatch" style="background-color:#50c878;" aria-label="Emerald Green glaze"></span>
-    <span class="swatch-label">Hollyhock Purple</span><span class="color-swatch" style="background-color:#7851a9;" aria-label="Hollyhock Purple glaze"></span>
-    <span class="swatch-label">Ocher</span><span class="color-swatch" style="background-color:#cc7722;" aria-label="Ocher glaze"></span>
-    <span class="swatch-label">Crocus</span><span class="color-swatch" style="background-color:#9966cc;" aria-label="Crocus glaze"></span>
-    <span class="swatch-label">Purple</span><span class="color-swatch" style="background-color:#800080;" aria-label="Purple glaze"></span>
-    <span class="swatch-label">Dark Green</span><span class="color-swatch" style="background-color:#006400;" aria-label="Dark Green glaze"></span>
-    <span class="swatch-label">Toasted Almond</span><span class="color-swatch" style="background-color:#d2b48c;" aria-label="Toasted Almond glaze"></span>
-    <span class="swatch-label">Cactus Flower</span><span class="color-swatch" style="background-color:#ff69b4;" aria-label="Cactus Flower glaze"></span>
-  </div>
-</section>
-
-<footer>
-  <p>Hours: Mon–Fri 9am–5pm</p>
-  <p>Email: telliestudios@gmail.com</p>
-  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
-</footer>
-
-<!-- 🛒 Floating Cart Icon -->
-<div id="cart-icon" onclick="location.href='cart.html';">
-  🛒 <span id="cart-count">0</span>
-</div>
 
 <script>
-  let selectedGlaze = ""; // Global glaze tracker
-
-  // Enable glaze color selection
-  document.querySelectorAll(".color-swatch").forEach(swatch => {
-    swatch.addEventListener("click", function() {
-      document.querySelectorAll(".color-swatch").forEach(s => s.classList.remove("selected"));
-      this.classList.add("selected");
-      selectedGlaze = this.getAttribute("data-color");
-    });
-  });
-
-  function updatePrice(selectId, priceId) {
-    const variant = document.getElementById(selectId).value;
-    let price = 0;
-
-    if (selectId === 'beeSelect') {
-      if (variant.includes('$4')) price = 4;
-      else if (variant.includes('$5')) price = 5;
-      else if (variant.includes('$6')) price = 6;
-      else if (variant.includes('$7')) price = 7;
-    }
-    if (selectId === 'flowerSelect') {
-      if (variant.includes('$4')) price = 4;
-      else if (variant.includes('$6')) price = 6;
-      else if (variant.includes('$8')) price = 8;
-    }
-    if (selectId === 'mushroomSelect') {
-      price = variant === 'Large' ? 8 : 5;
-    }
-    if (selectId === 'skullSelect') {
-      price = variant === 'Large' ? 12 : 5;
-    }
-
-    document.getElementById(priceId).textContent = `$${price}`;
-  }
-
-  function addVariantToCart(name, basePrice, selectId) {
-    const variant = document.getElementById(selectId).value;
-    let price = basePrice;
-
-    if (selectId === 'skullSelect') {
-      price = variant === 'Large' ? 12 : 5;
-    }
-    if (selectId === 'beeSelect') {
-      if (variant.includes('$4')) price = 4;
-      else if (variant.includes('$5')) price = 5;
-      else if (variant.includes('$6')) price = 6;
-      else if (variant.includes('$7')) price = 7;
-    }
-    if (selectId === 'flowerSelect') {
-      if (variant.includes('$4')) price = 4;
-      else if (variant.includes('$6')) price = 6;
-      else if (variant.includes('$8')) price = 8;
-    }
-    if (selectId === 'mushroomSelect') {
-      price = variant === 'Large' ? 8 : 5;
-    }
-
-    if (selectedGlaze === "") {
-      alert("Please select a glaze color before adding to cart.");
-      return;
-    }
-
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({
-      name: `${name} - ${variant}`,
-      price,
-      quantity: 1,
-      glaze: selectedGlaze
-    });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    alert(`${name} (${variant}) with glaze '${selectedGlaze}' added to cart!`);
-  }
-
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    document.getElementById('cart-count').textContent = cart.length;
-  }
-
-  window.onload = updateCartCount;
+    const flowerPrices = { Small: 4, Medium: 5, Large: 6 };
+    const beePrices = { Tiny: 4, Small: 5, Medium: 6, Large: 7 };
+    const mushroomPrices = { Small: 5, Large: 8 };
+    const skullPrices = { Small: 8, Large: 12 };
 </script>
+<section class="color-options">
+    <h2>Choose Your Glaze</h2>
+    <div class="color-picker">
+        <button class="color-choice" style="background-color:white;">White</button>
+        <button class="color-choice" style="background-color:red;">Red</button>
+        <button class="color-choice" style="background-color:black;">Black</button>
+        <button class="color-choice" style="background-color:darkgreen;">Dark Green</button>
+        <button class="color-choice" style="background-color:#d2b48c;">Toasted Almond</button>
+        <button class="color-choice" style="background-color:#556b2f;">Cactus</button>
+        <button class="color-choice" style="background-color:#fdfd96;">Medium Yellow</button>
+        <button class="color-choice" style="background-color:yellow;">Bright Yellow</button>
+        <button class="color-choice" style="background-color:#b87333;">Copper</button>
+        <button class="color-choice" style="background-color:#f8f8ff;">China White</button>
+        <button class="color-choice" style="background-color:#654321;">Dark Brown</button>
+        <button class="color-choice" style="background-color:#3f00ff;">Ultramarine Blue</button>
+        <button class="color-choice" style="background-color:#50c878;">Emerald Green</button>
+        <button class="color-choice" style="background-color:#5a98d1;">Hollyhock Blue</button>
+        <button class="color-choice" style="background-color:#c2b280;">Ocher</button>
+        <button class="color-choice" style="background-color:#a984bc;">Crocus</button>
+        <button class="color-choice" style="background-color:purple;">Purple</button>
+    </div>
+</section>
 
-  </body> 
+<style>
+    .color-options {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    .color-picker {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 1em;
+    }
+
+    .color-choice {
+        border: 2px solid #333;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        outline: none;
+        transition: transform 0.2s ease;
+    }
+
+    .color-choice:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0
+      <footer class="site-footer">
+    <div class="footer-info">
+        <p><strong>Gallery Hours:</strong><br>
+        Mon–Fri: 10am – 6pm<br>
+        Sat: 11am – 4pm<br>
+        Sun: Closed</p>
+        <p><strong>Contact Us:</strong><br>
+        <a href="mailto:hello@yourgallery.com">hello@yourgallery.com</a><br>
+        <a href="https://www.facebook.com/yourgallery" target="_blank">Follow us on Facebook</a></p>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        background-color: #f2eee3;
+        color: #333;
+        padding: 2em;
+        text-align: center;
+        border-top: 2px solid #ccc;
+    }
+
+    .site-footer a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .site-footer a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-info p {
+        margin: 0.5em 0;
+        font-size: 0.9em;
+    }
+</style>
+</body>
 </html>
+
+
