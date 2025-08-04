@@ -35,11 +35,14 @@
       list-style: none;
       display: flex;
       gap: 15px;
+      padding: 0;
+      margin: 0;
     }
 
     nav ul li a {
       text-decoration: none;
       color: #333;
+      font-weight: bold;
     }
 
     .service-section {
@@ -162,22 +165,19 @@
   <h2>Shopping Cart</h2>
   <div id="cart-items" class="cart-items"></div>
   <button onclick="clearCart()">Clear Cart</button>
-  <a href="checkout.html" class="checkout-button">
-
-  </a>
+  <a href="cart.html" class="checkout-button"><button>Go to Checkout</button></a>
 </section>
 
 <footer>
-  <p>Hours: Mon-Fri 9am-5pm</p>
+  <p>Hours: Mon–Fri 9am–5pm</p>
   <p>Email: telliestudios@gmail.com</p>
   <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
 <script>
-  <script>
   function addToCart(productName, productPrice) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
+
     const existing = cart.find(item => item.name === productName);
     if (existing) {
       existing.quantity += 1;
@@ -187,14 +187,7 @@
 
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${productName} has been added to your cart!`);
-  }
-</script>
-
-  function addToCart(name, price) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ name, price, quantity: 1 });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} added to cart!`);
+    displayCartItems();
   }
 
   function displayCartItems() {
@@ -212,7 +205,7 @@
       const itemTotal = item.quantity * item.price;
       total += itemTotal;
       cartItemsContainer.innerHTML += `
-        <p><strong>${item.name}</strong> - $${item.price}</p>
+        <p><strong>${item.name}</strong> – $${item.price} × ${item.quantity}</p>
         <button onclick="removeFromCart(${index})">Remove</button>
       `;
     });
@@ -237,6 +230,3 @@
 
 </body>
 </html>
-
-
-
