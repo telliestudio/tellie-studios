@@ -1,492 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tellie Studios – Handmade Pottery Kits and Studio Services">
-  <title>Tellie Studios</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, lightblue, pink, purple);
-      color: #333;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pottery - TellieStudios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, lightblue, pink, purple);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-    .color-picker {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin: 20px auto;
-    }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px;
+        }
 
-    .color-label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100px;
-      text-align: center;
-      font-size: 14px;
-      cursor: pointer;
-    }
+        .logo {
+            width: 120px;
+            height: auto;
+        }
 
-    .color-dot {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 2px solid #444;
-      margin-bottom: 5px;
-      display: inline-block;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
 
-    header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      padding: 15px;
-    }
+        .intro {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.85);
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+        }
 
-    .logo {
-      max-width: 120px;
-      height: auto;
-    }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 0;
-      margin: 0;
-    }
+        .gallery-item {
+            width: 300px;
+            border-radius: 8px;
+            padding: 10px;
+            background: white;
+            text-align: center;
+            cursor: pointer;
+        }
 
-    nav li a {
-      text-decoration: none;
-      color: #333;
-    }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
 
-    .announcement {
-      background: #fff6d9;
-      padding: 20px;
-      border-bottom: 2px solid #ffc107;
-    }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
 
-    .announcement h2 {
-      margin: 0;
-      font-size: 24px;
-      color: #8b0000;
-    }
-
-    .announcement p {
-      margin: 10px 0 0;
-      font-size: 18px;
-    }
-
-    .welcome-section {
-      position: relative;
-      background: url("detail.jpg") no-repeat center/cover;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .welcome-text {
-      width: 80%;
-      background: rgba(255,255,255,0.85);
-      padding: 20px;
-      border-radius: 8px;
-      color: #222;
-    }
-
-    .call-to-action {
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 10px;
-      color: #444;
-    }
-
-    .services-section {
-      margin: 50px 0;
-    }
-
-    .services-section h2 {
-      font-size: 28px;
-      color: #333;
-    }
-
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 30px auto;
-      width: 90%;
-    }
-
-    .service-box {
-      flex: 1 1 280px;
-      max-width: 350px;
-      border: 1px solid #ddd;
-      padding: 15px;
-      background: white;
-      text-align: center;
-    }
-
-    .service-box img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-    .faq {
-      background: #dabfff;
-      padding: 20px;
-      border-radius: 8px; 
-    }
-
-    .testimonial {
-      background: pink;
-      padding: 20px;
-      font-weight: bold;
-      border-radius: 8px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-    }
-
-    button {
-      background: purple;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-
-    footer {
-      padding: 20px;
-      background: white;
-    }
-
-    /*👇 Mobile-Friendly Adjustments */
-    @media screen and (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .welcome-section {
-        height: 250px;
-      }
-
-      .welcome-text {
-        font-size: 16px; 
-      }
-
-      .service-box img {
-        height: auto;
-      }
-    }
-  </style>
+        footer {
+            padding: 20px;
+            background: white;
+        }
+    </style>
 </head>
 <body>
-       <style>
-  @media screen and (max-width: 600px) {
-    .service-box img {
-      max-height: 180px;
-    }
-  }
-</style>
-</head>
-<body>
-  <header>
+
+<header>
     <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pottery.html">Pottery</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
+        <ul>
+             <li><a href="index.html">Home</a></li>
+                <li><a href="pottery.html">Pottery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li> <!-- Added Cart Link -->
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <section class="welcome-message">
-    <h2>Let Your Creativity Bloom</h2>
-    <p>Browse our handmade pieces, choose your glaze, and make each creation uniquely yours!</p>
-    <p><strong>Pick a piece below and your glaze and begin your journey.</strong></p>
-  </section>
+<section class="intro">
+    <h1>Pottery</h1>
+    <p>At Tellie Studios, we believe that clay tells stories—of creativity, connection, and care. Each piece in our collection is thoughtfully handcrafted, celebrating the textures of nature and the spirit of play. Whether you’re exploring our whimsical bunnies, galaxy-inspired mugs, or earthy mushrooms, you’ll find artistry and warmth in every curve. Dive into our glaze palette to customize your creation, or join one of our workshops to shape something beautiful with your own hands. From cozy kits to soulful sculpture, this is pottery made for dreamers.<p>
+    <p>For custom sizes or color modifications, reach out through our <a href="contact.html">Contact Page</a>.</p>
+</section>
 
-  <!-- 🖼️ Side-by-Side Image Row -->
-  <section class="image-row" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 40px auto; max-width: 90%;">
-  </section>
-
-  <section class="gallery-container">
-    <!-- Flowers -->
-    <div class="gallery-item">
-      <img src="flowers.jpg" alt="Flowers" style="width:100%; max-width:300px; border-radius:8px;">
-      <select onchange="addToCart(`Flowers (${this.value})`, flowerPrices[this.value])">
-        <option value="" disabled selected>Choose Size</option>
-        <option value="Small">Small - $4</option>
-        <option value="Medium">Medium - $5</option>
-        <option value="Large">Large - $6</option>
-      </select>
+<section class="gallery-container">
+    <div class="gallery-item" onclick="addToCart('flowers', 4,5,6)">
+        <img src="flowers.jpg" alt="Flowers">
     </div>
-
-    <!-- Astro -->
-    <div class="gallery-item">
-      <img src="astro.png" alt="Astro" style="width:100%; max-width:300px; border-radius:8px;">
-      <button onclick="addToCart('Astro', 25)">Add Astro - $25</button>
+    <div class="gallery-item" onclick="addToCart('astronaut', 25)">
+        <img src="atro.png" alt="astronaut">
     </div>
-
-    <!-- Apples -->
-    <div class="gallery-item">
-      <img src="apples.png" alt="Apples" style="width:100%; max-width:300px; border-radius:8px;">
-      <select onchange="addToCart(`Apples - ${this.value}`, applePrices[this.value])">
-        <option value="" disabled selected>Choose Variant</option>
-        <option value="Joyful">Joyful - $12</option>
-        <option value="Cheerful">Cheerful - $12</option>
-        <option value="Gentle">Gentle - $12</option>
-        <option value="Squish">Squish - $12</option>
-        <option value="Silly">Silly - $12</option>
-        <option value="Radiant">Radiant - $12</option>
-      </select>
+    <div class="gallery-item" onclick="addToCart('apples', 12)">
+        <img src="apples.png" alt="apples">
     </div>
-  </section>
-
-  <script>
-    const flowerPrices = { Small: 4, Medium: 5, Large: 6 };
-    const applePrices = {
-      Joyful: 12,
-      Cheerful: 12,
-      Gentle: 12,
-      Squish: 12,
-      Silly: 12,
-      Radiant: 12
-    };
-
-    function addToCart(productName, productPrice) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existing = cart.find(item => item.name === productName);
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
-      }
-
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(`${productName} has been added to your cart!`);
+    <div class="gallery-item" onclick="addToCart('bees', 4,5,6,7)">
+        <img src="bees.jpg" alt="bees">
+ </div>
+    <div class="gallery-item" onclick="addToCart('catus', 4)">
+        <img src="catus.jpg" alt="catus">
+    </div>
+    <div class="gallery-item" onclick="addToCart('flag', 6)">
+        <img src="flag.png" alt="Beach Walk">
+    </div>
+    <div class="gallery-item" onclick="addToCart('hatbunny', 16)">
+        <img src="hatbunny.png" alt="hatbunny">
+    </div>
+    <div class="gallery-item" onclick="addToCart('hearts', 4)">
+        <img src="hearts.jpg" alt="hearts">
+    </div>
+    <div class="gallery-item" onclick="addToCart('mushroom house', 16)">
+        <img src="mushroomhouse.png" alt="Mushroom House">
+    </div>
+    <div class="gallery-item" onclick="addToCart('oldbunny', 16)">
+        <img src="oldbunny.png" alt="oldbunny">
+    </div>
+    <div class="gallery-item" onclick="addToCart('pineapple.jpg', 4)">
+        <img src="pineapple.jpg" alt="Pineapple">
+    </div>
+    <div class="gallery-item" onclick="addToCart('mushrooms', 5,8)">
+        <img src="mushrooms.png" alt="Mushrooms">
+    </div>
+    <div clas<script>
+    function addToCart(name, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name, price, quantity: 1 });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to cart!`);
     }
-  </script>
-</body>
-</html>
-
-<script>
-  const applePrices = {
-    "Joyful": 12,
-    "Cheerful": 12,
-    "Gentle": 12,
-    "Squish": 12,
-    "Silly": 12,
-    "Radiant": 12
-  };
-
-  const beePrices = {
-    "Tiny": 4,
-    "Small": 5,
-    "Medium": 6,
-    "Large": 7
-  };
-
-  const heartPrices = {
-    "Tiny": 4,
-    "Curved": 4
-  };
-
-  const hatBunnyPrices = {
-    "Velvet": 16,
-    "Whisker": 16,
-    "Tophat": 16
-  };
-
-  const oldBunnyPrices = {
-    "Shy": 12,
-    "Wiggly": 12
-  };
-
-  function addToCart(productName, productPrice) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existing = cart.find(item => item.name === productName);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push({ name: productName, price: productPrice, quantity: 1 });
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${productName} has been added to your cart!`);
-  }
-</script>
-
-<!-- Bee (4 sizes) -->
-<div class="gallery-item">
-  <img src="bees.jpg" alt="Bee" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Bee (${this.value})`, beePrices[this.value])">
-    <option value="" disabled selected>Choose Size</option>
-    <option value="Tiny">Tiny - $4</option>
-    <option value="Small">Small - $5</option>
-    <option value="Medium">Medium - $6</option>
-    <option value="Large">Large - $7</option>
-  </select>
-</div>
-
-<!-- Cactus -->
-<div class="gallery-item">
-  <img src="catus.jpg" alt="Cactus" style="width:100%; max-width:300px; border-radius:8px;">
-  <button onclick="addToCart('Cactus', 4)">Add Cactus - $4</button>
-</div>
-
-<!-- Hearts (2 variants) -->
-<div class="gallery-item">
-  <img src="hearts.jpg" alt="Hearts" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Hearts - ${this.value}`, heartPrices[this.value])">
-    <option value="" disabled selected>Choose Type</option>
-    <option value="Tiny">Tiny - $4</option>
-    <option value="Curved">Curved - $4</option>
-  </select>
-</div>
-
-<!-- Flag -->
-<div class="gallery-item">
-  <img src="flag.png" alt="Flag" style="width:100%; max-width:300px; border-radius:8px;">
-  <button onclick="addToCart('Flag', 6)">Add Flag - $6</button>
-</div>
-
-<!-- Hat Bunny (3 variants) -->
-<div class="gallery-item">
-  <img src="hatbunny.png" alt="Hat Bunny" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Hat Bunny - ${this.value}`, hatBunnyPrices[this.value])">
-    <option value="" disabled selected>Choose Style</option>
-    <option value="Velvet">Velvet - $16</option>
-    <option value="Whisker">Whisker - $16</option>
-    <option value="Tophat">Tophat - $16</option>
-  </select>
-</div>
-
-<!-- Mushroom House -->
-<div class="gallery-item">
-  <img src="mushroomhouse.png" alt="Mushroom House" style="width:100%; max-width:300px; border-radius:8px;">
-  <button onclick="addToCart('Mushroom House', 16)">Add Mushroom House - $16</button>
-</div>
-
-<!-- Old Bunny (2 variants) -->
-<div class="gallery-item">
-  <img src="oldbunny.png" alt="Old Bunny" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Old Bunny - ${this.value}`, oldBunnyPrices[this.value])">
-    <option value="" disabled selected>Choose Type</option>
-    <option value="Shy">Shy - $12</option>
-    <option value="Wiggly">Wiggly - $12</option>
-  </select>
-</div>
-
-  <!-- Pineapple -->
-<div class="gallery-item">
-  <img src="pineapple.jpg" alt="Pineapple" style="width:100%; max-width:300px; border-radius:8px;">
-  <button onclick="addToCart('Pineapple', 4)">Add Pineapple - $4</button>
-</div>
-
-<!-- Mushroom (2 sizes) -->
-<div class="gallery-item">
-  <img src="mushrooms.png" alt="Mushroom" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Mushroom (${this.value})`, mushroomPrices[this.value])">
-    <option value="" disabled selected>Choose Size</option>
-    <option value="Small">Small - $5</option>
-    <option value="Large">Large - $8</option>
-  </select>
-</div>
-
-<!-- Shot Glass -->
-<div class="gallery-item">
-  <img src="shotglass.png" alt="Shot Glass" style="width:100%; max-width:300px; border-radius:8px;">
-  <button onclick="addToCart('Shot Glass', 12)">Add Shot Glass - $12</button>
-</div>
-
-<!-- Skulls (2 sizes) -->
-<div class="gallery-item">
-  <img src="skulls.png" alt="Skulls" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Skull (${this.value})`, skullPrices[this.value])">
-    <option value="" disabled selected>Choose Size</option>
-    <option value="Small">Small - $8</option>
-    <option value="Large">Large - $12</option>
-  </select>
-</div>
-
-<script>
-  const flowerPrices = { Small: 4, Medium: 5, Large: 6 };
-  const beePrices = { Tiny: 4, Small: 5, Medium: 6, Large: 7 };
-  const mushroomPrices = { Small: 5, Large: 8 };
-  const skullPrices = { Small: 8, Large: 12 };
-
-  function getSelectedGlazes() {
-    const selected = [];
-    document.querySelectorAll("input[name='glaze']:checked").forEach((checkbox) => {
-      selected.push(checkbox.value);
-    });
-    return selected;
-  }
-
-  function addGlazesToCart() {
-    const selectedGlazes = getSelectedGlazes();
-    if (selectedGlazes.length === 0) {
-      alert("Please select at least one glaze.");
-      return;
-    }
-
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    selectedGlazes.forEach(glaze => {
-      const glazeLabel = `Included Glaze – ${glaze}`;
-      const existingGlaze = cart.find(item => item.name === glazeLabel);
-      if (existingGlaze) {
-        existingGlaze.quantity += 1;
-      } else {
-        cart.push({ name: glazeLabel, price: 0, quantity: 1 });
-      }
-    });
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert("Glazes added to cart: " + selectedGlazes.join(", "));
-  }
-
-  function addToCart(productName, productPrice) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existing = cart.find(item => item.name === productName);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push({ name: productName, price: productPrice, quantity: 1 });
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${productName} has been added to your cart!`);
-  }
 </script>
 
 <section class="color-options">
@@ -513,7 +170,22 @@
   </div>
 </section>
 
-   <button onclick="addGlazesToCart()" class="glaze-cart-button">
+   <button onclick="addGlazesToCart()" class="glaze-cart-button">s="gallery-item" onclick="addToCart('shotglass', 12)">
+        <img src="shotglass.png" alt="shotglass">
+    </div>
+    <div class="gallery-item" onclick="addToCart('skulls', 8,12)">
+        <img src="skulls.png" alt="skulls">
+    </div>
+  
+</section>
+
+<footer>
+    <p>Hours: Mon-Fri 9am-5pm</p>
+    <p>Email: telliestudios@gmail.com</p>
+    <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+</footer>
+
+
     Add Selected Glazes to Cart
   </button>
 </section>
