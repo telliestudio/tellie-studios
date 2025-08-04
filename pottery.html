@@ -195,16 +195,25 @@
 
 <section class="gallery-container">
 
-    <!-- Flowers (3 sizes) -->
-    <div class="gallery-item">
-        <img src="flowers.jpg" alt="Flowers">
-        <select onchange="addToCart(`Flowers (${this.value})`, flowerPrices[this.value])">
-            <option value="" disabled selected>Choose Size</option>
-            <option value="Small">Small - $4</option>
-            <option value="Medium">Medium - $5</option>
-            <option value="Large">Large - $6</option>
-        </select>
-    </div>
+   <!-- Flowers (3 sizes) -->
+<div class="gallery-item">
+  <img src="flowers.jpg" alt="Flowers" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Flowers (${this.value})`, flowerPrices[this.value])">
+    <option value="" disabled selected>Choose Size</option>
+    <option value="Small">Small - $4</option>
+    <option value="Medium">Medium - $5</option>
+    <option value="Large">Large - $6</option>
+  </select>
+</div>
+
+<script>
+  const flowerPrices = {
+    "Small": 4,
+    "Medium": 5,
+    "Large": 6
+  };
+</script>
+
 
     <!-- Astro -->
     <div class="gallery-item">
@@ -213,29 +222,53 @@
     </div>
 
     <!-- Apples (6 variants) -->
-    <div class="gallery-item">
-        <img src="apples.png" alt="Apples">
-        <select onchange="addToCart(`Apples - ${this.value}`, 12)">
-            <option value="" disabled selected>Choose Variant</option>
-            <option value="Joyful">Joyful - $12</option>
-            <option value="Cheerful">Cheerful - $12</option>
-            <option value="Gentle">Gentle - $12</option>
-            <option value="Squish">Squish - $12</option>
-            <option value="Silly">Silly - $12</option>
-            <option value="Radiant">Radiant - $12</option>
-        </select>
+<div class="gallery-item">
+  <img src="apples.png" alt="Apples" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Apples - ${this.value}`, applePrices[this.value])">
+    <option value="" disabled selected>Choose Variant</option>
+    <option value="Joyful">Joyful - $12</option>
+    <option value="Cheerful">Cheerful - $12</option>
+    <option value="Gentle">Gentle - $12</option>
+    <option value="Squish">Squish - $12</option>
+    <option value="Silly">Silly - $12</option>
+    <option value="Radiant">Radiant - $12</option>
+  </select>
+</div>
+
+<script>
+  const applePrices = {
+    "Joyful": 12,
+    "Cheerful": 12,
+    "Gentle": 12,
+    "Squish": 12,
+    "Silly": 12,
+    "Radiant": 12
+  };
+</script>
+
     </div>
 
-    <!-- Bee (4 sizes) -->
-    <div class="gallery-item">
-        <img src="bees.jpg" alt="Bee">
-        <select onchange="addToCart(`Bee (${this.value})`, beePrices[this.value])">
-            <option value="" disabled selected>Choose Size</option>
-            <option value="Tiny">Tiny - $4</option>
-            <option value="Small">Small - $5</option>
-            <option value="Medium">Medium - $6</option>
-            <option value="Large">Large - $7</option>
-        </select>
+  <!-- Bee (4 sizes) -->
+<div class="gallery-item">
+  <img src="bees.jpg" alt="Bee" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Bee (${this.value})`, beePrices[this.value])">
+    <option value="" disabled selected>Choose Size</option>
+    <option value="Tiny">Tiny - $4</option>
+    <option value="Small">Small - $5</option>
+    <option value="Medium">Medium - $6</option>
+    <option value="Large">Large - $7</option>
+  </select>
+</div>
+
+<script>
+  const beePrices = {
+    "Tiny": 4,
+    "Small": 5,
+    "Medium": 6,
+    "Large": 7
+  };
+</script>
+
     </div>
 
     <!-- Cactus -->
@@ -256,15 +289,25 @@
         <button onclick="addToCart('Flag', 6)">Add Flag - $6</button>
     </div>
 
-    <!-- Hat Bunny (3 variants) -->
-    <div class="gallery-item">
-        <img src="hatbunny.png" alt="Hat Bunny">
-        <select onchange="addToCart(`Hat Bunny - ${this.value}`, 16)">
-            <option value="" disabled selected>Choose Style</option>
-            <option value="Velvet">Velvet - $16</option>
-            <option value="Whisker">Whisker - $16</option>
-            <option value="Tophat">Tophat - $16</option>
-        </select>
+   <!-- Hat Bunny (3 variants) -->
+<div class="gallery-item">
+  <img src="hatbunny.png" alt="Hat Bunny" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Hat Bunny - ${this.value}`, hatBunnyPrices[this.value])">
+    <option value="" disabled selected>Choose Style</option>
+    <option value="Velvet">Velvet - $16</option>
+    <option value="Whisker">Whisker - $16</option>
+    <option value="Tophat">Tophat - $16</option>
+  </select>
+</div>
+
+<script>
+  const hatBunnyPrices = {
+    "Velvet": 16,
+    "Whisker": 16,
+    "Tophat": 16
+  };
+</script>
+
     </div>
 
     <!-- Mushroom House -->
@@ -273,14 +316,23 @@
         <button onclick="addToCart('Mushroom House', 16)">Add Mushroom House - $16</button>
     </div>
 
-    <!-- Old Bunny (2 variants) -->
-    <div class="gallery-item">
-        <img src="oldbunny.png" alt="Old Bunny">
-        <select onchange="addToCart(`Old Bunny - ${this.value}`, 16)">
-            <option value="" disabled selected>Choose Pose</option>
-            <option value="Kneeling">Kneeling - $16</option>
-            <option value="Sitting">Sitting - $16</option>
-        </select>
+  <!-- Old Bunny (2 variants) -->
+<div class="gallery-item">
+  <img src="oldbunny.png" alt="Old Bunny" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Old Bunny - ${this.value}`, oldBunnyPrices[this.value])">
+    <option value="" disabled selected>Choose Pose</option>
+    <option value="Kneeling">Kneeling - $16</option>
+    <option value="Sitting">Sitting - $16</option>
+  </select>
+</div>
+
+<script>
+  const oldBunnyPrices = {
+    "Kneeling": 16,
+    "Sitting": 16
+  };
+</script>
+
     </div>
 
     <!-- Pineapple -->
@@ -289,14 +341,23 @@
         <button onclick="addToCart('Pineapple', 4)">Add Pineapple - $4</button>
     </div>
 
-    <!-- Mushroom (2 sizes) -->
-    <div class="gallery-item">
-        <img src="mushrooms.png" alt="Mushroom">
-        <select onchange="addToCart(`Mushroom (${this.value})`, mushroomPrices[this.value])">
-            <option value="" disabled selected>Choose Size</option>
-            <option value="Small">Small - $5</option>
-            <option value="Large">Large - $8</option>
-        </select>
+ <!-- Mushroom (2 sizes) -->
+<div class="gallery-item">
+  <img src="mushrooms.png" alt="Mushroom" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Mushroom (${this.value})`, mushroomPrices[this.value])">
+    <option value="" disabled selected>Choose Size</option>
+    <option value="Small">Small - $5</option>
+    <option value="Large">Large - $8</option>
+  </select>
+</div>
+
+<script>
+  const mushroomPrices = {
+    "Small": 5,
+    "Large": 8
+  };
+</script>
+
     </div>
 
     <!-- Shot Glass -->
@@ -305,14 +366,23 @@
         <button onclick="addToCart('Shot Glass', 12)">Add Shot Glass - $12</button>
     </div>
 
-    <!-- Skulls (2 sizes) -->
-    <div class="gallery-item">
-        <img src="skulls.png" alt="Skulls">
-        <select onchange="addToCart(`Skull (${this.value})`, skullPrices[this.value])">
-            <option value="" disabled selected>Choose Size</option>
-            <option value="Small">Small - $8</option>
-            <option value="Large">Large - $12</option>
-        </select>
+   <!-- Skulls (2 sizes) -->
+<div class="gallery-item">
+  <img src="skulls.png" alt="Skulls" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Skull (${this.value})`, skullPrices[this.value])">
+    <option value="" disabled selected>Choose Size</option>
+    <option value="Small">Small - $8</option>
+    <option value="Large">Large - $12</option>
+  </select>
+</div>
+
+<script>
+  const skullPrices = {
+    "Small": 8,
+    "Large": 12
+  };
+</script>
+
     </div>
 
 </section>
