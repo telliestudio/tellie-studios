@@ -215,11 +215,12 @@
 </script>
 
 
-    <!-- Astro -->
-    <div class="gallery-item">
-        <img src="astro.png" alt="Astro">
-        <button onclick="addToCart('Astro', 25)">Add Astro - $25</button>
-    </div>
+   <!-- Astro -->
+<div class="gallery-item">
+  <img src="astro.png" alt="Astro" style="width:100%; max-width:300px; border-radius:8px;">
+  <button onclick="addToCart('Astro', 25)">Add Astro - $25</button>
+</div>
+
 
     <!-- Apples (6 variants) -->
 <div class="gallery-item">
@@ -271,23 +272,36 @@
 
     </div>
 
-    <!-- Cactus -->
-    <div class="gallery-item">
-        <img src="catus.jpg" alt="Cactus">
-        <button onclick="addToCart('Cactus', 4)">Add Cactus - $4</button>
+   <!-- Cactus -->
+<div class="gallery-item">
+  <img src="catus.jpg" alt="Cactus" style="width:100%; max-width:300px; border-radius:8px;">
+  <button onclick="addToCart('Cactus', 4)">Add Cactus - $4</button>
     </div>
 
-    <!-- Hearts -->
-    <div class="gallery-item">
-        <img src="hearts.jpg" alt="Hearts">
-        <button onclick="addToCart('Hearts', 4)">Add Hearts - $4</button>
-    </div>
+<!-- Hearts (2 variants) -->
+<div class="gallery-item">
+  <img src="hearts.jpg" alt="Hearts" style="width:100%; max-width:300px; border-radius:8px;">
+  <select onchange="addToCart(`Hearts - ${this.value}`, heartPrices[this.value])">
+    <option value="" disabled selected>Choose Type</option>
+    <option value="Tiny">Tiny - $4</option>
+    <option value="Curved">Curved - $4</option>
+  </select>
+</div>
 
-    <!-- Flag -->
-    <div class="gallery-item">
-        <img src="flag.png" alt="Flag">
-        <button onclick="addToCart('Flag', 6)">Add Flag - $6</button>
-    </div>
+<script>
+  const heartPrices = {
+    "Tiny": 4,
+    "Curved": 4
+  };
+</script>
+
+
+  <!-- Flag -->
+<div class="gallery-item">
+  <img src="flag.png" alt="Flag" style="width:100%; max-width:300px; border-radius:8px;">
+  <button onclick="addToCart('Flag', 6)">Add Flag - $6</button>
+</div>
+
 
    <!-- Hat Bunny (3 variants) -->
 <div class="gallery-item">
@@ -310,11 +324,12 @@
 
     </div>
 
-    <!-- Mushroom House -->
-    <div class="gallery-item">
-        <img src="mushroomhouse.png" alt="Mushroom House">
-        <button onclick="addToCart('Mushroom House', 16)">Add Mushroom House - $16</button>
-    </div>
+  <!-- Mushroom House -->
+<div class="gallery-item">
+  <img src="mushroomhouse.png" alt="Mushroom House" style="width:100%; max-width:300px; border-radius:8px;">
+  <button onclick="addToCart('Mushroom House', 16)">Add Mushroom House - $16</button>
+</div>
+
 
   <!-- Old Bunny (2 variants) -->
 <div class="gallery-item">
@@ -335,11 +350,12 @@
 
     </div>
 
-    <!-- Pineapple -->
-    <div class="gallery-item">
-        <img src="pineapple.jpg" alt="Pineapple">
-        <button onclick="addToCart('Pineapple', 4)">Add Pineapple - $4</button>
-    </div>
+   <!-- Pineapple -->
+<div class="gallery-item">
+  <img src="pineapple.jpg" alt="Pineapple" style="width:100%; max-width:300px; border-radius:8px;">
+  <button onclick="addToCart('Pineapple', 4)">Add Pineapple - $4</button>
+</div>
+
 
  <!-- Mushroom (2 sizes) -->
 <div class="gallery-item">
@@ -360,11 +376,12 @@
 
     </div>
 
-    <!-- Shot Glass -->
-    <div class="gallery-item">
-        <img src="shotglass.png" alt="Shot Glass">
-        <button onclick="addToCart('Shot Glass', 12)">Add Shot Glass - $12</button>
-    </div>
+   <!-- Shot Glass -->
+<div class="gallery-item">
+  <img src="shotglass.png" alt="Shot Glass" style="width:100%; max-width:300px; border-radius:8px;">
+  <button onclick="addToCart('Shot Glass', 12)">Add Shot Glass - $12</button>
+</div>
+
 
    <!-- Skulls (2 sizes) -->
 <div class="gallery-item">
