@@ -1,263 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pottery - TellieStudios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, lightblue, pink, purple);
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pottery - TellieStudios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, lightblue, pink, purple);
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 15px;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px;
+    }
 
-        .logo {
-            width: 120px;
-            height: auto;
-        }
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
 
-        .intro {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.85);
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 8px;
-            font-size: 18px;
-            text-align: center;
-        }
+    .description {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.85);
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 8px;
+      font-size: 18px;
+    }
 
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .gallery-item {
-            width: 300px;
-            border-radius: 8px;
-            padding: 10px;
-            background: white;
-            text-align: center;
-            cursor: pointer;
-        }
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+    }
 
-        .product img {
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
 
+    .product img:hover {
+      transform: scale(1.05);
+    }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
+    .color-picker {
+      margin-top: 10px;
+    }
 
-        footer {
-            padding: 20px;
-            background: white;
-        }
-    </style>
+    .color-picker label {
+      font-weight: bold;
+    }
+
+    .color-picker select {
+      padding: 5px;
+      margin-top: 5px;
+      border-radius: 4px;
+    }
+
+    .product-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .cart-section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 30px auto;
+      width: 80%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .cart-section button {
+      padding: 8px 16px;
+      margin: 6px;
+      background-color: #f1c4ec;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
-    <nav>
-        <ul>
-             <li><a href="index.html">Home</a></li>
-                <li><a href="pottery.html">Pottery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html">Cart</a></li> <!-- Added Cart Link -->
-        </ul>
-    </nav>
+  <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pottery.html">Pottery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
 </header>
-  <main class="container">
-    <h1>Pottery Collection</h1>
-    <div class="description">
-      Each piece is ready to paint and can be shipped or picked up locally from our Bismarck, ND store. You can select paint to be included with your order. When finished, simply use the included return label to send your item back for professional firing and final return to you.
+
+<main class="container">
+  <h1>Pottery Collection</h1>
+  <div class="description">
+    Each piece is ready to paint and can be shipped or picked up locally from our Bismarck, ND store. You can select paint to be included with your order. When finished, simply use the included return label to send your item back for professional firing and final return to you.
+  </div>
+<div class="product">
+  <h2>Mushroom House</h2>
+  <img src="mushroomhouse.png" alt="Mushroom House">
+  <p>$18</p>
+  <div class="color-picker">
+    <label for="color">Glaze:</label>
+    <select name="color">
+      <option value="">Select a Color</option>
+      <option value="Cactus">Cactus</option>
+      <option value="Almond">Almond</option>
+      <option value="White">White</option>
+      <option value="Dark Green">Dark Green</option>
+      <option value="Black">Black</option>
+      <option value="Red">Red</option>
+      <option value="Purple">Purple</option>
+      <option value="Crocus">Crocus</option>
+      <option value="Ocher">Ocher</option>
+      <option value="Hollyhock">Hollyhock</option>
+      <option value="Emerald">Emerald</option>
+      <option value="Ultra Blue">Ultra Blue</option>
+      <option value="Dark Brown">Dark Brown</option>
+      <option value="China White">China White</option>
+      <option value="Copper">Copper</option>
+      <option value="Bright Yellow">Bright Yellow</option>
+      <option value="Yellow">Yellow</option>
+    </select>
+  </div>
+  <div class="product-buttons">
+    <button onclick="addToCart('Mushroom House', 18)">Add to Cart</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Astro</h2>
+  <img src="astro.png" alt="Astro">
+  <p>$25 each or $50 for 2</p>
+  <div class="color-picker">... (same dropdown)</div>
+  <div class="product-buttons">
+    <button onclick="addToCart('Astro Single', 25)">Add One</button>
+    <button onclick="addToCart('Astro Pair', 50)">Add Pair</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Apples</h2>
+  <img src="apples.png" alt="Apples">
+  <p>$12 each or $66 for set of six</p>
+  <div class="color-picker">... </div>
+  <div class="product-buttons">
+    <button onclick="addToCart('Apples', 12)">Add Individual</button>
+    <button onclick="addToCart('Apples Set of 6', 66)">Add Set</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Flag</h2>
+  <img src="flag.png" alt="Flag">
+  <p>$8</p>
+  <div class="color-picker">... </div>
+  <div class="product-buttons">
+    <button onclick="addToCart('Flag', 8)">Add to Cart</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Shotglass</h2>
+  <img src="shotglass.png" alt="Shotglass">
+  <p>$8</p>
+  <div class="color-picker">... </div>
+  <div class="product-buttons">
+    <button onclick="addToCart('Shotglass', 8)">Add to Cart</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Beehive</h2>
+  <img src="beehive.png" alt="Beehive">
+  <p>$6</p>
+  <div class="color-picker">... </div>
+  <div class="product-buttons">
+    <button onclick="addToCart('Beehive', 6)">Add to Cart</button>
+  </div>
+</div>
+<div class="product">
+  <h2>Mushrooms</h2>
+  <img src="mushrooms.png" alt="Mushrooms">
+  <p>$5 small / $8 large / $10 set</p>
+  <div class="color-picker">... </div>
+  <div class="product-buttons">
+    <button onclick="addToCart('Mushroom Small', 5)">Add Small</button>
+    <button onclick="addToCart('Mushroom Large', 8)">Add Large</button>
+    <button onclick="addToCart('Mushroom Set', 10)">Add Set</button>
+  </div>
+</div>
+
+  <div class="product-grid">
+    <!-- Product 9 -->
+    <div class="product">
+      <h2>Skulls</h2>
+      <img src="skulls.png" alt="Skulls">
+      <p>$8 small / $12 large / $20 set</p>
+      <div class="color-picker">
+        <label for="color">Glaze:</label>
+        <select name="color"> ... (same 17 color options) </select>
+      </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Skulls Small', 8)">Add Small</button>
+        <button onclick="addToCart('Skulls Large', 12)">Add Large</button>
+        <button onclick="addToCart('Skulls Set', 20)">Add Set</button>
+      </div>
     </div>
 
-    <div class="product-grid">
-      <div class="product">
-        <h2>Apples</h2>
-        <img src="apples.png" alt="Apples">
-        <p>$12 each or $66 for set of six</p>
-        <button onclick="addToCart('Apples', 12)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Astro</h2>
-        <img src="astro.png" alt="Astro">
-        <p>$45 each or $85 for 2</p>
-        <button onclick="addToCart('Astro', 45)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Flag</h2>
-        <img src="flag.png" alt="Flag">
-        <p>$10</p>
-        <button onclick="addToCart('Flag', 10)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Mushroom House</h2>
-        <img src="mushroomhouse.png" alt="Mushroom House">
-        <p>$18</p>
-        <button onclick="addToCart('Mushroom House', 18)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Light Switch</h2>
-        <img src="lightswitch.png" alt="Light Switch">
-        <p>$18</p>
-        <button onclick="addToCart('Light Switch', 18)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Beehive</h2>
-        <img src="beehive.png" alt="Beehive">
-        <p>$14</p>
-        <button onclick="addToCart('Beehive', 14)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Shotglass</h2>
-        <img src="shotglass.png" alt="Shotglass">
-        <p>$18</p>
-        <button onclick="addToCart('Shotglass', 18)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Mushrooms</h2>
-        <img src="mushrooms.png" alt="Mushrooms">
-        <p>$14 small / $18 large / $28 set</p>
-        <button onclick="addToCart('Mushrooms', 14)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Skulls</h2>
-        <img src="skulls.png" alt="Skulls">
-        <p>$8 small / $16 large / $24 set</p>
-        <button onclick="addToCart('Skulls', 8)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Hat Bunny</h2>
-        <img src="hatbunny.png" alt="Hat Bunny">
-        <p>$16 or $26 for set / $45 for 3</p>
-        <button onclick="addToCart('Hat Bunny', 16)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Old Bunny</h2>
-        <img src="oldbunny.png" alt="Old Bunny">
-        <p>$16 or $26 for set / $45 for 3</p>
-        <button onclick="addToCart('Old Bunny', 16)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Bees</h2>
-        <img src="bees.jpg" alt="Bees">
-        <p>$8 / $10 / $12 / $14 by size</p>
-        <button onclick="addToCart('Bees', 8)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Pineapple</h2>
-        <img src="pineapple.jpg" alt="Pineapple">
-        <p>$12</p>
-        <button onclick="addToCart('Pineapple', 12)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Cactus</h2>
-        <img src="catus.jpg" alt="Cactus">
-        <p>$12</
-        <button onclick="addToCart('Cactus', 12)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Flowers</h2>
-        <img src="flowers.jpg" alt="Flowers">
-        <p>$10 / $12 / $14 by size or $25 set</p>
-        <button onclick="addToCart('Flowers', 10)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <h2>Hearts</h2>
-        <img src="hearts.jpg" alt="Hearts">
-        <p>$14 or $24 for set of 2</p>
-        <button onclick="addToCart('Hearts', 14)">Add to Cart</button>
+    <!-- Product 10 -->
+    <div class="product">
+      <h2>Hat Bunny</h2>
+      <img src="hatbunny.png" alt="Hat Bunny">
+      <p>$16 or $26 for set / $45 for 3</p>
+      <div class="color-picker"> ... </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Hat Bunny Single', 16)">Add Single</button>
+        <button onclick="addToCart('Hat Bunny Set of 2', 26)">Add Set of 2</button>
+        <button onclick="addToCart('Hat Bunny Set of 3', 45)">Add Set of 3</button>
       </div>
     </div>
-  </main>
+
+    <!-- Product 11 -->
+    <div class="product">
+      <h2>Old Bunny</h2>
+      <img src="oldbunny.png" alt="Old Bunny">
+      <p>$16 or $26 for set / $45 for 3</p>
+      <div class="color-picker"> ... </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Old Bunny Single', 16)">Add Single</button>
+        <button onclick="addToCart('Old Bunny Set of 2', 26)">Add Set of 2</button>
+        <button onclick="addToCart('Old Bunny Set of 3', 45)">Add Set of 3</button>
+      </div>
+    </div>
+
+    <!-- Product 12 -->
+    <div class="product">
+      <h2>Bees</h2>
+      <img src="bees.jpg" alt="Bees">
+      <p>$4 / $5 / $6 / $7 by size</p>
+      <div class="color-picker"> ... </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Bee Small', 4)">Add Small</button>
+        <button onclick="addToCart('Bee Medium', 5)">Add Medium</button>
+        <button onclick="addToCart('Bee Large', 6)">Add Large</button>
+        <button onclick="addToCart('Bee XL', 7)">Add XL</button>
+      </div>
+    </div>
+
+    <!-- Product 13 -->
+    <div class="product">
+      <h2>Pineapple</h2>
+      <img src="pineapple.jpg" alt="Pineapple">
+      <p>$4</p>
+      <div class="color-picker"> ... </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Pineapple', 4)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 14 -->
+    <div class="product">
+      <h2>Cactus</h2>
+      <img src="catus.jpg" alt="Cactus">
+      <p>$4</p>
+      <div class="color-picker"> ... </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Cactus', 4)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 15 -->
+    <div class="product">
+      <h2>Flowers</h2>
+      <img src="flowers.jpg" alt="Flowers">
+      <p>$4 / $6 / $8 by size or $18 set of 3</p>
+      <div class="color-picker"> ... </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Flower Small', 4)">Add Small</button>
+        <button onclick="addToCart('Flower Medium', 6)">Add Medium</button>
+        <button onclick="addToCart('Flower Large', 8)">Add Large</button>
+        <button onclick="addToCart('Flower Set', 18)">Add Set</button>
+      </div>
+    </div>
+
+    <!-- Product 16 -->
+    <div class="product">
+      <h2>Hearts</h2>
+      <img src="hearts.jpg" alt="Hearts">
+      <p>$4 or $8 for set of 2</p>
+      <div class="color-picker"> ... </div>
+      <div class="product-buttons">
+        <button onclick="addToCart('Heart Single', 4)">Add Single</button>
+        <button onclick="addToCart('Heart Set of 2', 8)">Add Set</button>
+      </div>
+    </div>
+  </div> <!-- End of product-grid -->
+</main>
 
 <section class="cart-section">
-    <h2>Shopping Cart</h2>
-    <div id="cart-items" class="cart-items"></div>
-    <button onclick="clearCart()">Clear Cart</button>
-    <a href="checkout.html"><button>Proceed to Checkout</button></a>
+  <h2>Shopping Cart</h2>
+  <div id="cart-items" class="cart-items"></div>
+  <button onclick="clearCart()">Clear Cart</button>
+  <a href="checkout.html"><button>Proceed to Checkout</button></a>
 </section>
 
 <footer>
-    <p>Hours: Mon-Fri 9am-5pm</p>
-    <p>Email: telliestudios@gmail.com</p>
-    <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+  <p>Hours: Mon–Fri 9am–5pm</p>
+  <p>Email: telliestudios@gmail.com</p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
 <script>
-    function addToCart(name, price) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push({ name, price, quantity: 1 });
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${name} added to cart!`);
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price, quantity: 1 });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+
+  function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+      return;
     }
 
-    function displayCartItems() {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = '';
+    let total = 0;
+    cartItems.forEach((item, index) => {
+      const itemTotal = item.quantity * item.price;
+      total += itemTotal;
+      cartItemsContainer.innerHTML += `
+        <p><strong>${item.name}</strong> - $${item.price}</p>
+        <button onclick="removeFromCart(${index})">Remove</button>
+      `;
+    });
 
-        if (cartItems.length === 0) {
-            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-            return;
-        }
+    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+  }
 
-        let total = 0;
-        cartItems.forEach((item, index) => {
-            const itemTotal = item.quantity * item.price;
-            total += itemTotal;
-            cartItemsContainer.innerHTML += `
-                <p><strong>${item.name}</strong> - $${item.price}</p>
-                <button onclick="removeFromCart(${index})">Remove</button>
-            `;
-        });
-
-        cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
-    }
-
-    function removeFromCart(index) {
-        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        cartItems.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-        displayCartItems();
-    }
-
-    function clearCart() {
-        localStorage.removeItem('cart');
-        displayCartItems();
-    }
-
+  function removeFromCart(index) {
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    cartItems.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
     displayCartItems();
+  }
+
+  function clearCart() {
+    localStorage.removeItem('cart');
+    displayCartItems();
+  }
+
+  displayCartItems();
 </script>
 
 </body>
 </html>
+
