@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pottery - TellieStudios</title>
   <style>
     body {
@@ -40,6 +40,7 @@
       width: 80%;
       border-radius: 8px;
       font-size: 18px;
+      text-align: center;
     }
 
     .gallery-container {
@@ -52,35 +53,45 @@
 
     .gallery-item {
       width: 300px;
-      background: white;
       border-radius: 8px;
       padding: 10px;
+      background: white;
+      text-align: center;
+      cursor: pointer;
     }
 
     .gallery-item img {
       width: 100%;
       height: auto;
       border-radius: 8px;
+      transition: transform 0.3s ease;
     }
 
-    select {
-      margin: 10px 0;
-      padding: 6px;
-      width: 100%;
-      font-size: 1rem;
+    .gallery-item img:hover {
+      transform: scale(1.05);
     }
 
-    button {
-      background: #d2b48c;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      color: white;
+    .gallery-item p {
+      margin: 8px 0;
+      font-weight: bold;
+    }
+
+    .color-palette {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 40px auto;
+      padding: 20px;
+      width: 80%;
+      border-radius: 8px;
+    }
+
+    .color-swatch {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
       cursor: pointer;
-    }
-
-    button:hover {
-      background: #c0a377;
     }
 
     footer {
@@ -92,7 +103,7 @@
 <body>
 
 <header>
-  <img src="logo.jpg" alt="TellieStudios Logo" class="logo" />
+  <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -107,64 +118,107 @@
 </header>
 
 <section class="intro">
-  <h1>Handmade Pottery</h1>
-  <p>Every piece is sculpted with love and designed to spark joy.</p>
-  <p>Choose your favorite and pick one or more glaze colors!</p>
+  <h1>Whimsical Ceramic Collection</h1>
+  <p>Each piece is handcrafted and priced to delight. Explore magical creatures, earthy textures, and joyful miniatures—from mushrooms to bunnies to cheerful apples.</p>
 </section>
 
 <section class="gallery-container">
-
-  <!-- 🏺 Mushroom House -->
-  <div class="gallery-item">
-    <img src="mushroom house.jpg" alt="Mushroom House">
-    <p><strong>Mushroom House</strong> – $16</p>
-    <select multiple>
-      <option value="Cactus">🟢 Cactus</option>
-      <option value="Almond">🤍 Almond</option>
-      <option value="White">⬜ White</option>
-      <option value="Dark Green">🌲 Dark Green</option>
-      <option value="Red">🔴 Red</option>
-      <option value="Purple">🟣 Purple</option>
-      <option value="Ocher">🟠 Ocher</option>
-      <option value="Ultra Blue">🔵 Ultra Blue</option>
-      <option value="China White">☁️ China White</option>
-      <option value="Copper">🟤 Copper</option>
-      <option value="Bright Yellow">💛 Bright Yellow</option>
-      <option value="Hollyhock">💖 Hollyhock</option>
-      <option value="Emerald">💚 Emerald</option>
-    </select>
-    <button onclick="addToCart('Mushroom House', 16)">Add to Cart</button>
+  <div class="gallery-item" onclick="addToCart('Mushroom House', 16)">
+    <img src="mushroom_house.jpg" alt="Mushroom House">
+    <p>$16</p>
   </div>
-
-  <!-- ⭐ Astro -->
-  <div class="gallery-item">
+  <div class="gallery-item" onclick="addToCart('Astro', 25)">
     <img src="astro.jpg" alt="Astro">
-    <p><strong>Astro</strong> – $25</p>
-    <select multiple>...same options...</select>
-    <button onclick="addToCart('Astro', 25)">Add to Cart</button>
+    <p>$25</p>
   </div>
-
-  <!-- 🍎 Apples – $12 each -->
-  <div class="gallery-item">
-    <img src="apples.jpg" alt="Joyful Apple">
-    <p><strong>Apple – Joyful</strong> – $12</p>
-    <select multiple>...same options...</select>
-    <button onclick="addToCart('Apple – Joyful', 12)">Add to Cart</button>
+  <div class="gallery-item" onclick="addToCart('Apples - Joyful', 12)">
+    <img src="apple_joyful.jpg" alt="Apple - Joyful">
+    <p>$12</p>
   </div>
-
-  <!-- ➕ Add other apples (Cheerful, Gentle, Squish, Silly, Radiant) & full set if you like -->
-
-  <!-- 🐰 Hat Bunny – Velvet -->
-  <div class="gallery-item">
-    <img src="hatbunny velvet.jpg" alt="Hatbunny Velvet">
-    <p><strong>Hatbunny – Velvet</strong> – $16</p>
-    <select multiple>...same options...</select>
-    <button onclick="addToCart('Hatbunny – Velvet', 16)">Add to Cart</button>
+  <div class="gallery-item" onclick="addToCart('Apples - Cheerful', 12)">
+    <img src="apple_cheerful.jpg" alt="Apple - Cheerful">
+    <p>$12</p>
   </div>
+  <div class="gallery-item" onclick="addToCart('Apples - Gentle', 12)">
+    <img src="apple_gentle.jpg" alt="Apple - Gentle">
+    <p>$12</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Apples - Squish', 12)">
+    <img src="apple_squish.jpg" alt="Apple - Squish">
+    <p>$12</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Apples - Silly', 12)">
+    <img src="apple_silly.jpg" alt="Apple - Silly">
+    <p>$12</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Apples - Radiant', 12)">
+    <img src="apple_radiant.jpg" alt="Apple - Radiant">
+    <p>$12</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Flag', 5)">
+    <img src="flag.jpg" alt="Flag">
+    <p>$5</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Shotglass', 12)">
+    <img src="shotglass.jpg" alt="Shotglass">
+    <p>$12</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Beehive', 6)">
+    <img src="beehive.jpg" alt="Beehive">
+    <p>$6</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Mushroom - Small', 5)">
+    <img src="mushroom_small.jpg" alt="Mushroom - Small">
+    <p>$5</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Mushroom - Large', 8)">
+    <img src="mushroom_large.jpg" alt="Mushroom - Large">
+    <p>$8</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Skull - Small', 5)">
+    <img src="skull_small.jpg" alt="Skull - Small">
+    <p>$5</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Skull - Large', 12)">
+    <img src="skull_large.jpg" alt="Skull - Large">
+    <p>$12</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Hat Bunny - Velvet', 16)">
+    <img src="hatbunny_velvet.jpg" alt="Hat Bunny - Velvet">
+    <p>$16</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Hat Bunny - Whisker', 16)">
+    <img src="hatbunny_whisker.jpg" alt="Hat Bunny - Whisker">
+    <p>$16</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Hat Bunny - Top Hat', 16)">
+    <img src="hatbunny_top_hat.jpg" alt="Hat Bunny - Top Hat">
+    <p>$16</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Old Bunny - Kneeling', 16)">
+    <img src="oldbunny_kneeling.jpg" alt="Old Bunny - Kneeling">
+    <p>$16</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Old Bunny - Sitting', 16)">
+    <img src="oldbunny_sitting.jpg" alt="Old Bunny - Sitting">
+    <p>$16</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Bee - Small', 4)">
+    <img src="bee_small.jpg" alt="Bee - Small">
+    <p>$4</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Bee - Medium', 5)">
+    <img src="bee_medium.jpg" alt="Bee - Medium">
+    <p>$5</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Bee - Large', 6)">
+    <img src="bee_large.jpg" alt="Bee - Large">
+    <p>$6</p>
+  </div>
+  <div class="gallery-item" onclick="addToCart('Bee - XL', 7)">
+    <div class="gallery-item" onclick="addToCart('Bee - XL', 7)"> <img src="bee_xl.jpg" alt="Bee - XL"> <p>$7</p> </div> <div class="gallery-item" onclick="addToCart('Pineapple', 4)"> <img src="pineapple.jpg" alt="Pineapple"> <p>$4</p> </div> <div class="gallery-item" onclick="addToCart('Cactus', 4)"> <img src="cactus.jpg" alt="Cactus"> <p>$4</p> </div> <div class="gallery-item" onclick="addToCart('Flower - Small', 4)"> <img src="flower_small.jpg" alt="Flower - Small"> <p>$4</p> </div> <div class="gallery-item" onclick="addToCart('Flower - Medium', 6)"> <img src="flower_medium.jpg" alt="Flower - Medium"> <p>$6</p> </div> <div class="gallery-item" onclick="addToCart('Flower - Large', 8)"> <img src="flower_large.jpg" alt="Flower - Large"> <p>$8</p> </div> <div class="gallery-item" onclick="addToCart('Heart - Tilted', 4)"> <img src="heart_tilted.jpg" alt="Heart - Tilted"> <p>$4</p> </div> <div class="gallery-item" onclick="addToCart('Heart - Curved', 4)"> <img src="heart_curved.jpg" alt="Heart - Curved"> <p>$4</p> </div> </section>
 
- 
-
-</section>
+<section class="color-palette"> <h2>Color Options</h2> <p>Each piece is available in a selection of glazes. Hover or click to preview!</p> <div> <span class="color-swatch" style="background-color: #f8c8dc;" title="Blush"></span> <span class="color-swatch" style="background-color: #ffd700;" title="Sunshine"></span> <span class="color-swatch" style="background-color: #c3f0ca;" title="Mint"></span> <span class="color-swatch" style="background-color: #add8e6;" title="Sky"></span> <span class="color-swatch" style="background-color: #dda0dd;" title="Lavender"></span> <span class="color-swatch" style="background-color: #f5f5dc;" title="Cream"></span> <!-- Add more glaze colors as needed --> </div> </section>
 
 <footer>
   <p>Hours: Mon–Fri 9am–5pm</p>
@@ -183,4 +237,3 @@
 
 </body>
 </html>
-
