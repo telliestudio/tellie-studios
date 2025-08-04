@@ -1,158 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About TellieStudios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, lightblue, pink, purple);
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About TellieStudios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, lightblue, pink, purple);
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 15px;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px 30px;
+    }
 
-        .logo {
-            width: 120px;
-            height: auto;
-        }
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
 
-        .about-section {
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 8px;
-            width: 80%;
-            margin: 40px auto;
-        }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
 
-        .mission {
-            font-size: 22px;
-            font-weight: bold;
-            color: #444;
-        }
+    .background-image {
+      background: url('about-me.png') no-repeat center/cover;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .story {
-            font-size: 18px;
-            margin-top: 20px;
-        }
+    .background-image h1 {
+      color: white;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 4px #000;
+    }
 
-        .values {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
+    .about-section {
+      padding: 50px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 8px;
+      width: 80%;
+      margin: 30px auto;
+    }
 
-        .value-box {
-            width: 30%;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .mission {
+      font-size: 22px;
+      font-weight: bold;
+      color: #444;
+    }
 
-        .background-image {
-            background: url('about-me.png') no-repeat center/cover;
-            height: 400px;
-        }
+    .story {
+      font-size: 18px;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
 
-        .contact-form input, .contact-form textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-        }
+    .values {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      gap: 20px;
+    }
 
-        button {
-            background: purple;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
+    .value-box {
+      width: 30%;
+      min-width: 260px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        footer {
-            padding: 20px;
-            background: white;
-        }
-    </style>
+    .contact-form {
+      margin-top: 40px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background: purple;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .contact-form button:hover {
+      background: #7a38a5;
+    }
+
+    footer {
+      padding: 30px 20px;
+      background: white;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="TellieStudios Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pottery.html">Pottery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html">Cart</a></li> <!-- Added Cart Link -->
-            </ul>
-        </nav>
-    </header>
 
-    <div class="background-image"></div>
+  <header>
+    <img src="logo.png" alt="TellieStudios Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pottery.html">Pottery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="about-section">
-        <h1>About TellieStudios</h1>
-        <p class="mission">Bringing art to life, one brushstroke at a time.</p>
-        <p class="story">
-            TellieStudios was founded with the belief that art is more than just an aesthetic—it's a journey, an expression, and a way to connect. 
-            Our mission is to inspire creativity, provide quality art resources, and create spaces where artists of all levels can feel supported in their craft.
-        </p>
+  <div class="background-image">
+    <h1>Welcome to TellieStudios</h1>
+  </div>
 
-        <div class="values">
-            <div class="value-box">
-                <h3>Creativity</h3>
-                <p>We foster an environment where imagination thrives. Whether through hands-on workshops or curated art kits, we encourage self-expression.</p>
-            </div>
-            <div class="value-box">
-                <h3>Community</h3>
-                <p>Art is a universal language, and we build connections through shared passion, thoughtful collaborations, and meaningful conversations.</p>
-            </div>
-            <div class="value-box">
-                <h3>Quality</h3>
-                <p>We believe in delivering the best—from materials to workshops—ensuring every artist has the tools needed to create with confidence.</p>
-            </div>
-        </div>
-    </section>
+  <section class="about-section">
+    <h2>About TellieStudios</h2>
+    <p class="mission">Bringing art to life, one brushstroke at a time.</p>
+    <p class="story">
+      TellieStudios was founded with the belief that art is more than just an aesthetic—it's a journey, an expression, and a way to connect. 
+      Our mission is to inspire creativity, provide quality art resources, and create spaces where artists of all levels can feel supported in their craft.
+    </p>
 
-    <footer>
-        <div class="contact-form">
-            <h3>Contact Us</h3>
-            <p>Have questions or want to schedule an appointment? Fill out the form below.</p>
-            <form action="submit_form.php" method="post">
-                <input type="text" name="name" placeholder="Your Name">
-                <input type="email" name="email" placeholder="Your Email">
-                <textarea name="message" placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-        <div class="footer-links">
-            <p>Hours: Mon-Fri 9am-5pm</p>
-            <p>Email: telliestudios@gmail.com</p>
-            <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
-        </div>
-    </footer>
+    <div class="values">
+      <div class="value-box">
+        <h3>Creativity</h3>
+        <p>We foster an environment where imagination thrives. Whether through hands-on workshops or curated art kits, we encourage self-expression.</p>
+      </div>
+      <div class="value-box">
+        <h3>Community</h3>
+        <p>Art is a universal language, and we build connections through shared passion, thoughtful collaborations, and meaningful conversations.</p>
+      </div>
+      <div class="value-box">
+        <h3>Quality</h3>
+        <p>We believe in delivering the best—from materials to workshops—ensuring every artist has the tools needed to create with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contact-form">
+      <h3>Contact Us</h3>
+      <p>Have questions or want to schedule an appointment? Fill out the form below.</p>
+      <form action="submit_form.php" method="post">
+        <input type="text" name="name" placeholder="Your Name">
+        <input type="email" name="email" placeholder="Your Email">
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="footer-links">
+      <p>Hours: Mon–Fri 9am–5pm</p>
+      <p>Email: telliestudios@gmail.com</p>
+      <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+    </div>
+  </footer>
 
 </body>
 </html>
+
+
 
 
 
