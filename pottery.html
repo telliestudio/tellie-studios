@@ -14,6 +14,33 @@
         padding: 0;
         }
 
+      .color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.color-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.color-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #444;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
       header { 
         display: flex;
         flex-wrap: wrap; justify-content: space-between;
@@ -194,7 +221,7 @@
   
     <h2>Let Your Creativity Bloom</h2>
     <p>Browse our handmade pieces, choose your glaze, and make each creation uniquely yours!</p>
-    <p><strong>Click "Pottery" to begin your journey.</strong></p>
+    <p><strong>Pick a piece below and your glaze and begin your journey.</strong></p>
 
   </section>
 
@@ -421,28 +448,98 @@
     const mushroomPrices = { Small: 5, Large: 8 };
     const skullPrices = { Small: 8, Large: 12 };
 </script>
-
 <section class="color-options">
-    <h2>Choose Your Glaze</h2>
-    <div class="color-picker">
-        <button class="color-choice" onclick="selectColor('White')" style="background-color:white;" title="White"></button>
-        <button class="color-choice" onclick="selectColor('Red')" style="background-color:red;" title="Red"></button>
-        <button class="color-choice" onclick="selectColor('Black')" style="background-color:black;" title="Black"></button>
-        <button class="color-choice" onclick="selectColor('Dark Green')" style="background-color:darkgreen;" title="Dark Green"></button>
-        <button class="color-choice" onclick="selectColor('Toasted Almond')" style="background-color:#d2b48c;" title="Toasted Almond"></button>
-        <button class="color-choice" onclick="selectColor('Cactus')" style="background-color:#556b2f;" title="Cactus"></button>
-        <button class="color-choice" onclick="selectColor('Medium Yellow')" style="background-color:#fdfd96;" title="Medium Yellow"></button>
-        <button class="color-choice" onclick="selectColor('Bright Yellow')" style="background-color:yellow;" title="Bright Yellow"></button>
-        <button class="color-choice" onclick="selectColor('Copper')" style="background-color:#b87333;" title="Copper"></button>
-        <button class="color-choice" onclick="selectColor('China White')" style="background-color:#f8f8ff;" title="China White"></button>
-        <button class="color-choice" onclick="selectColor('Dark Brown')" style="background-color:#654321;" title="Dark Brown"></button>
-        <button class="color-choice" onclick="selectColor('Ultramarine Blue')" style="background-color:#3f00ff;" title="Ultramarine Blue"></button>
-        <button class="color-choice" onclick="selectColor('Emerald Green')" style="background-color:#50c878;" title="Emerald Green"></button>
-        <button class="color-choice" onclick="selectColor('Hollyhock Blue')" style="background-color:#5a98d1;" title="Hollyhock Blue"></button>
-        <button class="color-choice" onclick="selectColor('Ocher')" style="background-color:#c2b280;" title="Ocher"></button>
-        <button class="color-choice" onclick="selectColor('Crocus')" style="background-color:#a984bc;" title="Crocus"></button>
-        <button class="color-choice" onclick="selectColor('Purple')" style="background-color:purple;" title="Purple"></button>
-    </div>
+  <h2>Choose Your Glaze</h2>
+  <div class="color-picker">
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="White">
+      <span class="color-dot" style="background-color: white;"></span>
+      <p>White</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Red">
+      <span class="color-dot" style="background-color: red;"></span>
+      <p>Red</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Black">
+      <span class="color-dot" style="background-color: black;"></span>
+      <p>Black</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Dark Green">
+      <span class="color-dot" style="background-color: darkgreen;"></span>
+      <p>Dark Green</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Toasted Almond">
+      <span class="color-dot" style="background-color: #d2b48c;"></span>
+      <p>Toasted Almond</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Cactus">
+      <span class="color-dot" style="background-color: #556b2f;"></span>
+      <p>Cactus</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Medium Yellow">
+      <span class="color-dot" style="background-color: #fdfd96;"></span>
+      <p>Medium Yellow</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Bright Yellow">
+      <span class="color-dot" style="background-color: yellow;"></span>
+      <p>Bright Yellow</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Copper">
+      <span class="color-dot" style="background-color: #b87333;"></span>
+      <p>Copper</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="China White">
+      <span class="color-dot" style="background-color: #f8f8ff;"></span>
+      <p>China White</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Dark Brown">
+      <span class="color-dot" style="background-color: #654321;"></span>
+      <p>Dark Brown</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Ultramarine Blue">
+      <span class="color-dot" style="background-color: #3f00ff;"></span>
+      <p>Ultramarine Blue</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Emerald Green">
+      <span class="color-dot" style="background-color: #50c878;"></span>
+      <p>Emerald Green</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Hollyhock Blue">
+      <span class="color-dot" style="background-color: #5a98d1;"></span>
+      <p>Hollyhock Blue</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Ocher">
+      <span class="color-dot" style="background-color: #c2b280;"></span>
+      <p>Ocher</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Crocus">
+      <span class="color-dot" style="background-color: #a984bc;"></span>
+      <p>Crocus</p>
+    </label>
+    <label class="color-label">
+      <input type="checkbox" name="glaze" value="Purple">
+      <span class="color-dot" style="background-color: purple;"></span>
+      <p>Purple</p>
+    </label>
+  </div>
+</section>
+
+
 <section class="cart-section">
   <h2>Shopping Cart</h2>
   <div id="cart-items" class="cart-items"></div>
