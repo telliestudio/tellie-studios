@@ -8,20 +8,53 @@
     body {
       font-family: Georgia, serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background: #fefefe;
       color: #333;
     }
 
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px 20px;
+      border-bottom: 2px solid #d2b48c;
+    }
+
+    .logo {
+      max-width: 120px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
     .cart-section, .checkout-form {
       padding: 20px;
+      margin: 20px;
       background: #f6f6f6;
       border: 1px solid #ddd;
-      margin-bottom: 40px;
+      border-radius: 6px;
     }
 
     .cart-items p {
       margin: 5px 0;
+      font-size: 1rem;
     }
 
     .form-group {
@@ -57,11 +90,6 @@
       background: #c0a377;
     }
 
-    .venmo-section {
-      margin-top: 20px;
-      font-size: 0.95rem;
-    }
-
     .payment-options {
       margin-top: 30px;
       padding: 15px;
@@ -82,9 +110,32 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    .included-glazes {
+      margin-top: 20px;
+      padding: 10px;
+      background: #fef0ff;
+      border: 1px solid #e9c6e9;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
+
+  <header>
+    <img src="logo.jpg" alt="Tellie Studios Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pottery.html">Pottery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section class="cart-section">
     <h2>Your Order Summary</h2>
@@ -144,14 +195,13 @@
       const cartItemsContainer = document.getElementById('cart-items');
       cartItemsContainer.innerHTML = '';
 
+      let total = 0;
+
       if (cartItems.length === 0 && glazeItems.length === 0) {
         cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
         return;
       }
 
-      let total = 0;
-
-      // Display pottery items
       cartItems.forEach(item => {
         const itemTotal = item.quantity * item.price;
         total += itemTotal;
@@ -162,12 +212,11 @@
         `;
       });
 
-      // Display glaze selections
       if (glazeItems.length > 0) {
         cartItemsContainer.innerHTML += `
-          <div style="margin-top: 20px;">
+          <div class="included-glazes">
             <p><strong>Included Glazes:</strong> ${glazeItems.join(', ')}</p>
-            <p><em>(All glaze choices come free with your kit!)</em></p>
+            <p><em>(No extra charge — every kit comes with unlimited glaze selections!)</em></p>
           </div>
         `;
       }
@@ -186,3 +235,4 @@
 
 </body>
 </html>
+
