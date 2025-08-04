@@ -447,102 +447,56 @@
     const beePrices = { Tiny: 4, Small: 5, Medium: 6, Large: 7 };
     const mushroomPrices = { Small: 5, Large: 8 };
     const skullPrices = { Small: 8, Large: 12 };
+<script>
+  function getSelectedGlazes() {
+    const selected = [];
+    document.querySelectorAll("input[name='glaze']:checked").forEach((checkbox) => {
+      selected.push(checkbox.value);
+    });
+    return selected;
+  }
+
+  function addToCart() {
+    const selectedGlazes = getSelectedGlazes();
+    if (selectedGlazes.length === 0) {
+      alert("Please select at least one glaze.");
+      return;
+    }
+
+    // ✅ Store selected glazes for cart.html to retrieve
+    localStorage.setItem("selectedGlazes", JSON.stringify(selectedGlazes));
+
+    alert("Added to cart: " + selectedGlazes.join(", "));
+  }
 </script>
+
 <section class="color-options">
-  <h2>Choose Your Glaze this is included with each kit and no limit on colors</h2>
+  <h2>Choose Your Glaze — this is included with each kit and there's no limit on colors!</h2>
   <div class="color-picker">
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="White">
-      <span class="color-dot" style="background-color: white;"></span>
-      <p>White</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Red">
-      <span class="color-dot" style="background-color: red;"></span>
-      <p>Red</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Black">
-      <span class="color-dot" style="background-color: black;"></span>
-      <p>Black</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Dark Green">
-      <span class="color-dot" style="background-color: darkgreen;"></span>
-      <p>Dark Green</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Toasted Almond">
-      <span class="color-dot" style="background-color: #d2b48c;"></span>
-      <p>Toasted Almond</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Cactus">
-      <span class="color-dot" style="background-color: #556b2f;"></span>
-      <p>Cactus</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Medium Yellow">
-      <span class="color-dot" style="background-color: #fdfd96;"></span>
-      <p>Medium Yellow</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Bright Yellow">
-      <span class="color-dot" style="background-color: yellow;"></span>
-      <p>Bright Yellow</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Copper">
-      <span class="color-dot" style="background-color: #b87333;"></span>
-      <p>Copper</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="China White">
-      <span class="color-dot" style="background-color: #f8f8ff;"></span>
-      <p>China White</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Dark Brown">
-      <span class="color-dot" style="background-color: #654321;"></span>
-      <p>Dark Brown</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Ultramarine Blue">
-      <span class="color-dot" style="background-color: #3f00ff;"></span>
-      <p>Ultramarine Blue</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Emerald Green">
-      <span class="color-dot" style="background-color: #50c878;"></span>
-      <p>Emerald Green</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Hollyhock Blue">
-      <span class="color-dot" style="background-color: #5a98d1;"></span>
-      <p>Hollyhock Blue</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Ocher">
-      <span class="color-dot" style="background-color: #c2b280;"></span>
-      <p>Ocher</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Crocus">
-      <span class="color-dot" style="background-color: #a984bc;"></span>
-      <p>Crocus</p>
-    </label>
-    <label class="color-label">
-      <input type="checkbox" name="glaze" value="Purple">
-      <span class="color-dot" style="background-color: purple;"></span>
-      <p>Purple</p>
-    </label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="White"><span class="color-dot" style="background-color: white;"></span><p>White</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Red"><span class="color-dot" style="background-color: red;"></span><p>Red</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Black"><span class="color-dot" style="background-color: black;"></span><p>Black</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Dark Green"><span class="color-dot" style="background-color: darkgreen;"></span><p>Dark Green</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Toasted Almond"><span class="color-dot" style="background-color: #d2b48c;"></span><p>Toasted Almond</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Cactus"><span class="color-dot" style="background-color: #556b2f;"></span><p>Cactus</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Medium Yellow"><span class="color-dot" style="background-color: #fdfd96;"></span><p>Medium Yellow</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Bright Yellow"><span class="color-dot" style="background-color: yellow;"></span><p>Bright Yellow</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Copper"><span class="color-dot" style="background-color: #b87333;"></span><p>Copper</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="China White"><span class="color-dot" style="background-color: #f8f8ff;"></span><p>China White</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Dark Brown"><span class="color-dot" style="background-color: #654321;"></span><p>Dark Brown</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Ultramarine Blue"><span class="color-dot" style="background-color: #3f00ff;"></span><p>Ultramarine Blue</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Emerald Green"><span class="color-dot" style="background-color: #50c878;"></span><p>Emerald Green</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Hollyhock Blue"><span class="color-dot" style="background-color: #5a98d1;"></span><p>Hollyhock Blue</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Ocher"><span class="color-dot" style="background-color: #c2b280;"></span><p>Ocher</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Crocus"><span class="color-dot" style="background-color: #a984bc;"></span><p>Crocus</p></label>
+    <label class="color-label"><input type="checkbox" name="glaze" value="Purple"><span class="color-dot" style="background-color: purple;"></span><p>Purple</p></label>
   </div>
 
-  <!-- 🛒 Add-to-cart button -->
   <button onclick="addToCart()" class="glaze-cart-button">
     Add Selected Glazes to Cart
   </button>
 </section>
+
 
 </section>
 
