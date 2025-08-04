@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tellie Studios – Handmade Pottery Kits and Studio Services">
   <title>Tellie Studios</title>
   <style>
     body {
@@ -198,10 +199,19 @@
       }
 
       .service-box img {
-        max-height: 180px;
+        height: auto;
       }
     }
   </style>
+</head>
+<body>
+       <style>
+  @media screen and (max-width: 600px) {
+    .service-box img {
+      max-height: 180px;
+    }
+  }
+</style>
 </head>
 <body>
   <header>
@@ -218,47 +228,112 @@
       </ul>
     </nav>
   </header>
-</body>
-</html>
 
-  
+  <section class="welcome-message">
     <h2>Let Your Creativity Bloom</h2>
     <p>Browse our handmade pieces, choose your glaze, and make each creation uniquely yours!</p>
     <p><strong>Pick a piece below and your glaze and begin your journey.</strong></p>
-
   </section>
 
   <!-- 🖼️ Side-by-Side Image Row -->
   <section class="image-row" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 40px auto; max-width: 90%;">
-   </section>
+  </section>
 
+  <section class="gallery-container">
+    <!-- Flowers -->
+    <div class="gallery-item">
+      <img src="flowers.jpg" alt="Flowers" style="width:100%; max-width:300px; border-radius:8px;">
+      <select onchange="addToCart(`Flowers (${this.value})`, flowerPrices[this.value])">
+        <option value="" disabled selected>Choose Size</option>
+        <option value="Small">Small - $4</option>
+        <option value="Medium">Medium - $5</option>
+        <option value="Large">Large - $6</option>
+      </select>
+    </div>
 
+    <!-- Astro -->
+    <div class="gallery-item">
+      <img src="astro.png" alt="Astro" style="width:100%; max-width:300px; border-radius:8px;">
+      <button onclick="addToCart('Astro', 25)">Add Astro - $25</button>
+    </div>
 
-<section class="gallery-container">
+    <!-- Apples -->
+    <div class="gallery-item">
+      <img src="apples.png" alt="Apples" style="width:100%; max-width:300px; border-radius:8px;">
+      <select onchange="addToCart(`Apples - ${this.value}`, applePrices[this.value])">
+        <option value="" disabled selected>Choose Variant</option>
+        <option value="Joyful">Joyful - $12</option>
+        <option value="Cheerful">Cheerful - $12</option>
+        <option value="Gentle">Gentle - $12</option>
+        <option value="Squish">Squish - $12</option>
+        <option value="Silly">Silly - $12</option>
+        <option value="Radiant">Radiant - $12</option>
+      </select>
+    </div>
+  </section>
 
-   <!-- Flowers (3 sizes) -->
-<div class="gallery-item">
-  <img src="flowers.jpg" alt="Flowers" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Flowers (${this.value})`, flowerPrices[this.value])">
-    <option value="" disabled selected>Choose Size</option>
-    <option value="Small">Small - $4</option>
-    <option value="Medium">Medium - $5</option>
-    <option value="Large">Large - $6</option>
-  </select>
-</div>
+  <script>
+    const flowerPrices = { Small: 4, Medium: 5, Large: 6 };
+    const applePrices = {
+      Joyful: 12,
+      Cheerful: 12,
+      Gentle: 12,
+      Squish: 12,
+      Silly: 12,
+      Radiant: 12
+    };
+
+    function addToCart(productName, productPrice) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existing = cart.find(item => item.name === productName);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${productName} has been added to your cart!`);
+    }
+  </script>
+</body>
+</html>
 
 <script>
-  const flowerPrices = {
-    "Small": 4,
-    "Medium": 5,
-    "Large": 6
+  const applePrices = {
+    "Joyful": 12,
+    "Cheerful": 12,
+    "Gentle": 12,
+    "Squish": 12,
+    "Silly": 12,
+    "Radiant": 12
   };
-</script>
 
-<script>
+  const beePrices = {
+    "Tiny": 4,
+    "Small": 5,
+    "Medium": 6,
+    "Large": 7
+  };
+
+  const heartPrices = {
+    "Tiny": 4,
+    "Curved": 4
+  };
+
+  const hatBunnyPrices = {
+    "Velvet": 16,
+    "Whisker": 16,
+    "Tophat": 16
+  };
+
+  const oldBunnyPrices = {
+    "Shy": 12,
+    "Wiggly": 12
+  };
+
   function addToCart(productName, productPrice) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
     const existing = cart.find(item => item.name === productName);
     if (existing) {
       existing.quantity += 1;
@@ -271,41 +346,7 @@
   }
 </script>
 
-   <!-- Astro -->
-<div class="gallery-item">
-  <img src="astro.png" alt="Astro" style="width:100%; max-width:300px; border-radius:8px;">
-  <button onclick="addToCart('Astro', 25)">Add Astro - $25</button>
-</div>
-
-
-    <!-- Apples (6 variants) -->
-<div class="gallery-item">
-  <img src="apples.png" alt="Apples" style="width:100%; max-width:300px; border-radius:8px;">
-  <select onchange="addToCart(`Apples - ${this.value}`, applePrices[this.value])">
-    <option value="" disabled selected>Choose Variant</option>
-    <option value="Joyful">Joyful - $12</option>
-    <option value="Cheerful">Cheerful - $12</option>
-    <option value="Gentle">Gentle - $12</option>
-    <option value="Squish">Squish - $12</option>
-    <option value="Silly">Silly - $12</option>
-    <option value="Radiant">Radiant - $12</option>
-  </select>
-</div>
-
-<script>
-  const applePrices = {
-    "Joyful": 12,
-    "Cheerful": 12,
-    "Gentle": 12,
-    "Squish": 12,
-    "Silly": 12,
-    "Radiant": 12
-  };
-</script>
-
-    </div>
-
-  <!-- Bee (4 sizes) -->
+<!-- Bee (4 sizes) -->
 <div class="gallery-item">
   <img src="bees.jpg" alt="Bee" style="width:100%; max-width:300px; border-radius:8px;">
   <select onchange="addToCart(`Bee (${this.value})`, beePrices[this.value])">
@@ -317,22 +358,11 @@
   </select>
 </div>
 
-<script>
-  const beePrices = {
-    "Tiny": 4,
-    "Small": 5,
-    "Medium": 6,
-    "Large": 7
-  };
-</script>
-
-    </div>
-
-   <!-- Cactus -->
+<!-- Cactus -->
 <div class="gallery-item">
   <img src="catus.jpg" alt="Cactus" style="width:100%; max-width:300px; border-radius:8px;">
   <button onclick="addToCart('Cactus', 4)">Add Cactus - $4</button>
-    </div>
+</div>
 
 <!-- Hearts (2 variants) -->
 <div class="gallery-item">
@@ -344,22 +374,13 @@
   </select>
 </div>
 
-<script>
-  const heartPrices = {
-    "Tiny": 4,
-    "Curved": 4
-  };
-</script>
-
-
-  <!-- Flag -->
+<!-- Flag -->
 <div class="gallery-item">
   <img src="flag.png" alt="Flag" style="width:100%; max-width:300px; border-radius:8px;">
   <button onclick="addToCart('Flag', 6)">Add Flag - $6</button>
 </div>
 
-
-   <!-- Hat Bunny (3 variants) -->
+<!-- Hat Bunny (3 variants) -->
 <div class="gallery-item">
   <img src="hatbunny.png" alt="Hat Bunny" style="width:100%; max-width:300px; border-radius:8px;">
   <select onchange="addToCart(`Hat Bunny - ${this.value}`, hatBunnyPrices[this.value])">
@@ -370,50 +391,29 @@
   </select>
 </div>
 
-<script>
-  const hatBunnyPrices = {
-    "Velvet": 16,
-    "Whisker": 16,
-    "Tophat": 16
-  };
-</script>
-
-    </div>
-
-  <!-- Mushroom House -->
+<!-- Mushroom House -->
 <div class="gallery-item">
   <img src="mushroomhouse.png" alt="Mushroom House" style="width:100%; max-width:300px; border-radius:8px;">
   <button onclick="addToCart('Mushroom House', 16)">Add Mushroom House - $16</button>
 </div>
 
-
-  <!-- Old Bunny (2 variants) -->
+<!-- Old Bunny (2 variants) -->
 <div class="gallery-item">
   <img src="oldbunny.png" alt="Old Bunny" style="width:100%; max-width:300px; border-radius:8px;">
   <select onchange="addToCart(`Old Bunny - ${this.value}`, oldBunnyPrices[this.value])">
-    <option value="" disabled selected>Choose Pose</option>
-    <option value="Kneeling">Kneeling - $16</option>
-    <option value="Sitting">Sitting - $16</option>
+    <option value="" disabled selected>Choose Type</option>
+    <option value="Shy">Shy - $12</option>
+    <option value="Wiggly">Wiggly - $12</option>
   </select>
 </div>
 
-<script>
-  const oldBunnyPrices = {
-    "Kneeling": 16,
-    "Sitting": 16
-  };
-</script>
-
-    </div>
-
-   <!-- Pineapple -->
+  <!-- Pineapple -->
 <div class="gallery-item">
   <img src="pineapple.jpg" alt="Pineapple" style="width:100%; max-width:300px; border-radius:8px;">
   <button onclick="addToCart('Pineapple', 4)">Add Pineapple - $4</button>
 </div>
 
-
- <!-- Mushroom (2 sizes) -->
+<!-- Mushroom (2 sizes) -->
 <div class="gallery-item">
   <img src="mushrooms.png" alt="Mushroom" style="width:100%; max-width:300px; border-radius:8px;">
   <select onchange="addToCart(`Mushroom (${this.value})`, mushroomPrices[this.value])">
@@ -423,23 +423,13 @@
   </select>
 </div>
 
-<script>
-  const mushroomPrices = {
-    "Small": 5,
-    "Large": 8
-  };
-</script>
-
-    </div>
-
-   <!-- Shot Glass -->
+<!-- Shot Glass -->
 <div class="gallery-item">
   <img src="shotglass.png" alt="Shot Glass" style="width:100%; max-width:300px; border-radius:8px;">
   <button onclick="addToCart('Shot Glass', 12)">Add Shot Glass - $12</button>
 </div>
 
-
-   <!-- Skulls (2 sizes) -->
+<!-- Skulls (2 sizes) -->
 <div class="gallery-item">
   <img src="skulls.png" alt="Skulls" style="width:100%; max-width:300px; border-radius:8px;">
   <select onchange="addToCart(`Skull (${this.value})`, skullPrices[this.value])">
@@ -485,11 +475,24 @@
     localStorage.setItem('cart', JSON.stringify(cart));
     alert("Glazes added to cart: " + selectedGlazes.join(", "));
   }
+
+  function addToCart(productName, productPrice) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existing = cart.find(item => item.name === productName);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name: productName, price: productPrice, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${productName} has been added to your cart!`);
+  }
 </script>
 
 <section class="color-options">
   <h2>Choose Your Glaze — this is included with each kit and there's no limit on colors!</h2>
   <div class="color-picker">
+    <!-- ✨ Glaze options intact -->
     <label class="color-label"><input type="checkbox" name="glaze" value="White"><span class="color-dot" style="background-color: white;"></span><p>White</p></label>
     <label class="color-label"><input type="checkbox" name="glaze" value="Red"><span class="color-dot" style="background-color: red;"></span><p>Red</p></label>
     <label class="color-label"><input type="checkbox" name="glaze" value="Black"><span class="color-dot" style="background-color: black;"></span><p>Black</p></label>
@@ -508,10 +511,12 @@
     <label class="color-label"><input type="checkbox" name="glaze" value="Crocus"><span class="color-dot" style="background-color: #a984bc;"></span><p>Crocus</p></label>
     <label class="color-label"><input type="checkbox" name="glaze" value="Purple"><span class="color-dot" style="background-color: purple;"></span><p>Purple</p></label>
   </div>
+</section>
 
-  <button onclick="addGlazesToCart()" class="glaze-cart-button">
+   <button onclick="addGlazesToCart()" class="glaze-cart-button">
     Add Selected Glazes to Cart
   </button>
 </section>
+
 </body>
-  </html>
+</html>
