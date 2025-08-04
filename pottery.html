@@ -531,6 +531,13 @@
 </footer>
 
 <script>
+  let selectedColor = null;
+
+  function selectColor(color) {
+    selectedColor = color;
+    alert(`Color selected: ${color}`);
+  }
+
   function getSelectedGlazes() {
     const selected = [];
     document.querySelectorAll("input[name='glaze']:checked").forEach((checkbox) => {
@@ -539,30 +546,84 @@
     return selected;
   }
 
-  function addToCart() {
-    const selectedGlazes = getSelectedGlazes();
-    if (selectedGlazes.length === 0) {
-      alert("Please select at least one glaze.");
-      return;
-    }
-
+  function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Handle pottery item
+    const itemName = selectedColor ? `${name} - ${selectedColor}` : name;
+    const existingItem = cart.find(item => item.name === itemName);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name: itemName, price, quantity: 1 });
+    }
+
+    // Handle glaze selections
+    const selectedGlazes = getSelectedGlazes();
     selectedGlazes.forEach(glaze => {
       const glazeLabel = `Included Glaze – ${glaze}`;
-      const existing = cart.find(item => item.name === glazeLabel);
-      if (existing) {
-        existing.quantity += 1;
+      const existingGlaze = cart.find(item => item.name === glazeLabel);
+      if (existingGlaze) {
+        existingGlaze.quantity += 1;
       } else {
         cart.push({ name: glazeLabel, price: 0, quantity: 1 });
       }
     });
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert("Added to cart: " + selectedGlazes.join(", "));
+    alert(`${itemName} + ${selectedGlazes.join(", ")} added to cart!`);
     displayCartItems();
   }
+
+  function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+      return;
+    }
+
+    let total = 0;
+    cartItems.forEach((item, index) => {
+      const itemTotal = item.quantity * item.price;
+      total += itemTotal;
+      cartItemsContainer.innerHTML += `
+        <p><strong>${item.name}</strong> – $${item.price.toFixed(2)} × ${item.quantity}</p>
+        <button onclick="removeFromCart(${index})">Remove</button>
+      `;
+    });
+
+    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+  }
+
+  function removeFromCart(index) {
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    cartItems.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    displayCartItems();
+  }
+
+  function clearCart() {
+    localStorage.removeItem('cart');
+    displayCartItems();
+  }
+
+  function proceedToCheckout() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+    } else {
+      window.location.href = "https://square.link/u/26LsMyir";
+    }
+  }
+
+  displayCartItems();
 </script>
+
+
+
 
 </body>
 </html>
