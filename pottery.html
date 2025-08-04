@@ -127,9 +127,29 @@
 
 <section class="gallery-container">
 
-  <!-- Example item with dropdown -->
+  <label for="itemSelect">Choose a pottery piece:</label>
+  <select id="itemSelect" name="itemSelect">
+    <option value="astro.png">$25 – Astro</option>
+    <option value="apples.png">$8 – Apples</option>
+    <option value="beehive.png">$6 – Beehive</option>
+    <option value="bee.jpg">$8 – Bee</option>
+    <option value="cactus.jpg">$4 – Cactus</option>
+    <option value="flag.png">$5 – Flag</option>
+    <option value="flowers.png">$8 – Flowers</option>
+    <option value="hatbunny.png">$8 – Hat Bunny</option>
+    <option value="oldbunny.png">$8 – Old Bunny</option>
+    <option value="hearts.jpg">$8 – Hearts</option>
+    <option value="mushroomhouse.png">$16 – Mushroom House</option>
+    <option value="pineapple.jpg">$4 – Pineapple</option>
+    <option value="shotglass.png">$12 – Shotglass</option>
+    <option value="skulls.png">$8 – Skulls</option>
+    <option value="mushroom.png">$5 – Mushroom (Small)</option>
+    <option value="mushroom.png">$8 – Mushroom (Large)</option>
+  </select>
+
+  <!-- Apples -->
   <div class="gallery-item">
-    <img src="apple.jpg" alt="Apple">
+    <img src="apples.png" alt="Apples">
     <select id="appleSelect">
       <option>Joyful</option>
       <option>Cheerful</option>
@@ -138,22 +158,22 @@
       <option>Silly</option>
       <option>Radiant</option>
     </select>
-    <p>$12</p>
-    <button onclick="addVariantToCart('Apple', 12, 'appleSelect')">Add to Cart</button>
+    <p>$8</p>
+    <button onclick="addVariantToCart('Apples', 8, 'appleSelect')">Add to Cart</button>
   </div>
 
-  <!-- Repeat similar structure for other dropdown items -->
-
+  <!-- Skulls -->
   <div class="gallery-item">
-    <img src="skull.jpg" alt="Skull">
+    <img src="skulls.png" alt="Skulls">
     <select id="skullSelect">
       <option>Small</option>
       <option>Large</option>
     </select>
     <p>$5 / $12</p>
-    <button onclick="addVariantToCart('Skull', 0, 'skullSelect')">Add to Cart</button>
+    <button onclick="addVariantToCart('Skulls', 0, 'skullSelect')">Add to Cart</button>
   </div>
 
+  <!-- Bee -->
   <div class="gallery-item">
     <img src="bee.jpg" alt="Bee">
     <select id="beeSelect">
@@ -165,45 +185,49 @@
     <button onclick="addVariantToCart('Bee', 0, 'beeSelect')">Add to Cart</button>
   </div>
 
+  <!-- Flowers -->
   <div class="gallery-item">
-    <img src="flower.jpg" alt="Flower">
+    <img src="flowers.png" alt="Flowers">
     <select id="flowerSelect">
       <option>Small ($4)</option>
       <option>Medium ($6)</option>
       <option>Large ($8)</option>
     </select>
-    <button onclick="addVariantToCart('Flower', 0, 'flowerSelect')">Add to Cart</button>
+    <button onclick="addVariantToCart('Flowers', 0, 'flowerSelect')">Add to Cart</button>
   </div>
 
+  <!-- Hat Bunny -->
   <div class="gallery-item">
-    <img src="hatbunny.jpg" alt="Hat Bunny">
+    <img src="hatbunny.png" alt="Hat Bunny">
     <select id="hatbunnySelect">
       <option>Velvet</option>
       <option>Whisker</option>
       <option>Top Hat</option>
     </select>
-    <p>$16</p>
-    <button onclick="addVariantToCart('Hat Bunny', 16, 'hatbunnySelect')">Add to Cart</button>
+    <p>$8</p>
+    <button onclick="addVariantToCart('Hat Bunny', 8, 'hatbunnySelect')">Add to Cart</button>
   </div>
 
+  <!-- Old Bunny -->
   <div class="gallery-item">
-    <img src="oldbunny.jpg" alt="Old Bunny">
+    <img src="oldbunny.png" alt="Old Bunny">
     <select id="oldbunnySelect">
       <option>Kneeling</option>
       <option>Sitting</option>
     </select>
-    <p>$16</p>
-    <button onclick="addVariantToCart('Old Bunny', 16, 'oldbunnySelect')">Add to Cart</button>
+    <p>$8</p>
+    <button onclick="addVariantToCart('Old Bunny', 8, 'oldbunnySelect')">Add to Cart</button>
   </div>
 
+  <!-- Hearts -->
   <div class="gallery-item">
-    <img src="heart.jpg" alt="Heart">
+    <img src="hearts.jpg" alt="Hearts">
     <select id="heartSelect">
       <option>Tilted</option>
       <option>Curved</option>
     </select>
-    <p>$4</p>
-    <button onclick="addVariantToCart('Heart', 4, 'heartSelect')">Add to Cart</button>
+    <p>$8</p>
+    <button onclick="addVariantToCart('Hearts', 8, 'heartSelect')">Add to Cart</button>
   </div>
 
 </section>
@@ -214,7 +238,7 @@
   <div>
     <span class="swatch-label">Medium Yellow</span><span class="color-swatch" style="background-color:#fce205;"></span>
     <span class="swatch-label">Bright Yellow</span><span class="color-swatch" style="background-color:#fff700;"></span>
-    <span class="swatch-label">Copper</span><span class="color-swatch" style="background-color:#b87333;"></span>
+    <span class="swatch-label">Copper</span    <span class="swatch-label">Copper</span><span class="color-swatch" style="background-color:#b87333;"></span>
     <span class="swatch-label">China White</span><span class="color-swatch" style="background-color:#e5e4e2;"></span>
     <span class="swatch-label">White</span><span class="color-swatch" style="background-color:#ffffff;"></span>
     <span class="swatch-label">Red</span><span class="color-swatch" style="background-color:#ff0000;"></span>
@@ -224,14 +248,48 @@
     <span class="swatch-label">Emerald Green</span><span class="color-swatch" style="background-color:#50c878;"></span>
     <span class="swatch-label">Hollyhock Purple</span><span class="color-swatch" style="background-color:#7851a9;"></span>
     <span class="swatch-label">Ocher</span><span class="color-swatch" style="background-color:#cc7722;"></span>
-    <span class="swatch-label">Crocus</span><span class="swatch-label">Crocus</span><span class="color-swatch" style="background-color:#9966cc;"></span> <span class="swatch-label">Purple</span><span class="color-swatch" style="background-color:#800080;"></span> <span class="swatch-label">Dark Green</span><span class="color-swatch" style="background-color:#006400;"></span> <span class="swatch-label">Toasted Almond</span><span class="color-swatch" style="background-color:#d2b48c;"></span> <span class="swatch-label">Cactus Flower</span><span class="color-swatch" style="background-color:#ff69b4;"></span> </div> </section>
+    <span class="swatch-label">Crocus</span><span class="color-swatch" style="background-color:#9966cc;"></span>
+    <span class="swatch-label">Purple</span><span class="color-swatch" style="background-color:#800080;"></span>
+    <span class="swatch-label">Dark Green</span><span class="color-swatch" style="background-color:#006400;"></span>
+    <span class="swatch-label">Toasted Almond</span><span class="color-swatch" style="background-color:#d2b48c;"></span>
+    <span class="swatch-label">Cactus Flower</span><span class="color-swatch" style="background-color:#ff69b4;"></span>
+  </div>
+</section>
 
-<footer> <p>Hours: Mon–Fri 9am–5pm</p> <p>Email: telliestudios@gmail.com</p> <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a> </footer>
+<footer>
+  <p>Hours: Mon–Fri 9am–5pm</p>
+  <p>Email: telliestudios@gmail.com</p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+</footer>
 
-<script> function addVariantToCart(name, basePrice, selectId) { const variant = document.getElementById(selectId).value; let price = basePrice;
+<script>
+  function addVariantToCart(name, basePrice, selectId) {
+    const variant = document.getElementById(selectId).value;
+    let price = basePrice;
 
-// Handle custom prices for certain dropdowns if (selectId === 'skullSelect') { price = variant === 'Large' ? 12 : 5; } if (selectId === 'beeSelect') { if (variant.includes('($4)')) price = 4; else if (variant.includes('($5)')) price = 5; else if (variant.includes('($6)')) price = 6; else if (variant.includes('($7)')) price = 7; } if (selectId === 'flowerSelect') { if (variant.includes('($4)')) price = 4; else if (variant.includes('($6)')) price = 6; else if (variant.includes('($8)')) price = 8; }
+    // Handle custom pricing logic for dropdowns with variant-based prices
+    if (selectId === 'skullSelect') {
+      price = variant === 'Large' ? 12 : 5;
+    }
+    if (selectId === 'beeSelect') {
+      if (variant.includes('($4)')) price = 4;
+      else if (variant.includes('($5)')) price = 5;
+      else if (variant.includes('($6)')) price = 6;
+      else if (variant.includes('($7)')) price = 7;
+    }
+    if (selectId === 'flowerSelect') {
+      if (variant.includes('($4)')) price = 4;
+      else if (variant.includes('($6)')) price = 6;
+      else if (variant.includes('($8)')) price = 8;
+    }
 
-const cart = JSON.parse(localStorage.getItem('cart')) || []; cart.push({ name: ${name} - ${variant}, price, quantity: 1 }); localStorage.setItem('cart', JSON.stringify(cart)); alert(${name} (${variant}) added to cart!); } </script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name: `${name} - ${variant}`, price, quantity: 1 });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} (${variant}) added to cart!`);
+  }
+</script>
 
-</body> </html>
+</body>
+</html>
+
