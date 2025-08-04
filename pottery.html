@@ -105,7 +105,7 @@
         <img src="flowers.jpg" alt="Flowers">
     </div>
     <div class="gallery-item" onclick="addToCart('astronaut', 25)">
-        <img src="atro.png" alt="astronaut">
+        <img src="astro.png" alt="astronaut">
     </div>
     <div class="gallery-item" onclick="addToCart('apples', 12)">
         <img src="apples.png" alt="apples">
@@ -137,15 +137,23 @@
     <div class="gallery-item" onclick="addToCart('mushrooms', 5,8)">
         <img src="mushrooms.png" alt="Mushrooms">
     </div>
-    <div clas<script>
+    <div class="gallery-item" onclick="addToCart('shotglass', 12)">
+<img src="shotglass.png" alt="shotglass">
+    </div>
+    <div class="gallery-item" onclick="addToCart('skulls', 8,12)">
+        <img src="skulls.png" alt="skulls">
+    </div>
+  
+</section>
+
+        </script>
+  <script>
     function addToCart(name, price) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart.push({ name, price, quantity: 1 });
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${name} added to cart!`);
     }
-</script>
-
 <section class="color-options">
   <h2>Choose Your Glaze — this is included with each kit and there's no limit on colors!</h2>
   <div class="color-picker">
@@ -171,14 +179,6 @@
 </section>
 
    <button onclick="addGlazesToCart()" class="glaze-cart-button">s="gallery-item" onclick="addToCart('shotglass', 12)">
-        <img src="shotglass.png" alt="shotglass">
-    </div>
-    <div class="gallery-item" onclick="addToCart('skulls', 8,12)">
-        <img src="skulls.png" alt="skulls">
-    </div>
-  
-</section>
-
 <footer>
     <p>Hours: Mon-Fri 9am-5pm</p>
     <p>Email: telliestudios@gmail.com</p>
