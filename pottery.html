@@ -465,29 +465,6 @@
     const beePrices = { Tiny: 4, Small: 5, Medium: 6, Large: 7 };
     const mushroomPrices = { Small: 5, Large: 8 };
     const skullPrices = { Small: 8, Large: 12 };
-<script>
-  function getSelectedGlazes() {
-    const selected = [];
-    document.querySelectorAll("input[name='glaze']:checked").forEach((checkbox) => {
-      selected.push(checkbox.value);
-    });
-    return selected;
-  }
-
-  function addToCart() {
-    const selectedGlazes = getSelectedGlazes();
-    if (selectedGlazes.length === 0) {
-      alert("Please select at least one glaze.");
-      return;
-    }
-
-    // ✅ Store selected glazes for cart.html to retrieve
-    localStorage.setItem("selectedGlazes", JSON.stringify(selectedGlazes));
-
-    alert("Added to cart: " + selectedGlazes.join(", "));
-  }
-</script>
-
 <section class="color-options">
   <h2>Choose Your Glaze — this is included with each kit and there's no limit on colors!</h2>
   <div class="color-picker">
@@ -510,34 +487,12 @@
     <label class="color-label"><input type="checkbox" name="glaze" value="Purple"><span class="color-dot" style="background-color: purple;"></span><p>Purple</p></label>
   </div>
 
-  <button onclick="addToCart()" class="glaze-cart-button">
+  <button onclick="addGlazesToCart()" class="glaze-cart-button">
     Add Selected Glazes to Cart
   </button>
 </section>
 
-</section>
-
-<section class="cart-section">
-  <h2>Shopping Cart</h2>
-  <div id="cart-items" class="cart-items"></div>
-  <button onclick="clearCart()">Clear Cart</button>
-  <button onclick="proceedToCheckout()">Checkout</button>
-</section>
-
-<footer>
-  <p>Hours: Mon–Fri 9am–5pm</p>
-  <p>Email: <a href="mailto:telliestudios@gmail.com">telliestudios@gmail.com</a></p>
-  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
-</footer>
-
 <script>
-  let selectedColor = null;
-
-  function selectColor(color) {
-    selectedColor = color;
-    alert(`Color selected: ${color}`);
-  }
-
   function getSelectedGlazes() {
     const selected = [];
     document.querySelectorAll("input[name='glaze']:checked").forEach((checkbox) => {
@@ -546,20 +501,15 @@
     return selected;
   }
 
-  function addToCart(name, price) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Handle pottery item
-    const itemName = selectedColor ? `${name} - ${selectedColor}` : name;
-    const existingItem = cart.find(item => item.name === itemName);
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cart.push({ name: itemName, price, quantity: 1 });
+  function addGlazesToCart() {
+    const selectedGlazes = getSelectedGlazes();
+    if (selectedGlazes.length === 0) {
+      alert("Please select at least one glaze.");
+      return;
     }
 
-    // Handle glaze selections
-    const selectedGlazes = getSelectedGlazes();
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
     selectedGlazes.forEach(glaze => {
       const glazeLabel = `Included Glaze – ${glaze}`;
       const existingGlaze = cart.find(item => item.name === glazeLabel);
@@ -571,59 +521,9 @@
     });
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${itemName} + ${selectedGlazes.join(", ")} added to cart!`);
-    displayCartItems();
+    alert("Glazes added to cart: " + selectedGlazes.join(", "));
   }
-
-  function displayCartItems() {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
-
-    if (cartItems.length === 0) {
-      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-      return;
-    }
-
-    let total = 0;
-    cartItems.forEach((item, index) => {
-      const itemTotal = item.quantity * item.price;
-      total += itemTotal;
-      cartItemsContainer.innerHTML += `
-        <p><strong>${item.name}</strong> – $${item.price.toFixed(2)} × ${item.quantity}</p>
-        <button onclick="removeFromCart(${index})">Remove</button>
-      `;
-    });
-
-    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
-  }
-
-  function removeFromCart(index) {
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    cartItems.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-    displayCartItems();
-  }
-
-  function clearCart() {
-    localStorage.removeItem('cart');
-    displayCartItems();
-  }
-
-  function proceedToCheckout() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    if (cart.length === 0) {
-      alert("Your cart is empty!");
-    } else {
-      window.location.href = "https://square.link/u/26LsMyir";
-    }
-  }
-
-  displayCartItems();
 </script>
-
-
-
 
 </body>
 </html>
