@@ -72,6 +72,10 @@
       padding: 5px;
     }
 
+    .color-swatch.selected {
+  border: 3px solid #333;
+}
+
     .color-swatch {
       display: inline-block;
       width: 30px;
@@ -375,6 +379,17 @@
 </div>
 
 <script>
+  let selectedGlaze = ""; // Global glaze tracker
+
+  // Enable glaze color selection
+  document.querySelectorAll(".color-swatch").forEach(swatch => {
+    swatch.addEventListener("click", function() {
+      document.querySelectorAll(".color-swatch").forEach(s => s.classList.remove("selected"));
+      this.classList.add("selected");
+      selectedGlaze = this.getAttribute("data-color");
+    });
+  });
+
   function updatePrice(selectId, priceId) {
     const variant = document.getElementById(selectId).value;
     let price = 0;
@@ -422,11 +437,21 @@
       price = variant === 'Large' ? 8 : 5;
     }
 
+    if (selectedGlaze === "") {
+      alert("Please select a glaze color before adding to cart.");
+      return;
+    }
+
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ name: `${name} - ${variant}`, price, quantity: 1 });
+    cart.push({
+      name: `${name} - ${variant}`,
+      price,
+      quantity: 1,
+      glaze: selectedGlaze
+    });
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    alert(`${name} (${variant}) added to cart!`);
+    alert(`${name} (${variant}) with glaze '${selectedGlaze}' added to cart!`);
   }
 
   function updateCartCount() {
@@ -437,7 +462,5 @@
   window.onload = updateCartCount;
 </script>
 
-</body>
+  </body> 
 </html>
-
-
