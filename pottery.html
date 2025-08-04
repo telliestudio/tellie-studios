@@ -91,7 +91,7 @@
 
     <!-- Flowers (3 sizes) -->
     <div class="gallery-item">
-        <img src="flowers.png" alt="Flowers">
+        <img src="flowers.jpg" alt="Flowers">
         <select onchange="addToCart(`Flowers (${this.value})`, flowerPrices[this.value])">
             <option value="" disabled selected>Choose Size</option>
             <option value="Small">Small - $4</option>
@@ -122,7 +122,7 @@
 
     <!-- Bee (4 sizes) -->
     <div class="gallery-item">
-        <img src="bee.jpg" alt="Bee">
+        <img src="bees.jpg" alt="Bee">
         <select onchange="addToCart(`Bee (${this.value})`, beePrices[this.value])">
             <option value="" disabled selected>Choose Size</option>
             <option value="Tiny">Tiny - $4</option>
@@ -134,7 +134,7 @@
 
     <!-- Cactus -->
     <div class="gallery-item">
-        <img src="cactus.jpg" alt="Cactus">
+        <img src="catus.jpg" alt="Cactus">
         <button onclick="addToCart('Cactus', 4)">Add Cactus - $4</button>
     </div>
 
@@ -185,7 +185,7 @@
 
     <!-- Mushroom (2 sizes) -->
     <div class="gallery-item">
-        <img src="mushroom.jpg" alt="Mushroom">
+        <img src="mushrooms.jpg" alt="Mushroom">
         <select onchange="addToCart(`Mushroom (${this.value})`, mushroomPrices[this.value])">
             <option value="" disabled selected>Choose Size</option>
             <option value="Small">Small - $5</option>
@@ -268,34 +268,72 @@
     .color-choice:hover {
         transform: scale(1.2);
         box-shadow: 0 0
-            
-    <footer>
-    <p>Hours: Mon–Fri 9am–5pm</p>
+
+        </section>
+
+<section class="cart-section">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items" class="cart-items"></div>
+    <button onclick="clearCart()">Clear Cart</button>
+    <a href="checkout.html"><button>Proceed to Checkout</button></a>
+</section>
+
+<footer>
+    <p>Hours: Mon-Fri 9am-5pm</p>
     <p>Email: telliestudios@gmail.com</p>
     <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
-<style>
-    footer {
-        background-color: white;
-        text-align: center;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-        border-top: 2px solid #ccc;
-        margin-top: 2em;
+<script>
+    function addToCart(name, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name, price, quantity: 1 });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to cart!`);
     }
 
-    footer a {
-        color: #333;
-        font-weight: bold;
-        text-decoration: none;
-        margin-top: 8px;
-        display: inline-block;
+    function displayCartItems() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';
+
+        if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            return;
+        }
+
+        let total = 0;
+        cartItems.forEach((item, index) => {
+            const itemTotal = item.quantity * item.price;
+            total += itemTotal;
+            cartItemsContainer.innerHTML += `
+                <p><strong>${item.name}</strong> - $${item.price}</p>
+                <button onclick="removeFromCart(${index})">Remove</button>
+            `;
+        });
+
+        cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
     }
 
-    footer a:hover {
-        text-decoration: underline;
+    function removeFromCart(index) {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        displayCartItems();
     }
-</style>
-    </body>
-    </html>
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        displayCartItems();
+    }
+
+    displayCartItems();
+</script>
+
+</body>
+</html>
+
+
+   
+
+
