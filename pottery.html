@@ -1,194 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pottery - TellieStudios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, lightblue, pink, purple);
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pottery - TellieStudios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, lightblue, pink, purple);
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 15px;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px;
+    }
 
-        .logo {
-            width: 120px;
-            height: auto;
-        }
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
 
-        .intro {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.85);
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 8px;
-            font-size: 18px;
-            text-align: center;
-        }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
 
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+    .intro {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.85);
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 8px;
+      font-size: 18px;
+      text-align: center;
+    }
 
-        .gallery-item {
-            width: 300px;
-            border-radius: 8px;
-            padding: 10px;
-            background: white;
-            text-align: center;
-            cursor: pointer;
-        }
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
+    .gallery-item {
+      width: 300px;
+      border-radius: 8px;
+      padding: 10px;
+      background: white;
+      text-align: center;
+      cursor: pointer;
+    }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
 
-        footer {
-            padding: 20px;
-            background: white;
-        }
-    </style>
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 20px;
+      background: white;
+    }
+
+    footer a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
-    <nav>
-        <ul>
-             <li><a href="index.html">Home</a></li>
-                <li><a href="pottery.html">Pottery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html">Cart</a></li> <!-- Added Cart Link -->
-        </ul>
-    </nav>
+  <img src="logo.jpg" alt="TellieStudios Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pottery.html">Pottery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section class="intro">
-    <h1>Pottery</h1>
-    <p>At Tellie Studios, we believe that clay tells stories—of creativity, connection, and care. Each piece in our collection is thoughtfully handcrafted, celebrating the textures of nature and the spirit of play. Whether you’re exploring our whimsical bunnies, galaxy-inspired mugs, or earthy mushrooms, you’ll find artistry and warmth in every curve. Dive into our glaze palette to customize your creation, or join one of our workshops to shape something beautiful with your own hands. From cozy kits to soulful sculpture, this is pottery made for dreamers.<p>
-    <p> Each piece is individually priced. If a design has multiple variations, your chosen option will appear in your cart—just leave your selection in the cart message section. For custom sizes or color modifications, reach out through our <a href="contact.html">Contact Page</a>.</p>
+  <h1>Pottery</h1>
+  <p>At Tellie Studios, we believe that clay tells stories—of creativity, connection, and care. Each piece in our collection is thoughtfully handcrafted, celebrating the textures of nature and the spirit of play. Whether you’re exploring our whimsical bunnies, galaxy-inspired mugs, or earthy mushrooms, you’ll find artistry and warmth in every curve.</p>
+  <p>Each piece is individually priced. If a design has multiple variations, your chosen option will appear in your cart—just leave your selection in the cart message section. For custom sizes or color modifications, reach out through our <a href="contact.html">Contact Page</a>.</p>
 </section>
 
 <section class="gallery-container">
-    <div class="gallery-item" onclick="addToCart('flowers', 4,5,6)">
-        <img src="flowers.jpg" alt="Flowers">
-    </div>
-    <div class="gallery-item" onclick="addToCart('astronaut', 25)">
-        <img src="astro.png" alt="astronaut">
-    </div>
-    <div class="gallery-item" onclick="addToCart('apples', 12)">
-        <img src="apples.png" alt="apples">
-    </div>
-    <div class="gallery-item" onclick="addToCart('bees', 4,5,6,7)">
-        <img src="bees.jpg" alt="bees">
- </div>
-    <div class="gallery-item" onclick="addToCart('catus', 4)">
-        <img src="catus.jpg" alt="catus">
-    </div>
-    <div class="gallery-item" onclick="addToCart('flag', 6)">
-        <img src="flag.png" alt="Beach Walk">
-    </div>
-    <div class="gallery-item" onclick="addToCart('hatbunny', 16)">
-        <img src="hatbunny.png" alt="hatbunny">
-    </div>
-    <div class="gallery-item" onclick="addToCart('hearts', 4)">
-        <img src="hearts.jpg" alt="hearts">
-    </div>
-    <div class="gallery-item" onclick="addToCart('mushroom house', 16)">
-        <img src="mushroomhouse.png" alt="Mushroom House">
-    </div>
-    <div class="gallery-item" onclick="addToCart('oldbunny', 16)">
-        <img src="oldbunny.png" alt="oldbunny">
-    </div>
-    <div class="gallery-item" onclick="addToCart('pineapple.jpg', 4)">
-        <img src="pineapple.jpg" alt="Pineapple">
-    </div>
-    <div class="gallery-item" onclick="addToCart('mushrooms', 5,8)">
-        <img src="mushrooms.png" alt="Mushrooms">
-    </div>
-    <div class="gallery-item" onclick="addToCart('shotglass', 12)">
-<img src="shotglass.png" alt="shotglass">
-    </div>
-    <div class="gallery-item" onclick="addToCart('skulls', 8,12)">
-        <img src="skulls.png" alt="skulls">
-    </div>
-  
-</section>
-
-        </script>
-  <script>
-    function addToCart(name, price) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push({ name, price, quantity: 1 });
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${name} added to cart!`);
-    }
-<section class="color-options">
-  <h2>Choose Your Glaze — this is included with each kit and there's no limit on colors!</h2>
-  <div class="color-picker">
-    <!-- ✨ Glaze options intact -->
-    <label class="color-label"><input type="checkbox" name="glaze" value="White"><span class="color-dot" style="background-color: white;"></span><p>White</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Red"><span class="color-dot" style="background-color: red;"></span><p>Red</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Black"><span class="color-dot" style="background-color: black;"></span><p>Black</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Dark Green"><span class="color-dot" style="background-color: darkgreen;"></span><p>Dark Green</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Toasted Almond"><span class="color-dot" style="background-color: #d2b48c;"></span><p>Toasted Almond</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Cactus"><span class="color-dot" style="background-color: #556b2f;"></span><p>Cactus</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Medium Yellow"><span class="color-dot" style="background-color: #fdfd96;"></span><p>Medium Yellow</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Bright Yellow"><span class="color-dot" style="background-color: yellow;"></span><p>Bright Yellow</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Copper"><span class="color-dot" style="background-color: #b87333;"></span><p>Copper</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="China White"><span class="color-dot" style="background-color: #f8f8ff;"></span><p>China White</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Dark Brown"><span class="color-dot" style="background-color: #654321;"></span><p>Dark Brown</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Ultramarine Blue"><span class="color-dot" style="background-color: #3f00ff;"></span><p>Ultramarine Blue</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Emerald Green"><span class="color-dot" style="background-color: #50c878;"></span><p>Emerald Green</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Hollyhock Blue"><span class="color-dot" style="background-color: #5a98d1;"></span><p>Hollyhock Blue</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Ocher"><span class="color-dot" style="background-color: #c2b280;"></span><p>Ocher</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Crocus"><span class="color-dot" style="background-color: #a984bc;"></span><p>Crocus</p></label>
-    <label class="color-label"><input type="checkbox" name="glaze" value="Purple"><span class="color-dot" style="background-color: purple;"></span><p>Purple</p></label>
+  <div class="gallery-item" onclick="addToCart('Flowers', 4)">
+    <img src="flowers.jpg" alt="Flowers" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Astronaut', 25)">
+    <img src="astro.png" alt="Astronaut" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Apples', 12)">
+    <img src="apples.png" alt="Apples" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Bees', 4)">
+    <img src="bees.jpg" alt="Bees" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Cactus', 4)">
+    <img src="catus.jpg" alt="Cactus" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Flag', 6)">
+    <img src="flag.png" alt="Flag" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Hat Bunny', 16)">
+    <img src="hatbunny.png" alt="Hat Bunny" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Hearts', 4)">
+    <img src="hearts.jpg" alt="Hearts" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Mushroom House', 16)">
+    <img src="mushroomhouse.png" alt="Mushroom House" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Old Bunny', 16)">
+    <img src="oldbunny.png" alt="Old Bunny" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Pineapple', 4)">
+    <img src="pineapple.jpg" alt="Pineapple" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Mushrooms', 5)">
+    <img src="mushrooms.png" alt="Mushrooms" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Shotglass', 12)">
+    <img src="shotglass.png" alt="Shotglass" />
+  </div>
+  <div class="gallery-item" onclick="addToCart('Skulls', 8)">
+    <img src="skulls.png" alt="Skulls" />
   </div>
 </section>
 
-   <button onclick="addGlazesToCart()" class="glaze-cart-button">s="gallery-item" onclick="addToCart('shotglass', 12)">
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price, quantity: 1 });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+</script>
+
 <footer>
-    <p>Hours: Mon-Fri 9am-5pm</p>
-    <p>Email: telliestudios@gmail.com</p>
-    <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+  <p>Hours: Mon-Fri 9am-5pm</p>
+  <p>Email: telliestudios@gmail.com</p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
-
-
-    Add Selected Glazes to Cart
-  </button>
-</section>
 
 </body>
 </html>
+
