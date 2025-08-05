@@ -193,10 +193,15 @@
     <label for="note">Pottery Notes (if you selected a piece with variations):</label>
     <textarea id="note" name="note" rows="3"></textarea>
 
-    <label for="payment">Payment Method:</label>
-    <select id="payment" name="payment">
-      <option value="venmo">Venmo</option>
-      <option value="square">Square</option>
+   <label for="payment">Payment Method:</label>
+<div>
+  <input type="radio" id="venmo" name="payment" value="venmo" />
+  <label for="venmo"><a href="https://venmo.com/Shantel-Crowley" target="_blank">Pay via Venmo @Shantel-Crowley</a></label>
+</div>
+<div>
+  <input type="radio" id="square" name="payment" value="square" />
+  <label for="square"><a href="https://square.link/u/YbkebNCm?src=sms" target="_blank">Pay via Square</a></label>
+</div>
     </select>
 
     <button type="submit">Place Order
@@ -246,6 +251,7 @@
 
 </body>
 </html>
+
 
 
 
