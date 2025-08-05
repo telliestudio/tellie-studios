@@ -2,77 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tellie Studios – Your Cart</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart – TellieStudios</title>
   <style>
     body {
-      font-family: Georgia, serif;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, lightblue, pink, purple);
+      color: #333;
       margin: 0;
       padding: 0;
-      background: #fefefe;
-      color: #333;
     }
+
     header {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       background: white;
-      padding: 15px 20px;
-      border-bottom: 2px solid #d2b48c;
+      padding: 15px;
     }
+
     .logo {
-      max-width: 120px;
+      width: 120px;
       height: auto;
     }
+
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
       gap: 15px;
       padding: 0;
       margin: 0;
     }
+
     nav li a {
       text-decoration: none;
       color: #333;
       font-weight: bold;
-      font-size: 1rem;
     }
-    .cart-section {
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .cart-section, .form-section, .glaze-section {
       padding: 20px;
-      margin: 20px;
-      background: #f6f6f6;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      margin: 20px auto;
+      width: 80%;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
     }
+
     .cart-items p {
-      margin: 5px 0;
+      margin: 8px 0;
       font-size: 1rem;
     }
-    .included-glazes {
-      margin-top: 20px;
+
+    .glaze-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .color-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .color-dot {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-bottom: 6px;
+      border: 1px solid #aaa;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 5px;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
       padding: 10px;
-      background: #fef0ff;
-      border: 1px solid #e9c6e9;
+      margin: 8px 0;
       border-radius: 6px;
-    }
-    .pottery-selection {
-      margin-top: 20px;
-    }
-    .pottery-item {
-      margin-bottom: 15px;
-      padding: 10px;
-      background: #fff;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      font-size: 1rem;
     }
-    .pottery-item select,
-    .pottery-item input[type="checkbox"] {
-      margin-top: 8px;
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
     }
+
     button {
-      margin: 10px 0;
+      margin-top: 20px;
       padding: 10px 18px;
       font-size: 1rem;
       cursor: pointer;
@@ -81,15 +108,17 @@
       color: white;
       border-radius: 4px;
     }
+
     button:hover {
       background: #c0a377;
     }
+
     footer {
+      background: white;
+      padding: 20px;
       text-align: center;
-      font-size: 0.9rem;
-      background: #eee;
-      padding: 10px;
     }
+
     footer a {
       color: #333;
       text-decoration: none;
@@ -99,90 +128,125 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo.jpg" alt="Tellie Studios Logo" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pottery.html">Pottery</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <img src="logo.jpg" alt="TellieStudios Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pottery.html">Pottery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="cart-section">
-    <h2>Your Cart</h2>
-    <div id="cart-items" class="cart-items"></div>
-    <button onclick="clearCart()">Clear Cart</button>
-  </section>
+<section class="cart-section">
+  <h2>Your Cart</h2>
+  <div id="cart-items" class="cart-items"></div>
+  <button onclick="clearCart()">Clear Cart</button>
+</section>
 
-  <section class="pottery-selection">
-    <h2>Select Pottery Pieces</h2>
-    <div class="pottery-item">
-      <p><strong>Classic Vase</strong></p>
-      <label for="vase-size">Size:</label>
-      <select id="vase-size">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
-      </select>
-      <div class="included-glazes">
-        <p>Choose Glaze (Free):</p>
-        <label><input type="checkbox" value="Matte White" /> Matte White</label><br />
-        <label><input type="checkbox" value="Rustic Blue" /> Rustic Blue</label><br />
-        <label><input type="checkbox" value="Glossy Teal" /> Glossy Teal</label>
-      </div>
-      <button onclick="window.location.href='cart.html'">Add to Cart</button>
-    </div>
+<section class="glaze-section">
+  <h2>🎨 Choose Your Glaze Colors</h2>
+  <p>You can select multiple glaze colors for free. Choices are unlimited with pottery orders!</p>
+  <div class="glaze-grid">
+    <!-- Colors -->
+    <label class="color-label"><span class="color-dot" style="background:white;"></span><input type="checkbox" value="White">White</label>
+    <label class="color-label"><span class="color-dot" style="background:#f8f8ff;"></span><input type="checkbox" value="China White">China White</label>
+    <label class="color-label"><span class="color-dot" style="background:red;"></span><input type="checkbox" value="Red">Red</label>
+    <label class="color-label"><span class="color-dot" style="background:black;"></span><input type="checkbox" value="Black">Black</label>
+    <label class="color-label"><span class="color-dot" style="background:darkgreen;"></span><input type="checkbox" value="Dark Green">Dark Green</label>
+    <label class="color-label"><span class="color-dot" style="background:#50c878;"></span><input type="checkbox" value="Emerald Green">Emerald Green</label>
+    <label class="color-label"><span class="color-dot" style="background:#5a98d1;"></span><input type="checkbox" value="Hollyhock Blue">Hollyhock Blue</label>
+    <label class="color-label"><span class="color-dot" style="background:purple;"></span><input type="checkbox" value="Purple">Purple</label>
+    <label class="color-label"><span class="color-dot" style="background:#fdfd96;"></span><input type="checkbox" value="Medium Yellow">Medium Yellow</label>
+    <label class="color-label"><span class="color-dot" style="background:yellow;"></span><input type="checkbox" value="Bright Yellow">Bright Yellow</label>
+    <label class="color-label"><span class="color-dot" style="background:orange;"></span><input type="checkbox" value="Orange">Orange</label>
+    <label class="color-label"><span class="color-dot" style="background:#b87333;"></span><input type="checkbox" value="Copper Red">Copper Red</label>
+    <label class="color-label"><span class="color-dot" style="background:#654321;"></span><input type="checkbox" value="Dark Brown">Dark Brown</label>
+    <label class="color-label"><span class="color-dot" style="background:#3f00ff;"></span><input type="checkbox" value="Ultramarine Blue">Ultramarine Blue</label>
+    <label class="color-label"><span class="color-dot" style="background:#c2b280;"></span><input type="checkbox" value="Ocher">Ocher</label>
+    <label class="color-label"><span class="color-dot" style="background:#a984bc;"></span><input type="checkbox" value="Crocus">Crocus</label>
+    <label class="color-label"><span class="color-dot" style="background:#d2b48c;"></span><input type="checkbox" value="Toasted Almond">Toasted Almond</label>
+    <label class="color-label"><span class="color-dot" style="background:#556b2f;"></span><input type="checkbox" value="Cactus">Cactus</label>
+  </div>
+</section>
 
-    <!-- Repeat similar blocks for the remaining 14 pottery pieces -->
-  </section>
+<section class="form-section">
+  <h2>📝 Checkout Details</h2>
+  <form>
+    <label for="billing">Billing Address:</label>
+    <textarea id="billing" name="billing" rows="2"></textarea>
 
-  <footer>
-    <p>Hours: Mon–Fri 9am–5pm</p>
-    <p>Email: telliestudios@gmail.com</p>
-    <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
-  </footer>
+    <label for="shipping">Shipping Address:</label>
+    <textarea id="shipping" name="shipping" rows="2"></textarea>
 
-  <script>
-    function displayCartItems() {
-      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-      const cartItemsContainer = document.getElementById('cart-items');
-      cartItemsContainer.innerHTML = '';
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" />
 
-      let total = 0;
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" />
 
-      if (cartItems.length === 0) {
-        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-        return;
-      }
+    <label for="note">Pottery Notes (if you selected a piece with variations):</label>
+    <textarea id="note" name="note" rows="3"></textarea>
 
-      cartItems.forEach(item => {
-        const itemTotal = item.quantity * item.price;
-        total += itemTotal;
-        cartItemsContainer.innerHTML += `
-          <div style="margin-bottom: 10px;">
-            <p><strong>${item.name}</strong> – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p>
-          </div>
-        `;
-      });
+    <label for="payment">Payment Method:</label>
+    <select id="payment" name="payment">
+      <option value="venmo">Venmo</option>
+      <option value="square">Square</option>
+    </select>
 
-      cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+    <button type="submit">Place Order
+          <button type="submit">Place Order</button>
+  </form>
+</section>
+
+<footer>
+  <p>Hours: Mon–Fri 9am–5pm</p>
+  <p>Email: telliestudios@gmail.com</p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+</footer>
+
+<script>
+  function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    let total = 0;
+
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+      return;
     }
 
-    function clearCart() {
-      localStorage.removeItem('cart');
-      displayCartItems();
-    }
+    cartItems.forEach(item => {
+      const itemTotal = item.quantity * item.price;
+      total += itemTotal;
+      cartItemsContainer.innerHTML += `
+        <div style="margin-bottom: 10px;">
+          <p><strong>${item.name}</strong> – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p>
+        </div>
+      `;
+    });
 
+    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+  }
+
+  function clearCart() {
+    localStorage.removeItem('cart');
     displayCartItems();
-  </script>
+  }
+
+  displayCartItems();
+</script>
 
 </body>
 </html>
+
+
 
 
