@@ -153,25 +153,25 @@
   <h2>🎨 Choose Your Glaze Colors</h2>
   <p>You can select multiple glaze colors for free. Choices are unlimited with pottery orders!</p>
   <div class="glaze-grid">
-    <!-- Colors -->
-    <label class="color-label"><span class="color-dot" style="background:white;"></span><input type="checkbox" value="White">White</label>
-    <label class="color-label"><span class="color-dot" style="background:#f8f8ff;"></span><input type="checkbox" value="China White">China White</label>
-    <label class="color-label"><span class="color-dot" style="background:red;"></span><input type="checkbox" value="Red">Red</label>
-    <label class="color-label"><span class="color-dot" style="background:black;"></span><input type="checkbox" value="Black">Black</label>
-    <label class="color-label"><span class="color-dot" style="background:darkgreen;"></span><input type="checkbox" value="Dark Green">Dark Green</label>
-    <label class="color-label"><span class="color-dot" style="background:#50c878;"></span><input type="checkbox" value="Emerald Green">Emerald Green</label>
-    <label class="color-label"><span class="color-dot" style="background:#5a98d1;"></span><input type="checkbox" value="Hollyhock Blue">Hollyhock Blue</label>
-    <label class="color-label"><span class="color-dot" style="background:purple;"></span><input type="checkbox" value="Purple">Purple</label>
-    <label class="color-label"><span class="color-dot" style="background:#fdfd96;"></span><input type="checkbox" value="Medium Yellow">Medium Yellow</label>
-    <label class="color-label"><span class="color-dot" style="background:yellow;"></span><input type="checkbox" value="Bright Yellow">Bright Yellow</label>
-    <label class="color-label"><span class="color-dot" style="background:orange;"></span><input type="checkbox" value="Orange">Orange</label>
-    <label class="color-label"><span class="color-dot" style="background:#b87333;"></span><input type="checkbox" value="Copper Red">Copper Red</label>
-    <label class="color-label"><span class="color-dot" style="background:#654321;"></span><input type="checkbox" value="Dark Brown">Dark Brown</label>
-    <label class="color-label"><span class="color-dot" style="background:#3f00ff;"></span><input type="checkbox" value="Ultramarine Blue">Ultramarine Blue</label>
-    <label class="color-label"><span class="color-dot" style="background:#c2b280;"></span><input type="checkbox" value="Ocher">Ocher</label>
-    <label class="color-label"><span class="color-dot" style="background:#a984bc;"></span><input type="checkbox" value="Crocus">Crocus</label>
-    <label class="color-label"><span class="color-dot" style="background:#d2b48c;"></span><input type="checkbox" value="Toasted Almond">Toasted Almond</label>
-    <label class="color-label"><span class="color-dot" style="background:#556b2f;"></span><input type="checkbox" value="Cactus">Cactus</label>
+    <!-- Glaze options -->
+    <label class="color-label"><span class="color-dot" style="background:white;"></span><input type="checkbox" name="glazes" value="White">White</label>
+    <label class="color-label"><span class="color-dot" style="background:#f8f8ff;"></span><input type="checkbox" name="glazes" value="China White">China White</label>
+    <label class="color-label"><span class="color-dot" style="background:red;"></span><input type="checkbox" name="glazes" value="Red">Red</label>
+    <label class="color-label"><span class="color-dot" style="background:black;"></span><input type="checkbox" name="glazes" value="Black">Black</label>
+    <label class="color-label"><span class="color-dot" style="background:darkgreen;"></span><input type="checkbox" name="glazes" value="Dark Green">Dark Green</label>
+    <label class="color-label"><span class="color-dot" style="background:#50c878;"></span><input type="checkbox" name="glazes" value="Emerald Green">Emerald Green</label>
+    <label class="color-label"><span class="color-dot" style="background:#5a98d1;"></span><input type="checkbox" name="glazes" value="Hollyhock Blue">Hollyhock Blue</label>
+    <label class="color-label"><span class="color-dot" style="background:purple;"></span><input type="checkbox" name="glazes" value="Purple">Purple</label>
+    <label class="color-label"><span class="color-dot" style="background:#fdfd96;"></span><input type="checkbox" name="glazes" value="Medium Yellow">Medium Yellow</label>
+    <label class="color-label"><span class="color-dot" style="background:yellow;"></span><input type="checkbox" name="glazes" value="Bright Yellow">Bright Yellow</label>
+    <label class="color-label"><span class="color-dot" style="background:orange;"></span><input type="checkbox" name="glazes" value="Orange">Orange</label>
+    <label class="color-label"><span class="color-dot" style="background:#b87333;"></span><input type="checkbox" name="glazes" value="Copper Red">Copper Red</label>
+    <label class="color-label"><span class="color-dot" style="background:#654321;"></span><input type="checkbox" name="glazes" value="Dark Brown">Dark Brown</label>
+    <label class="color-label"><span class="color-dot" style="background:#3f00ff;"></span><input type="checkbox" name="glazes" value="Ultramarine Blue">Ultramarine Blue</label>
+    <label class="color-label"><span class="color-dot" style="background:#c2b280;"></span><input type="checkbox" name="glazes" value="Ocher">Ocher</label>
+    <label class="color-label"><span class="color-dot" style="background:#a984bc;"></span><input type="checkbox" name="glazes" value="Crocus">Crocus</label>
+    <label class="color-label"><span class="color-dot" style="background:#d2b48c;"></span><input type="checkbox" name="glazes" value="Toasted Almond">Toasted Almond</label>
+    <label class="color-label"><span class="color-dot" style="background:#556b2f;"></span><input type="checkbox" name="glazes" value="Cactus">Cactus</label>
   </div>
 </section>
 
@@ -190,67 +190,33 @@
     <label for="phone">Phone Number:</label>
     <input type="tel" id="phone" name="phone" />
 
-    <label for="note">Pottery Notes (if you selected a piece with variations):</label>
+    <label for="note">Pottery Notes (for designs with variations):</label>
     <textarea id="note" name="note" rows="3"></textarea>
 
-   <label for="payment">Payment Method:</label>
-<div>
-  <input type="radio" id="venmo" name="payment" value="venmo" />
-  <label for="venmo"><a href="https://venmo.com/Shantel-Crowley" target="_blank">Pay via Venmo @Shantel-Crowley</a></label>
-</div>
-<div>
-  <input type="radio" id="square" name="payment" value="square" />
-  <label for="square"><a href="https://square.link/u/YbkebNCm?src=sms" target="_blank">Pay via Square</a></label>
-</div>
-    </select>
+    <label>Payment Method:</label>
+    <div>
+      <input type="radio" id="venmo" name="payment" value="venmo" /> <label for="venmo"> <a href="https://venmo.com/Shantel-Crowley" target="_blank">Pay via Venmo @Shantel-Crowley</a> </label> </div> <div> <input type="radio" id="square" name="payment" value="square" /> <label for="square"> <a href="https://square.link/u/YbkebNCm?src=sms" target="_blank">Pay via Square</a> </label> </div>
 
-    <button type="submit">Place Order
-          <button type="submit">Place Order</button>
-  </form>
-</section>
+<button type="submit">Place Order</button> </form> </section>
 
-<footer>
-  <p>Hours: Mon–Fri 9am–5pm</p>
-  <p>Email: telliestudios@gmail.com</p>
-  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
-</footer>
+<footer> <p>Hours: Mon–Fri 9am–5pm</p> <p>Email: telliestudios@gmail.com</p> <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a> </footer>
 
-<script>
-  function displayCartItems() {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
+<script> function displayCartItems() { const cartItems = JSON.parse(localStorage.getItem('cart')) || []; const cartItemsContainer = document.getElementById('cart-items'); cartItemsContainer.innerHTML = '';
 
-    let total = 0;
+let total = 0;
 
-    if (cartItems.length === 0) {
-      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-      return;
-    }
+if (cartItems.length === 0) { cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>'; return; }
 
-    cartItems.forEach(item => {
-      const itemTotal = item.quantity * item.price;
-      total += itemTotal;
-      cartItemsContainer.innerHTML += `
-        <div style="margin-bottom: 10px;">
-          <p><strong>${item.name}</strong> – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p>
-        </div>
-      `;
-    });
+cartItems.forEach(item => { const itemTotal = item.quantity * item.price; total += itemTotal; cartItemsContainer.innerHTML += <div style="margin-bottom: 10px;"> <p><strong>${item.name}</strong> – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p> </div>; });
 
-    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
-  }
+cartItemsContainer.innerHTML += <p><strong>Total: $${total.toFixed(2)}</strong></p>; }
 
-  function clearCart() {
-    localStorage.removeItem('cart');
-    displayCartItems();
-  }
+function clearCart() { localStorage.removeItem('cart'); displayCartItems(); }
 
-  displayCartItems();
-</script>
+displayCartItems(); </script>
 
-</body>
-</html>
+</body> </html>
+
 
 
 
