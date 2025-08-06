@@ -31,6 +31,8 @@
       list-style: none;
       display: flex;
       gap: 15px;
+      padding: 0;
+      margin: 0;
     }
 
     nav ul li a {
@@ -160,18 +162,24 @@
 <script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({ name, price, quantity: 1 });
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} added to cart!`);
+    alert(`${name} has been added to your cart!`);
   }
 </script>
 
 <footer>
-  <p>Hours: Mon-Fri 9am-5pm</p>
+  <p>Hours: Mon–Fri 9am–5pm</p>
   <p>Email: telliestudios@gmail.com</p>
   <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
 </body>
 </html>
+
 
