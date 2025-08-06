@@ -1,109 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - TellieStudios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, lightblue, pink, purple);
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - TellieStudios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, lightblue, pink, purple);
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 15px;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px;
+    }
 
-        .logo {
-            width: 120px;
-            height: auto;
-        }
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
 
-        .intro {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.85);
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 8px;
-            font-size: 18px;
-            text-align: center;
-        }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
 
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+    .intro {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.85);
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 8px;
+      font-size: 18px;
+      text-align: center;
+    }
 
-        .gallery-item {
-            width: 300px;
-            border-radius: 8px;
-            padding: 10px;
-            background: white;
-            text-align: center;
-            cursor: pointer;
-        }
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
+    .gallery-item {
+      width: 300px;
+      border-radius: 8px;
+      padding: 10px;
+      background: white;
+      text-align: center;
+      cursor: pointer;
+    }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
 
-        footer {
-            padding: 20px;
-            background: white;
-        }
-    </style>
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 20px;
+      background: white;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
-    <nav>
-        <ul>
-             <li><a href="index.html">Home</a></li>
-                <li><a href="pottery.html">Pottery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html">Cart</a></li> <!-- Added Cart Link -->
-        </ul>
-    </nav>
+  <img src="logo.jpg" alt="TellieStudios Logo" class="logo">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pottery.html">Pottery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section class="intro">
-    <h1>Gallery of Original Paintings</h1>
-    <p>All images are hand-painted, each available for purchase at **$50 per painting**.</p>
-    <p>Most artworks are **16x20**, with new sizes arriving every week.</p>
-    <p>Want to learn how to paint one? Each artwork can be turned into a **paint-by-number kit**.</p>
-    <p>For custom sizes or color modifications, reach out through our <a href="contact.html">Contact Page</a>.</p>
+  <h1>Gallery of Original Paintings</h1>
+  <p>All images are hand-painted, each available for purchase at <strong>$50 per painting</strong>.</p>
+  <p>Most artworks are <strong>16x20</strong>, with new sizes arriving every week.</p>
+  <p>Want to learn how to paint one? Each artwork can be turned into a <strong>paint-by-number kit</strong>.</p>
+  <p>For custom sizes or color modifications, reach out through our <a href="contact.html">Contact Page</a>.</p>
 </section>
-
-<section class="gallery-container">
-    <div class="gallery-item" onclick="addToCart('Jesus at the Well', 50)">
+    <section class="gallery-container">
+            <div class="gallery-item" onclick="addToCart('Jesus at the Well', 50)">
         <img src="Jesus at the well.jpg" alt="Jesus at the Well">
     </div>
     <div class="gallery-item" onclick="addToCart('Jesus Reaching In', 50)">
@@ -240,20 +245,28 @@
         <img src="white flower girl.jpg" alt="white flower girl ">
     </div>
 </section>
+</section>
 
 <footer>
-    <p>Hours: Mon-Fri 9am-5pm</p>
-    <p>Email: telliestudios@gmail.com</p>
-    <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+  <p>Hours: Mon–Fri 9am–5pm</p>
+  <p>Email: telliestudios@gmail.com</p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
 <script>
-    function addToCart(name, price) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push({ name, price, quantity: 1 });
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${name} added to cart!`);
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name, price, quantity: 1 });
     }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} has been added to your cart!`);
+  }
 </script>
 
 </body>
