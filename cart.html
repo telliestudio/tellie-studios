@@ -195,27 +195,64 @@
 
     <label>Payment Method:</label>
     <div>
-      <input type="radio" id="venmo" name="payment" value="venmo" /> <label for="venmo"> <a href="https://venmo.com/Shantel-Crowley" target="_blank">Pay via Venmo @Shantel-Crowley</a> </label> </div> <div> <input type="radio" id="square" name="payment" value="square" /> <label for="square"> <a href="https://square.link/u/YbkebNCm?src=sms" target="_blank">Pay via Square</a> </label> </div>
+      <input type="radio" id="venmo" name="payment" value="venmo" />
+      <label for="venmo">
+        <a href="https://venmo.com/Shantel-Crowley" target="_blank">Pay via Venmo @Shantel-Crowley</a>
+      </label>
+    </div>
+    <div>
+           <input type="radio" id="square" name="payment" value="square" />
+      <label for="square">
+        <a href="https://square.link/u/YbkebNCm?src=sms" target="_blank">Pay via Square</a>
+      </label>
+    </div>
+    <button type="submit">Place Order</button>
+  </form>
+</section>
 
-<button type="submit">Place Order</button> </form> </section>
+<footer>
+  <p>Hours: Mon–Fri 9am–5pm</p>
+  <p>Email: telliestudios@gmail.com</p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+</footer>
 
-<footer> <p>Hours: Mon–Fri 9am–5pm</p> <p>Email: telliestudios@gmail.com</p> <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a> </footer>
+<script>
+  function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
 
-<script> function displayCartItems() { const cartItems = JSON.parse(localStorage.getItem('cart')) || []; const cartItemsContainer = document.getElementById('cart-items'); cartItemsContainer.innerHTML = '';
+    let total = 0;
 
-let total = 0;
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+      return;
+    }
 
-if (cartItems.length === 0) { cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>'; return; }
+    cartItems.forEach(item => {
+      const itemTotal = item.quantity * item.price;
+      total += itemTotal;
+      cartItemsContainer.innerHTML += `
+        <div style="margin-bottom: 10px;">
+          <p><strong>${item.name}</strong> – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p>
+        </div>`;
+    });
 
-cartItems.forEach(item => { const itemTotal = item.quantity * item.price; total += itemTotal; cartItemsContainer.innerHTML += <div style="margin-bottom: 10px;"> <p><strong>${item.name}</strong> – ${item.quantity} × $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}</p> </div>; });
+    cartItemsContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+  }
 
-cartItemsContainer.innerHTML += <p><strong>Total: $${total.toFixed(2)}</strong></p>; }
+  function clearCart() {
+    localStorage.removeItem('cart');
+    displayCartItems();
+  }
 
-function clearCart() { localStorage.removeItem('cart'); displayCartItems(); }
+  displayCartItems();
+</script>
 
-displayCartItems(); </script>
+</body>
+</html>
 
-</body> </html>
+
 
 
 
