@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pottery – TellieStudios</title>
+  <title>Cart – TellieStudios</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: linear-gradient(to bottom, lightblue, pink, purple);
+      color: #333;
       margin: 0;
       padding: 0;
     }
 
-    header, footer {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: white;
       padding: 15px;
-      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;
       gap: 15px;
       padding: 0;
       margin: 0;
@@ -33,94 +40,157 @@
       font-weight: bold;
     }
 
-    .product-list {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+    h2 {
+      margin-top: 30px;
     }
 
-    .product {
-      background: white;
-      padding: 15px;
-      margin-bottom: 15px;
+    .cart-section, .form-section, .glaze-section {
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .cart-items p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+
+    .glaze-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .color-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .color-dot {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-bottom: 6px;
+      border: 1px solid #aaa;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 5px;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
     }
 
     button {
-      margin-top: 10px;
-      padding: 8px 14px;
-      background: #d2b48c;
-      color: white;
-      border: none;
-      border-radius: 4px;
+      margin-top: 20px;
+      padding: 10px 18px;
+      font-size: 1rem;
       cursor: pointer;
+      background: #d2b48c;
+      border: none;
+      color: white;
+      border-radius: 4px;
     }
 
     button:hover {
       background: #c0a377;
+    }
+
+    footer {
+      background: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>TellieStudios Pottery</h1>
+  <img src="logo.jpg" alt="TellieStudios Logo" class="logo" />
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="pottery.html">Pottery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="cart.html">Cart</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="product-list">
-  <h2>Featured Pottery</h2>
+<section class="cart-section">
+  <h2>Your Cart</h2>
+  <div id="cart-items" class="cart-items"></div>
+  <button onclick="clearCart()">Clear Cart</button>
+</section>
 
-  <div class="product">
-    <h3>Sunset Vase</h3>
-    <p>$25.00</p>
-    <button onclick="addToCart('Sunset Vase', 25.00)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <h3>Ocean Bowl</h3>
-    <p>$18.00</p>
-    <button onclick="addToCart('Ocean Bowl', 18.00)">Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <h3>Rustic Mug</h3>
-    <p>$12.00</p>
-    <button onclick="addToCart('Rustic Mug', 12.00)">Add to Cart</button>
+<section class="glaze-section">
+  <h2>🎨 Choose Your Glaze Colors</h2>
+  <p>You can select multiple glaze colors for free. Choices are unlimited with pottery orders!</p>
+  <div class="glaze-grid">
+    <!-- Glaze options -->
+    <label class="color-label"><span class="color-dot" style="background:white;"></span><input type="checkbox" name="glazes" value="White">White</label>
+    <label class="color-label"><span class="color-dot" style="background:#f8f8ff;"></span><input type="checkbox" name="glazes" value="China White">China White</label>
+    <label class="color-label"><span class="color-dot" style="background:red;"></span><input type="checkbox" name="glazes" value="Red">Red</label>
+    <label class="color-label"><span class="color-dot" style="background:black;"></span><input type="checkbox" name="glazes" value="Black">Black</label>
+    <label class="color-label"><span class="color-dot" style="background:darkgreen;"></span><input type="checkbox" name="glazes" value="Dark Green">Dark Green</label>
+    <label class="color-label"><span class="color-dot" style="background:#50c878;"></span><input type="checkbox" name="glazes" value="Emerald Green">Emerald Green</label>
+    <label class="color-label"><span class="color-dot" style="background:#5a98d1;"></span><input type="checkbox" name="glazes" value="Hollyhock Blue">Hollyhock Blue</label>
+    <label class="color-label"><span class="color-dot" style="background:purple;"></span><input type="checkbox" name="glazes" value="Purple">Purple</label>
+    <label class="color-label"><span class="color-dot" style="background:#fdfd96;"></span><input type="checkbox" name="glazes" value="Medium Yellow">Medium Yellow</label>
+    <label class="color-label"><span class="color-dot" style="background:yellow;"></span><input type="checkbox" name="glazes" value="Bright Yellow">Bright Yellow</label>
+    <label class="color-label"><span class="color-dot" style="background:orange;"></span><input type="checkbox" name="glazes" value="Orange">Orange</label>
+    <label class="color-label"><span class="color-dot" style="background:#b87333;"></span><input type="checkbox" name="glazes" value="Copper Red">Copper Red</label>
+    <label class="color-label"><span class="color-dot" style="background:#654321;"></span><input type="checkbox" name="glazes" value="Dark Brown">Dark Brown</label>
+    <label class="color-label"><span class="color-dot" style="background:#3f00ff;"></span><input type="checkbox" name="glazes" value="Ultramarine Blue">Ultramarine Blue</label>
+    <label class="color-label"><span class="color-dot" style="background:#c2b280;"></span><input type="checkbox" name="glazes" value="Ocher">Ocher</label>
+    <label class="color-label"><span class="color-dot" style="background:#a984bc;"></span><input type="checkbox" name="glazes" value="Crocus">Crocus</label>
+    <label class="color-label"><span class="color-dot" style="background:#d2b48c;"></span><input type="checkbox" name="glazes" value="Toasted Almond">Toasted Almond</label>
+    <label class="color-label"><span class="color-dot" style="background:#556b2f;"></span><input type="checkbox" name="glazes" value="Cactus">Cactus</label>
   </div>
 </section>
 
-<footer>
-  <p>Email: telliestudios@gmail.com</p>
-  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
-</footer>
+<section class="form-section">
+  <h2>📝 Checkout Details</h2>
+  <form action="https://formspree.io/f/xnnqkbbl" method="POST">
+    <label for="billing">Billing Address:</label>
+    <textarea id="billing" name="billing" rows="2" required></textarea>
 
-<script>
-  function addToCart(name, price) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingItem = cart.find(item => item.name === name);
+    <label for="shipping">Shipping Address:</label>
+    <textarea id="shipping" name="shipping" rows="2" required></textarea>
 
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cart.push({ name, price, quantity: 1 });
-    }
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
 
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} added to cart!`);
-  }
-</script>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required />
 
-</body>
-</html>
+    [43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Ronnie434/30-days-of-React/tree/22142106cb46f717a1259f84227cc90ed7fe50cc/02_Day_Introduction_to_React%2F02_introduction_to_react.md?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Eblazecode/HOHbornfire/tree/97144935461a8707f477c8ee2cf24a165e943239/storage%2Fframework%2Fviews%2Fb73fecb6f61be40f24298138a5ab6eb1323f95ae.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/aryaks63/gym-manager/tree/52d68cf3b1bd6d2f98f8e20cef4d23bd14342e97/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "3")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/balendraparstemca/Complaint-managament-system/tree/9d940a5045626bd0be6f5e59af6009c5e73887f9/compaint%2Fblog.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "4")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Proyek-2-TI-3A/Proyek-2/tree/553972d2ed8eeb049d034ebadd31f8d0af875cfb/MarkUps-Varsity%2FVarsity%2Findex.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "5")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/rajat-rjt/canteen/tree/3b3b4d72ea8f0335df2c82a8d79780a08c6e175d/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "6")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/ahunter01/cosc212_labs/tree/9f50956bfc0ce6351d4b4cec8787618576da71e1/lab15%2Fscifi.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "7")<label for="
 
 
 
