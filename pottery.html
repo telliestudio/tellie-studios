@@ -89,6 +89,20 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      background: purple;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5e2d91;
+    }
   </style>
 </head>
 <body>
@@ -111,85 +125,122 @@
 <section class="intro">
   <h1>Pottery</h1>
   <p>At Tellie Studios, we believe that clay tells stories—of creativity, connection, and care. Each piece in our collection is thoughtfully handcrafted, celebrating the textures of nature and the spirit of play. Whether you’re exploring our whimsical bunnies, galaxy-inspired mugs, or earthy mushrooms, you’ll find artistry and warmth in every curve.</p>
-  <p>Each piece is individually priced. Click on the image to add to the cart. If a design has multiple variations, your chosen option will appear in your cart—just leave your selection in the cart message section. For custom sizes or color modifications, reach out through our <a href="contact.html">Contact Page</a>.</p>
+  <p>Each piece is individually priced. Click on the image to add to the cart. If a design has multiple variations, your chosen option will appear in your cart. For custom sizes or color modifications, reach out through our <a href="contact.html">Contact Page</a>.</p>
 </section>
 
 <section class="gallery-container">
-  <div class="gallery-item" onclick="addToCart('Flowers', 4)">
+  <div class="gallery-item">
     <img src="flowers.jpg" alt="Flowers" />
-    <p>$4 small, $5 medium, $6 large mark selection in cart notes</p>
+    <p>Select a size:</p>
+    <button onclick="addToCart('Flowers', 'Small', 4)">Small - $4</button>
+    <button onclick="addToCart('Flowers', 'Medium', 5)">Medium - $5</button>
+    <button onclick="addToCart('Flowers', 'Large', 6)">Large - $6</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Astronaut', 25)">
+
+  <div class="gallery-item">
     <img src="astro.png" alt="Astronaut" />
     <p>$25</p>
+    <button onclick="addToCart('Astronaut', 'Standard', 25)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Apples', 12)">
+
+  <div class="gallery-item">
     <img src="apples.png" alt="Apples" />
-    <p>$12 each mark selection in cart notes</p>
+    <p>$12 each</p>
+    <button onclick="addToCart('Apples', 'Standard', 12)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Bees', 4)">
+
+  <div class="gallery-item">
     <img src="bees.jpg" alt="Bees" />
-    <p>$4 small, $5 medium, $6 for large, $7 x-large mark selection in cart notes</p>
+    <p>Select a size:</p>
+    <button onclick="addToCart('Bees', 'Small', 4)">Small - $4</button>
+    <button onclick="addToCart('Bees', 'Medium', 5)">Medium - $5</button>
+    <button onclick="addToCart('Bees', 'Large', 6)">Large - $6</button>
+    <button onclick="addToCart('Bees', 'X-Large', 7)">X-Large - $7</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Cactus', 4)">
+
+  <div class="gallery-item">
     <img src="catus.jpg" alt="Cactus" />
     <p>$4</p>
+    <button onclick="addToCart('Cactus', 'Standard', 4)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Flag', 6)">
+
+  <div class="gallery-item">
     <img src="flag.png" alt="Flag" />
     <p>$6</p>
+    <button onclick="addToCart('Flag', 'Standard', 6)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Hat Bunny', 16)">
+
+  <div class="gallery-item">
     <img src="hatbunny.png" alt="Hat Bunny" />
-    <p>$16 each mark selection in cart notes</p>
+    <p>$16 each</p>
+    <button onclick="addToCart('Hat Bunny', 'Standard', 16)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Hearts', 4)">
+
+  <div class="gallery-item">
     <img src="hearts.jpg" alt="Hearts" />
-    <p>$4 each mark selection in cart notes</p>
+    <p>$4 each</p>
+    <button onclick="addToCart('Hearts', 'Standard', 4)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Mushroom House', 16)">
+
+  <div class="gallery-item">
     <img src="mushroomhouse.png" alt="Mushroom House" />
     <p>$16</p>
+    <button onclick="addToCart('Mushroom House', 'Standard', 16)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Old Bunny', 16)">
+
+  <div class="gallery-item">
     <img src="oldbunny.png" alt="Old Bunny" />
-    <p>$16 each Mark selection in cart notes</p>
+    <p>$16 each</p>
+    <button onclick="addToCart('Old Bunny', 'Standard', 16)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Pineapple', 4)">
+
+  <div class="gallery-item">
     <img src="pineapple.jpg" alt="Pineapple" />
     <p>$4</p>
+    <button onclick="addToCart('Pineapple', 'Standard', 4)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Mushrooms', 5)">
+
+  <div class="gallery-item">
     <img src="mushrooms.png" alt="Mushrooms" />
-    <p>$5 small- $10 for big mark selection in cart notes</p>
+    <p>Select a size:</p>
+    <button onclick="addToCart('Mushrooms', 'Small', 5)">Small - $5</button>
+    <button onclick="addToCart('Mushrooms', 'Big', 10)">Big - $10</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Shotglass', 12)">
+
+  <div class="gallery-item">
     <img src="shotglass.png" alt="Shotglass" />
     <p>$12</p>
+    <button onclick="addToCart('Shotglass', 'Standard', 12)">Add to Cart</button>
   </div>
-  <div class="gallery-item" onclick="addToCart('Skulls', 8)">
+
+  <div class="gallery-item">
     <img src="skulls.png" alt="Skulls" />
-    <p>$8 for small- $12 big mark selection in cart notes</p>
+    <p>Select a size:</p>
+    <button onclick="addToCart('Skulls', 'Small', 8)">Small - $8</button>
+    <button onclick="addToCart('Skulls', 'Big', 12)">Big - $12</button>
   </div>
 </section>
 
 <script>
-  function addToCart(name, price) {
+  <script>
+  function addToCart(name, size, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existing = cart.find(item => item.name === name);
+    const itemKey = `${name} (${size})`;
+    const existing = cart.find(item => item.name === itemKey);
     if (existing) {
       existing.quantity += 1;
     } else {
-      cart.push({ name, price, quantity: 1 });
+      cart.push({ name: itemKey, price, quantity: 1 });
     }
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} has been added to your cart!`);
+    alert(`${itemKey} has been added to your cart!`);
   }
 </script>
 
 <footer>
   <p>Hours: Mon–Fri 9am–5pm</p>
   <p>Email: telliestudios@gmail.com</p>
+  <p> Call/text 720-234-3639</p>
   <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
 </footer>
 
