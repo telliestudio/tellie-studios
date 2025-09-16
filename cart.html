@@ -153,7 +153,6 @@
   <h2>🎨 Choose Your Glaze Colors</h2>
   <p>You can select multiple glaze colors for free. Choices are unlimited with pottery orders!</p>
   <div class="glaze-grid">
-    <!-- Glaze options -->
     <label class="color-label"><span class="color-dot" style="background:white;"></span><input type="checkbox" name="glazes" value="White">White</label>
     <label class="color-label"><span class="color-dot" style="background:#f8f8ff;"></span><input type="checkbox" name="glazes" value="China White">China White</label>
     <label class="color-label"><span class="color-dot" style="background:red;"></span><input type="checkbox" name="glazes" value="Red">Red</label>
@@ -190,14 +189,66 @@
     <label for="phone">Phone Number:</label>
     <input type="tel" id="phone" name="phone" required />
 
-    [43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Ronnie434/30-days-of-React/tree/22142106cb46f717a1259f84227cc90ed7fe50cc/02_Day_Introduction_to_React%2F02_introduction_to_react.md?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Eblazecode/HOHbornfire/tree/97144935461a8707f477c8ee2cf24a165e943239/storage%2Fframework%2Fviews%2Fb73fecb6f61be40f24298138a5ab6eb1323f95ae.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/aryaks63/gym-manager/tree/52d68cf3b1bd6d2f98f8e20cef4d23bd14342e97/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "3")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/balendraparstemca/Complaint-managament-system/tree/9d940a5045626bd0be6f5e59af6009c5e73887f9/compaint%2Fblog.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "4")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Proyek-2-TI-3A/Proyek-2/tree/553972d2ed8eeb049d034ebadd31f8d0af875cfb/MarkUps-Varsity%2FVarsity%2Findex.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "5")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/rajat-rjt/canteen/tree/3b3b4d72ea8f0335df2c82a8d79780a08c6e175d/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "6")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/ahunter01/cosc212_labs/tree/9f50956bfc0ce6351d4b4cec8787618576da71e1/lab15%2Fscifi.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "7")<label for="
+    <p><strong>Payment Options:</strong> Please send payment via <strong>Square</strong> or <strong>Venmo</strong>. We will confirm your order once payment is received.</p>
+        <p>Venmo: @TellieStudios | Square: Link will be sent after order confirmation.</p>
 
+    <button type="submit">Submit Order</button>
+  </form>
+</section>
 
+<footer>
+  <p>Hours: Mon–Fri 9am–5pm</p>
+  <p>Email: telliestudios@gmail.com</p>
+  <a href="https://www.facebook.com/profile.php?id=61569383602060" target="_blank">Facebook</a>
+</footer>
 
+<script>
+  // Display cart items
+  const cartContainer = document.getElementById('cart-items');
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+  if (cart.length === 0) {
+    cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+  } else {
+    cart.forEach(item => {
+      const itemElement = document.createElement('p');
+      itemElement.textContent = `${item.name} – $${item.price} × ${item.quantity}`;
+      cartContainer.appendChild(itemElement);
+    });
 
+    // Create hidden input to send cart data
+    const cartForm = document.querySelector('form');
+    const cartInput = document.createElement('input');
+    cartInput.type = 'hidden';
+    cartInput.name = 'cart_contents';
+    cartInput.value = cart.map(item => `${item.name} ($${item.price} × ${item.quantity})`).join(', ');
+    cartForm.appendChild(cartInput);
+  }
 
+  // Add glaze selections to form
+  const glazeCheckboxes = document.querySelectorAll('input[name="glazes"]');
+  const glazeForm = document.querySelector('form');
+  glazeForm.addEventListener('submit', function () {
+    const selectedGlazes = Array.from(glazeCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value)
+      .join(', ');
+    const glazeInput = document.createElement('input');
+    glazeInput.type = 'hidden';
+    glazeInput.name = 'selected_glazes';
+    glazeInput.value = selectedGlazes;
+    glazeForm.appendChild(glazeInput);
+  });
 
+  // Clear cart function
+  function clearCart() {
+    localStorage.removeItem('cart');
+    location.reload();
+  }
+</script>
+
+</body>
+</html>
 
 
 
