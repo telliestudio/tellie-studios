@@ -159,6 +159,40 @@
     <p>Join us for a one-hour hands-on pottery class. Supplies included; additional tools available for a fee. $50 an hour and depending on group size all supplies included up to 10 people, extra fee for each person after. Size of pottery choice also affects cost so please reach out with any questions. </p>
     <button onclick="addToCart('Pottery Class', 50)">Add to Cart</button>
   </div>
+
+  <div class="service">
+    <h2>Party Kits – Drop‑Off Supplies</h2>
+    <img src="images/party-kit-basic.jpg" alt="Basic Party Kit">
+    <p>
+      We deliver all the supplies you need for a fun, creative party! Choose from 
+      <strong>basic paints</strong> (kids can take home their pieces the same day) or 
+      <strong>canvas kits</strong> and paint‑by‑number sets (simple or advanced). 
+      Perfect for birthdays, school events, or casual gatherings.
+    </p>
+    <p>
+      <strong>Starting at $75</strong> for up to 10 guests. Price varies depending on 
+      supplies and pottery pieces selected.
+    </p>
+    <button onclick="addToCart('Party Kit Drop-Off', 75)">Add to Cart</button>
+  </div>
+
+  <div class="service">
+    <h2>Party Kits – Firing & Glaze</h2>
+    <img src="images/party-kit-premium.jpg" alt="Premium Party Kit">
+    <p>
+      Upgrade your party experience with pottery‑safe paints! We’ll fire and glaze the 
+      pieces so they’re durable and food‑safe. Guests create during the party, and 
+      finished pottery is ready for pickup later. Canvas kits and advanced paint‑by‑numbers 
+      can also be included.
+    </p>
+    <p>
+      <strong>Starting at $100</strong> for up to 10 guests. Final cost depends on 
+      pottery choices and number of participants.
+    </p>
+    <button onclick="addToCart('Party Kit with Firing & Glaze', 100)">Add to Cart</button>
+  </div>
+
+  <p><em>Contact us for custom themes, larger groups, or special requests!</em></p>
 </section>
 
 <section class="cart-section">
@@ -201,8 +235,8 @@
       return;
     }
 
-    let total = 0;
-    cartItems.forEach((item, index) => {
+    let total = 0
+        cartItems.forEach((item, index) => {
       const itemTotal = item.quantity * item.price;
       total += itemTotal;
       cartItemsContainer.innerHTML += `
@@ -233,6 +267,7 @@
 </html>
 
     
+
 
 
 
